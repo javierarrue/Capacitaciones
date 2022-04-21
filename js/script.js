@@ -1,5 +1,3 @@
-$(document).ready( () => {
-  $(".data-table").each( (_, table) => {
-    $(table).DataTable();
-  } )
-})
+$(document).ready(function() {
+  $('#example').DataTable();
+} );
