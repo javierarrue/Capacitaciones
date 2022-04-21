@@ -8,6 +8,16 @@
     --topNavbarheight: 56px;
 }
 
+.hover-section a {
+    transition: 0.2s;
+}
+
+.hover-section:hover a{
+    background: white;
+    color: black !important;
+    border-radius: 20px 0px 0px 20px;
+}
+
 .sidebar-nav{
     width:var(--offcanvas-width);
 }
