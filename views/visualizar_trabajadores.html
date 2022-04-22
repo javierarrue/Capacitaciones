@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="../css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
     <title>Hello, world!</title>
   </head>
@@ -42,9 +42,9 @@
                 <i class="bi bi-person-fill"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/perfil.html">Perfil</a></li>
+                <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/login.html">Cerrar Sesión</a></li>
+                <li><a class="dropdown-item" href="login.html">Cerrar Sesión</a></li>
               </ul>
             </li>
           </ul>
@@ -67,7 +67,7 @@
               </div>
             </li>
             <li class="hover-section">
-              <a href="/registrar.html" class="nav-link px-3 active section-link">
+              <a href="registrar.html" class="nav-link px-3 active section-link">
                 <span class="me-2">
                   <i class="bi bi-pencil-square"></i>
                 </span>
@@ -75,7 +75,7 @@
               </a>
             </li>
             <li class="hover-section">
-              <a href="/visualizar.html" class="nav-link px-3 active">
+              <a href="visualizar.html" class="nav-link px-3 active">
                 <span class="me-2">
                   <i class="bi bi-table"></i>
                 </span>
@@ -125,30 +125,8 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 fw-bold fs-3">
-            Registrar
+            Visualizar trabajadores
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <div class="card text-white bg-primary h-100">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div> 
-
-        <div class="col-md-6 mb-3">
-          <div class="card text-white bg-primary">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div> 
       </div>
 
       <div class="row">
@@ -156,7 +134,7 @@
           <div class="card">
             <div class="card-header">
               <div class="card-header">
-                Data tables
+                <a href="visualizar.html">  Visualizar Áreas </a> < <a href="visualizar_específico.html"> Visualizar Departamentos </a>  < Visualizar trabajadores
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -167,11 +145,11 @@
                 >
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
+                      <th>Nombre</th>
+                      <th>Cargo</th>
+                      <th>Perfil</th>
+                      <th>Edad</th>
+                      <th>Fecha de comienzo</th>
                       <th>Salary</th>
                     </tr>
                   </thead>
@@ -635,12 +613,12 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                        <th>Nombre</th>
+                        <th>Cargo</th>
+                        <th>Perfil</th>
+                        <th>Edad</th>
+                        <th>Fecha de comienzo</th>
+                        <th>Salary</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -655,10 +633,10 @@
  <!-- /MAIN CONTENT OF THE PAGE-->    
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap5.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/dataTables.bootstrap5.min.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
