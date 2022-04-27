@@ -127,7 +127,7 @@
           <div class="col-md-12 fw-bold fs-3">
             <div class="card">
               <div class="card-body">
-                Registrar
+                Registrar cursos sugeridos
               </div>
             </div>
         </div>
@@ -144,22 +144,47 @@
                 <form>
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Dato</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">....</div>
+                      <label for="direccion" class="form-label">Seleccione una direccion</label>
+                      <select class="form-select" aria-label="Default select example" id="direccion">
+                        <option selected>Dirección</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
                     </div>
   
                     <div class="col-md-6 mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Dato</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      <label for="departamento" class="form-label">Seleccione un departamento</label>
+                      <select class="form-select" aria-label="Default select example" id="departamento">
+                        <option selected>Departamento</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
                     </div>
                   </div>
                     <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="cargo" class="form-label">Seleccione un cargo específico</label>
+                        <select class="form-select" aria-label="Default select example" id="cargo">
+                          <option selected>Cargo específico	</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
                       <div class="col-md-12 mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Dato</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        Lista de cursos oficiales para el cargo *x* del departamento *y* de la direccion *z*
+                        <ul class="list-group">
+                          <li class="list-group-item">An item</li>
+                          <li class="list-group-item">A second item</li>
+                          <li class="list-group-item">A third item</li>
+                          <li class="list-group-item">A fourth item</li>
+                          <li class="list-group-item">And a fifth one</li>
+                        </ul>
                       </div>
                     </div>
 
