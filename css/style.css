@@ -66,3 +66,14 @@ body{
         margin-left: var(--offcanvas-width);
     }
 }
+
+
+.addFieldBtn{
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.deleteFieldBtn{
+    padding-top: 1px;
+    padding-bottom: 1px;
+}

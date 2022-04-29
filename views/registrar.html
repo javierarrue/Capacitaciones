@@ -127,46 +127,52 @@
           <div class="col-md-12 fw-bold fs-3">
             <div class="card">
               <div class="card-body">
-                Registrar cursos sugeridos
+
+              <div class="row align-items-center">
+                <div class="col-md-10 col-sm-6">
+                  Registrar cursos sugeridos
+                </div>
+                <div class="col-md-2 col-sm-6 text-center">
+                  <img src="../resources/AMP-LOGO-2-01.png" alt="" class="img-fluid " style="width:5rem;">
+                </div>
+              </div>
               </div>
             </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-header">
-                Ingrese los datos solicitados
-              </div>
-              <div class="card-body">
 
-                <form>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label for="direccion" class="form-label">Seleccione una direccion</label>
-                      <select class="form-select" aria-label="Default select example" id="direccion">
-                        <option selected>Dirección</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-  
-                    <div class="col-md-6 mb-3">
-                      <label for="departamento" class="form-label">Seleccione un departamento</label>
-                      <select class="form-select" aria-label="Default select example" id="departamento">
-                        <option selected>Departamento</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
+      <form method="get" action="registrar.html">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-header">
+                  Ingrese los datos solicitados
+                </div>
+                <div class="card-body">
                     <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-4 mb-3">
+                        <label for="direccion" class="form-label">Seleccione una direccion</label>
+                        <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
+                          <option selected>Dirección</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+    
+                      <div class="col-md-4 mb-3">
+                        <label for="departamento" class="form-label">Seleccione un departamento</label>
+                        <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
+                          <option selected>Departamento</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4 mb-3">
                         <label for="cargo" class="form-label">Seleccione un cargo específico</label>
-                        <select class="form-select" aria-label="Default select example" id="cargo">
+                        <select name="cargo" class="form-select" aria-label="Default select example" id="cargo">
                           <option selected>Cargo específico	</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
@@ -175,34 +181,74 @@
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="col-md-12 mb-3">
-                        Lista de cursos oficiales para el cargo *x* del departamento *y* de la direccion *z*
-                        <ul class="list-group">
-                          <li class="list-group-item">An item</li>
-                          <li class="list-group-item">A second item</li>
-                          <li class="list-group-item">A third item</li>
-                          <li class="list-group-item">A fourth item</li>
-                          <li class="list-group-item">And a fifth one</li>
-                        </ul>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-2">Cursos oficiales</div>
+                    <ul class="list-group">
+                      <li class="list-group-item">An item</li>
+                      <li class="list-group-item">A second item</li>
+                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item">A fourth item</li>
+                      <li class="list-group-item">And a fifth one</li>
+                    </ul>
+
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="mb-2">
+                      Registrar cursos sugeridos
+                    </div>
+
+                    <div class="mb-1">
+                      <!--
+                      <div class="row align-items-center">
+                        <div class="col-md-10 col-sm-6">
+                          <input class="form-control" type="text" value="..." aria-label="readonly input example">
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                          <button type="button" class="btn btn-outline-primary addFieldBtn">+</button>
+                        </div>
+                      </div>-->
+                      <!-- VERSION ALTERNATIVA ✓✓✓-->
+                      <div class="row align-items-center">
+                        <div class="col-md-10 col-sm-6">
+                          <input class="form-control cursoSugeridoText" type="text" value="..." aria-label="readonly input example">
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                          <button type="button" class="btn btn-outline-success addFieldBtn">+</button>
+                        </div>
                       </div>
                     </div>
 
-                  <button type="submit" class="btn btn-primary">Registrar</button>
-                </form>
-
+                    <div class="cursos">
+                    </div>
+                  </div>
                 </div>
               </div>
-
+    
             </div>
           </div>
         </div>
-    </div>
+      </form>
 
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
 
-
+    <script src="../js/register.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
