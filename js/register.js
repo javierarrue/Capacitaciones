@@ -31,7 +31,7 @@ function createInput(){
     //Asignando el inputCounter al className del input, para que sea unico uno del otro. 
     rowDiv.className = 'row align-items-center mb-3 cursoSugerido'+inputCounter
     inputDiv.className = 'col-md-10 col-sm-10'
-    btnDiv.className = 'col-md-2 col-sm-2 text-center'
+    btnDiv.className = 'col-md-2 col-sm-2'
     btnDeleteField.className = 'btn btn-outline-danger deleteFieldBtn';
     
     //Set de current inputCounter to the button, for reference when deleting input
