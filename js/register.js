@@ -23,7 +23,7 @@ addFieldBtn.addEventListener('click', () => {
 function createHtmlElements(){
     textInput = document.createElement('input');
     rowDiv = document.createElement('div');
-    inputDiv = document.createElement('div');
+    inputDiv = document.createElement('div'); 
     btnDiv = document.createElement('div');
     btnDeleteField = document.createElement('button');
 }
