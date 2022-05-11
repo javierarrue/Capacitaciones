@@ -1,8 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
 }
 
 .login{
@@ -15,7 +14,6 @@ body{
     background: rgb(250,250,250);
     background: linear-gradient(90deg, rgba(250,250,250,1) 0%, rgba(207,207,207,1) 100%);
 }
-
 
 .row{
     -webkit-box-shadow: 0px 0px 16px -5px rgba(0,0,0,0.94); 
@@ -44,9 +42,6 @@ h1{
     background-color: rgb(46, 49, 146);
 }
 
-/*
-516 × 837 px
-*/
 .img{
     height: 550px;
     background-image: url('../resources/images/BUQUE1.png');
@@ -54,7 +49,6 @@ h1{
     background-position: center;
     background-size: cover;
 }
-
 
 /*Preservar ancho del container en pantallas mas grandes*/
 @media (min-width: 1200px) {
