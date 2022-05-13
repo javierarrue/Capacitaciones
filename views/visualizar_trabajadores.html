@@ -23,7 +23,7 @@
           <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" 
             aria-controls="offcanvasExample">
             <span class="navbar-toggler-icon" data-bs-target="#offcanvasExample" ></span>
-        </button>
+          </button>
         <!-- /OFF CANVAS BUTTON -->
 
         <a class="navbar-brand fw-bold text-uppercase me-auto ms-1" href="#">SISTEMA DE CARGOS ESPECÍFICOS</a>
@@ -55,11 +55,10 @@
     <!-- /TOP NAV BAR-->
 
     <!-- OFF CANVAS (SIDE NAV)-->
-    <div class="offcanvas offcanvas-start sidebar-nav text-white apm-blue" tabindex="-1" 
+    <div class="offcanvas offcanvas-start sidebar-nav text-white apm-blue visibleSideBar" tabindex="-1" 
       id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
       <div class="offcanvas-body p-0">
         <nav class="navbar-dark">
-
           <ul class="navbar-nav">
             <li class="mt-3">
               <div class="text-muted fw-bold text-uppercase px-3">
@@ -121,7 +120,7 @@
     <!-- /OFF CANVAS (SIDE NAV)-->
 
     <!-- MAIN CONTENT OF THE PAGE-->
-    <main class="mt-5 pt-3">
+    <main class="mt-5 pt-3">      
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 fw-bold fs-3">
@@ -163,25 +162,29 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
+                      <td>Aiger Nixon</td>
                       <td>System Architect</td>
                       <td>Edinburgh</td>
                       <td>61</td>
                       <td>2011/04/25</td>
                       <td>$320,800</td>
-                      <td>Tiger Nixon</td>
+                      <td>Curso 1 <hr> Curso 2 <hr> Curso 3 </td>
                       <td>System Architect</td>
                       <td>Edinburgh</td>
                       <td>61</td>
                     </tr>
                     <tr>
-                      <td>Garrett Winters</td>
+                      <td>Aarrett Winters</td>
                       <td>Accountant</td>
                       <td>Tokyo</td>
                       <td>63</td>
                       <td>2011/07/25</td>
                       <td>$170,750</td>
-                      <td>Tiger Nixon</td>
+                      <td>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <i class="bi bi-search">ver</i>
+                        </button>
+                      </td>
                       <td>System Architect</td>
                       <td>Edinburgh</td>
                       <td>61</td>
@@ -451,6 +454,28 @@
 
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cursos requeridos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3>Javier Arrue</h3>
+        Excel -> no tramite
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
     <script src="../js/bootstrap.bundle.min.js"></script>
