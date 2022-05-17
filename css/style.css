@@ -1,6 +1,3 @@
-.apm-blue{
-    background-color: rgb(46, 49, 146);
-}
 
 body{
     background: rgb(250,250,250);
@@ -9,6 +6,7 @@ body{
 
 /*Variables*/
 :root{
+    --apmBlue: rgb(46, 49, 146);
     --offcanvas-width: 270px;
     --topNavbarheight: 56px;
 }
@@ -29,7 +27,12 @@ body{
     border-radius: 20px 0px 0px 20px;
 }
 
+.navbar{
+    background-color: var(--apmBlue);
+}
+
 .sidebar-nav{
+    background-color: var(--apmBlue);
     width:var(--offcanvas-width);
 }
 
@@ -58,8 +61,8 @@ body{
     .sidebar-nav{
         transform: none;
         visibility: visible !important;
-        top: var(--topNavbarheight);
-        height: calc(100% - var(--topNavbarheight));
+        /*top: var(--topNavbarheight);
+        height: calc(100% - var(--topNavbarheight));*/
     }
 
     main{
@@ -75,4 +78,8 @@ body{
 .deleteFieldBtn{
     padding-top: 1px;
     padding-bottom: 1px;
+}
+
+.register-btn{
+    background-color: var(--apmBlue);
 }

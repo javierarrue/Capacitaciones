@@ -38,8 +38,12 @@ h1{
     background: linear-gradient(to top left, #FFFFFF, #AAAAAA);
 }
 
-.btn{
+.login-btn{
     background-color: rgb(46, 49, 146);
+}
+
+.login-btn:hover{
+    background-color: rgb(13, 110, 253);
 }
 
 .img{
@@ -55,4 +59,4 @@ h1{
     .container {
       width: 1000px;
     }
-  }
+}
