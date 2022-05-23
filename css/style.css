@@ -6,7 +6,8 @@ body{
 
 /*Variables*/
 :root{
-    --apmBlue: rgb(46, 49, 146);
+    --apmBlue: rgb(16,67, 130); /* rgb(46, 49, 146);*/
+    --apmBueHover: rgb(30, 115, 190);
     --offcanvas-width: 270px;
     --topNavbarheight: 56px;
 }
@@ -82,4 +83,8 @@ body{
 
 .register-btn{
     background-color: var(--apmBlue);
+}
+
+.register-btn:hover{
+    background-color: var(--apmBueHover);
 }

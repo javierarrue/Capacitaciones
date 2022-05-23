@@ -39,11 +39,11 @@ h1{
 }
 
 .login-btn{
-    background-color: rgb(46, 49, 146);
+    background-color: rgb(16,67, 130);
 }
 
 .login-btn:hover{
-    background-color: rgb(11, 94, 215);
+    background-color: rgb(30, 115, 190);
 }
 
 .img{
