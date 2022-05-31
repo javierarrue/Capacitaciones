@@ -81,7 +81,7 @@
             <li class="hover-section mb-1">
               <a href="home.php" class="nav-link px-3 active home">
                 <span class="me-2">
-                  <i class="bi bi-house-door"></i>
+                <i class="bi bi-house-door-fill"></i>
                 </span>
                 <span class="text-uppercase">Inicio</span>
               </a>
