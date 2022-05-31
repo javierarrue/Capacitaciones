@@ -27,8 +27,8 @@
                     <h5 class="text-center text-muted mb-4">Al Sistema de Cargos específicos</h3>
                     <form action="home.php" method="get">
                         <div class="form-floating col-9 mb-3 mx-auto">
-                            <input type="text" placeholder=" Usuario" class="form-control" id="userId" name="userId">
-                            <label for="userId" class="form-label text-muted">Usuario</label>
+                            <input type="text" placeholder="Usuario" class="form-control" id="user" name="user">
+                            <label for="user" class="form-label text-muted">Usuario</label>
                         </div>
                         
                         <div class="form-floating col-9 mb-3 mx-auto">
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="d-grid gap-2 col-9 mx-auto">
-                            <input class="btn text-white login-btn text-uppercase" type="submit" value="Acceder">
+                            <input class="btn text-white login-btn text-uppercase" type="submit" value="Acceder" name="submit">
                         </div>
                     </form>
                 </div>

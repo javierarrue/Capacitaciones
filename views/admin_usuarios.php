@@ -45,57 +45,59 @@
                   <div class="modal fade" id="nuevoUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Registrar un nuevo usuario</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <div class="row">
-                            <div class="col-md-6 mb-3">
-                              Nombre
-                              <div class="mb-3">
-                                <input class="form-control" type="text" value="..." aria-label="readonly input example">
+                        <form action="../includes/signupUser.inc.php" method="POST">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Registrar un nuevo usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-6 mb-3">
+                                Nombre
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" aria-label="firstname" name="firstname" required>
+                                </div>
+                              </div>
+        
+                              <div class="col-md-6 mb-3">
+                                Apellido
+                                <div class="mb-3">
+                                  <input class="form-control" type="text" aria-label="lastname" name="lastname" required>
+                                </div>
                               </div>
                             </div>
-      
-                            <div class="col-md-6 mb-3">
-                              Apellido
-                              <div class="mb-3">
-                                <input class="form-control" type="text" value="..." aria-label="readonly input example">
+                            
+                            <div class="row">
+                              <div class="col-md-6 mb-3">
+                                Usuario
+                                <div class="mb-3">
+                                      <input class="form-control" type="text" aria-label="username" name="username" required>
+                                </div>
+                              </div>
+        
+                              <div class="col-md-6 mb-3">
+                                Contraseña
+                                <div class="mb-3">
+                                  <input class="form-control" type="password" aria-label="password" name="password" required>
+                                </div>
+                              </div>
+                            </div>
+        
+                            <div class="row">
+                              <div class="col-md-12 mb-3">
+                                Seleccionar rol
+                                <select class="form-select" aria-label="rol" name="rol" required>
+                                  <option value="1">Admin</option>
+                                  <option value="3">Usuario</option>
+                                </select>
                               </div>
                             </div>
                           </div>
-                          
-                          <div class="row">
-                            <div class="col-md-6 mb-3">
-                              Usuario
-                              <div class="mb-3">
-                                <input class="form-control" type="text" value="..." aria-label="readonly input example">
-                              </div>
-                            </div>
-      
-                            <div class="col-md-6 mb-3">
-                              Contraseña
-                              <div class="mb-3">
-                                <input class="form-control" type="text" value="..." aria-label="readonly input example">
-                              </div>
-                            </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary text-uppercase" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" name="submit" class="btn register-btn text-uppercase text-white">Registrar</button>
                           </div>
-      
-                          <div class="row">
-                            <div class="col-md-12 mb-3">
-                              <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccionar Rol</option>
-                                <option value="1">Admin</option>
-                                <option value="2">Usuario</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary text-uppercase" data-bs-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn register-btn text-uppercase text-white">Registrar</button>
-                        </div>
+                        </form>
                       </div>
                     </div>
                   </div>
