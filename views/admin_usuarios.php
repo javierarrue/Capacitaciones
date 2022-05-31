@@ -1,6 +1,15 @@
-<?php include '../views/components/upperPart.php' ?>
 
-    <!-- MAIN CONTENT OF THE PAGE-->
+<?php include '../views/components/upperPart.php' ?>
+  <script>
+        document.querySelector('.administrar_usuarios').classList.add('link-active');
+        /* --> MOSTRAR MODAL EN CARGA
+        $(document).ready(function(){
+        $("#nuevoUsuario").modal('show');
+      });
+      */
+  </script>
+
+  <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
         <div class="row">
@@ -229,13 +238,7 @@
         </div>
       </div>
     </main>
-      <!-- /MAIN CONTENT OF THE PAGE-->    
+  <!-- /MAIN CONTENT OF THE PAGE-->    
 
-    <script>
-      /* --> MOSTRAR MODAL EN CARGA
-      $(document).ready(function(){
-      $("#nuevoUsuario").modal('show');
-    });
-    */
-    </script>
+
  <?php include '../views/components/lowerPart.php' ?>

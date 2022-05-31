@@ -1,5 +1,7 @@
 <?php include '../views/components/upperPart.php' ?>
-
+  <script>
+    document.querySelector('.visualizar').classList.add('link-active');
+  </script>
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">      
       <div class="container-fluid">

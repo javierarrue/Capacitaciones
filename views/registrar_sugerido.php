@@ -1,4 +1,8 @@
 <?php include '../views/components/upperPart.php' ?>
+  <script>
+    document.querySelector('.registrar_sugerido').classList.add('link-active');
+  </script>
+
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
@@ -149,4 +153,4 @@
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
 
- <?php include '../views/components/lowerPart.php' ?>
+<?php include '../views/components/lowerPart.php' ?>

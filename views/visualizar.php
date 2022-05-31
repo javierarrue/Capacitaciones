@@ -1,4 +1,7 @@
 <?php include '../views/components/upperPart.php' ?>
+  <script>
+    document.querySelector('.visualizar').classList.add('link-active');
+  </script>
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
@@ -42,7 +45,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                        <td> <a href="visualizar_específico.html">Marina Mercante</a> </td>
+                        <td> <a href="visualizar_departamentos.php">Marina Mercante</a> </td>
                         <td>5</td>
                         <td>20</td>
                     </tr>
@@ -71,7 +74,6 @@
           </div>
         </div>
     </div>
-
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
  <?php include '../views/components/lowerPart.php' ?>

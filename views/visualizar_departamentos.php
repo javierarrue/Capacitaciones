@@ -1,4 +1,7 @@
 <?php include '../views/components/upperPart.php' ?>
+  <script>
+    document.querySelector('.visualizar').classList.add('link-active');
+  </script>
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
@@ -33,7 +36,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                        <td> <a href="visualizar_trabajadores.html">Departamento de infraestructura</a> </td>
+                        <td> <a href="visualizar_trabajadores.php">Departamento de infraestructura</a> </td>
                         <td>5</td>
                     </tr>
                     <tr>

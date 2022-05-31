@@ -1,5 +1,8 @@
 <?php include '../views/components/upperPart.php' ?>
-    <!-- MAIN CONTENT OF THE PAGE-->
+  <script>
+    document.querySelector('.home').classList.add('link-active');
+  </script>
+  <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
         <div class="row">
@@ -528,7 +531,9 @@
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </main>
- <!-- /MAIN CONTENT OF THE PAGE-->    
- <?php include '../views/components/lowerPart.php' ?>
+  <!-- /MAIN CONTENT OF THE PAGE-->    
+
+
+<?php include '../views/components/lowerPart.php' ?>
