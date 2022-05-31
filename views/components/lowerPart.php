@@ -43,9 +43,9 @@
                 <i class="bi bi-person-fill"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item text-uppercase" href="perfil.html">Perfil</a></li>
+                <li><a class="dropdown-item text-uppercase" href="perfil.php">Perfil</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-uppercase" href="login.html">Cerrar Sesión</a></li>
+                <li><a class="dropdown-item text-uppercase" href="index.php">Cerrar Sesión</a></li>
               </ul>
             </li>
           </ul>
@@ -79,7 +79,7 @@
               </div>
             </li>
             <li class="hover-section mb-1">
-              <a href="index.html" class="nav-link px-3 active">
+              <a href="home.php" class="nav-link px-3 active">
                 <span class="me-2">
                   <i class="bi bi-house-door"></i>
                 </span>
@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="hover-section mb-1">
-              <a href="registrar.html" class="nav-link px-3 active section-link link-active">
+              <a href="registrar.php" class="nav-link px-3 active section-link">
                 <span class="me-2">
                   <i class="bi bi-journal-text"></i>
                 </span>
@@ -95,7 +95,7 @@
               </a>
             </li>
             <li class="hover-section mb-1">
-              <a href="visualizar.html" class="nav-link px-3 active">
+              <a href="visualizar.php" class="nav-link px-3 active">
                 <span class="me-2">
                   <i class="bi bi-table"></i>
                 </span>
@@ -103,7 +103,7 @@
               </a>
             </li>
             <li class="hover-section mb-1">
-              <a href="registrar_usuario.html" class="nav-link px-3 active">
+              <a href="registrar_usuario.php" class="nav-link px-3 active">
                 <span class="me-2">
                   <i class="bi bi-person-plus-fill"></i>
                 </span>
@@ -111,7 +111,7 @@
               </a>
             </li>
             <li class="hover-section mb-1">
-              <a href="admin_usuarios.html" class="nav-link px-3 active">
+              <a href="admin_usuarios.php" class="nav-link px-3 active">
                 <span class="me-2">
                   <i class="bi bi-people-fill"></i>
                 </span>
@@ -119,7 +119,7 @@
               </a>
             </li>
             <li class="hover-section mb-1">
-              <a href="registrar_requerido.html" class="nav-link px-3 active">
+              <a href="registrar_requerido.php" class="nav-link px-3 active">
                 <span class="me-2">
                   <i class="bi bi-journal-medical"></i>
                 </span>
@@ -163,3 +163,5 @@
       </div>
     </div>
     <!-- /OFF CANVAS (SIDE NAV)-->
+    
+    <!-- LINK ACTIVE -->

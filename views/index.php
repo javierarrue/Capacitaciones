@@ -25,7 +25,7 @@
                     </div>
                     <h1 class="text-center">Bienvenido</h1>
                     <h5 class="text-center text-muted mb-4">Al Sistema de Cargos específicos</h3>
-                    <form action="home.html" method="get">
+                    <form action="home.php" method="get">
                         <div class="form-floating col-9 mb-3 mx-auto">
                             <input type="text" placeholder=" Usuario" class="form-control" id="userId" name="userId">
                             <label for="userId" class="form-label text-muted">Usuario</label>
