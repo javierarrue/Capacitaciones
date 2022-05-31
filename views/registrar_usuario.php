@@ -86,7 +86,7 @@
             </div>
           </div>
         </form>
-        </div>
+      </div>
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
  <?php include '../views/components/lowerPart.php' ?>
