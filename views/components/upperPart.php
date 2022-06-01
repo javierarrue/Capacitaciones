@@ -1,3 +1,8 @@
+<?php 
+  include "../includes/verifySession.inc.php";
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -45,7 +50,7 @@
               <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item text-uppercase" href="perfil.php">Perfil</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-uppercase" href="index.php">Cerrar Sesión</a></li>
+                <li><a class="dropdown-item text-uppercase" href="../includes/logout.inc.php">Cerrar Sesión</a></li>
               </ul>
             </li>
           </ul>
