@@ -1,6 +1,6 @@
 <?php
 //Error handling
-//CLASE PARA MANEJO DE ERRORES - REGISTRO DE USUARIO
+//Manejo de query's - REGISTRO DE USUARIO
 
 class SignUpController extends Signup{
     private $firstname;

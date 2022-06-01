@@ -1,5 +1,5 @@
 <?php
-//Clase para el manejo query's de base de datos - REGISTRO DE USUARIO
+//Clase para el manejo query's - REGISTRO DE USUARIO
 //Esta *Exitende* de la clase DbConnection, para poder realizar la conexion a la Base de datos
 //y a si realizar los querys necesarios.
 class Signup extends DbConnection{

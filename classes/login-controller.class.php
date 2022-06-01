@@ -1,5 +1,5 @@
 <?php
-
+//Manejo de query's - INICIO DE SESION
 class LoginController extends Login{
     private $username;
     private $password;

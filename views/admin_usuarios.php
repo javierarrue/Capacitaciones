@@ -1,5 +1,7 @@
 
-<?php include '../views/components/upperPart.php' ?>
+<?php include '../views/components/upperPart.php';?>
+<?php include '../includes/users.inc.php';?>
+
   <script>
         document.querySelector('.administrar_usuarios').classList.add('link-active');
         /* --> MOSTRAR MODAL EN CARGA
@@ -134,19 +136,21 @@
                           </tr>
                         </thead>
                         <tbody>
+                          <?php
+                          while($user = $users->fetch(PDO::FETCH_ASSOC)){?>
                           <tr>
-                            <td>Admin</td>
-                            <td>Javier</td>
-                            <td>Arrue</td>
-                            <td>admin1</td>
+                            <td><?php echo $user["rol_id"]; ?></td>
+                            <td><?php echo $user["firstname"]; ?></td>
+                            <td><?php echo $user["lastname"]; ?></td>
+                            <td><?php echo $user["user"]; ?></td>
                             
                             <!-- EDITAR USUARIO -->
                             <td>
-                              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarUsuario">
+                              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
                                 <i class="bi bi-pencil-square"></i>
                               </button>
                                 <!-- Modal -->
-                              <div class="modal fade" id="editarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="editarUsuario_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <form action="">
@@ -159,13 +163,13 @@
                                           <div class="col-md-6 col-sm-12">
                                             Nombre
                                             <div class="mb-3">
-                                              <input name="firstName" class="form-control" type="text" value="" aria-label="readonly input example">
+                                              <input name="firstName" class="form-control" type="text" value="<?php echo $user["firstname"]; ?>" aria-label="readonly input example">
                                             </div>
                                           </div>
                                           <div class="col-md-6 col-sm-12">
                                             Apellido
                                             <div class="mb-3">
-                                              <input name="lastName" class="form-control" type="text" value="" aria-label="readonly input example">
+                                              <input name="lastName" class="form-control" type="text" value="<?php echo $user["lastname"]; ?>" aria-label="readonly input example">
                                             </div>
                                           </div>
                                         </div>
@@ -173,7 +177,7 @@
                                           <div class="col-md-6 col-sm-12">
                                             Usuario
                                             <div class="mb-3">
-                                              <input name="userName" class="form-control" type="text" value="" aria-label="readonly input example">
+                                              <input name="userName" class="form-control" type="text" value="<?php echo $user["user"]; ?>" aria-label="readonly input example">
                                             </div>
                                           </div>
                                           <div class="col-md-6 col-sm-12">
@@ -228,6 +232,7 @@
                             <!-- /ELIMINAR USUARIO -->
 
                           </tr>
+                          <?php }?>
                         </tbody>
                       </table>
                     </div>
