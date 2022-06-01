@@ -10,13 +10,12 @@
 
         //Instanciar clase Signup-Controller
         include "../classes/dbConnection.class.php";
-        include "../classes/signup.class.php";
-        include "../classes/signup-controller.class.php";
-        
+        include "../classes/User.class.php";
+        include "../classes/UserController.php";
         
         //Objeto de Clase SignUpController, se le pasan los parametros (datos de registro)
         //En esta clase se hacen las validaciones a los campos solicitados.
-        $signup = new SignUpController($firstname, $lastname, $username, $password, $rol);
+        $signup = new UserController($firstname, $lastname, $username, $password, $rol);
 
         //Registro de un usuario
         $signup->signUpUser();

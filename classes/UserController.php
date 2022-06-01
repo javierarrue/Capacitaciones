@@ -2,7 +2,7 @@
 //Error handling
 //Manejo de query's - REGISTRO DE USUARIO
 
-class SignUpController extends Signup{
+class UserController extends User{
     private $firstname;
     private $lastname;
     private $username;
@@ -72,5 +72,13 @@ class SignUpController extends Signup{
             return true;
         }
     }
+
+    public function showUsers(){
+        return $this->getUsers();
+    }
+
+    public function deleteSelectedUser(){
+        $this->deleteUser($this->username);
+    }   
 
 }

@@ -2,7 +2,7 @@
 //Clase para el manejo query's - REGISTRO DE USUARIO
 //Esta *Exitende* de la clase DbConnection, para poder realizar la conexion a la Base de datos
 //y a si realizar los querys necesarios.
-class Signup extends DbConnection{
+class User extends DbConnection{
     
     //Validar si el usuario ha registrar ya existe.
     protected function checkIfUserExist($username){
@@ -43,6 +43,28 @@ class Signup extends DbConnection{
         }
 
         $stmt = null;  
+    }
+
+    protected function getUsers(){
+        $stmt = $this->connect()->prepare("SELECT * FROM user;");
+
+        if(!$stmt->execute()){
+            $stmt = null;  
+            header("location: ../views/admin_usuarios.php?error=stmtfailed");
+            exit();
+        }
+
+        return $stmt;
+    }
+
+    protected function deleteUser($username){
+        $stmt = $this->connect()->prepare("DELETE FROM user WHERE user = ?;");
+
+        if(!$stmt->execute(array($username))){
+            $stmt = null;  
+            header("location: ../views/admin_usuarios.php?error=stmtfailed");
+            exit();
+        }
     }
 
 
