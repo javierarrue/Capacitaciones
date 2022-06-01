@@ -1,6 +1,6 @@
 
 <?php include '../views/components/upperPart.php';?>
-<?php include '../includes/users.inc.php';?>
+<?php include '../includes/showUsers.inc.php';?>
 
   <script>
         document.querySelector('.administrar_usuarios').classList.add('link-active');
@@ -153,7 +153,7 @@
                               <div class="modal fade" id="editarUsuario_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
-                                    <form action="">
+                                    <form action="../includes/editUser.php">
                                       <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Editar datos de usuario</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -210,20 +210,22 @@
 
                             <!-- ELIMINAR USUARIO -->
                             <td>
-                              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuario">
+                              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
                                   <i class="bi bi-trash3-fill"></i>
                               </button>
                                 <!-- Modal -->
-                              <div class="modal fade" id="eliminarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="delete_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar el usuario?</h5>
+                                      <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar el usuario <?php echo $user["user"]; ?>?</h5>
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                      <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                      <form action="../includes/deleteUser.inc.php" method="POST">
+                                        <button value="<?php echo $user["user"]; ?>" class="btn btn-danger" name="username" type="submit">Eliminar</button>
+                                      </form>
                                     </div>
                                   </div>
                                 </div>
