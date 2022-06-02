@@ -1,6 +1,6 @@
 <?php
-//Error handling
-//Manejo de query's - REGISTRO DE USUARIO
+//Error handling- REGISTRO DE USUARIO
+//Controlador, maneja las peticiones y se comunica con el modelo para recibir la informacion solicitada
 
 class UserController extends User{
     private $firstname;

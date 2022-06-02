@@ -1,5 +1,7 @@
 <?php
-//Manejo de query's - INICIO DE SESION
+// - INICIO DE SESION
+//Controlador, maneja las peticiones y se comunica con el modelo para recibir la informacion solicitada
+
 class LoginController extends Login{
     private $username;
     private $password;
