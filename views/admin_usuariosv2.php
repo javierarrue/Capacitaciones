@@ -1,6 +1,6 @@
 
 <?php include '../views/components/upperPart.php';?>
-<?php include '../includes/showUsers.inc.php';?>
+<?php include '../includes/administrateUsers.inc.php';?>
 
   <script>
         document.querySelector('.administrar_usuarios').classList.add('link-active');
@@ -73,8 +73,13 @@
                     <div class="col-md-12 mb-3">
                       Seleccionar rol
                       <select class="form-select" aria-label="rol" name="rol" required>
-                        <option value="1">Admin</option>
-                        <option value="3">Usuario</option>
+                        <?php
+                          while($userRol = $roles->fetch(PDO::FETCH_ASSOC)){?>
+                          <option 
+                            value="<?php echo $userRol["id"]?>">
+                              <?php echo $userRol["rol_name"]?>
+                          </option>
+                        <?php }?>
                       </select>
                     </div>
                   </div>
@@ -110,57 +115,35 @@
                         style="width: 100%">
                         <thead>
                           <tr>
-                            <th>Accion</th>
                             <th>Rol</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Usuario</th>
-                            <!--<th>Editar</th>
-                            <th>Eliminar</th>-->
+                            <th>Editar</th>
+                            <th>Eliminar</th>
                           </tr>
                         </thead>
                         <tbody>
                           <?php
                           while($user = $users->fetch(PDO::FETCH_ASSOC)){?>
                           <tr>
-                            <!-- EDITAR/ELIMINAR USUARIO -->
-                            <td>
-                              <a class="nav-link nav-item" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-three-dots-vertical"></i>
-                              </a>
-                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                  <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
-                                    Editar
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
-                                    Eliminar
-                                  </a>
-                                </li>
-                              </ul>
-                            </td>
-                            <!--/ EDITAR/ELIMINAR USUARIO -->
-                            <td><?php echo $user["rol_id"]; ?></td>
+                            <td><?php echo $user["rol_name"]; ?></td>
                             <td><?php echo $user["firstname"]; ?></td>
                             <td><?php echo $user["lastname"]; ?></td>
                             <td><?php echo $user["user"]; ?></td>
                             
                             <!-- EDITAR USUARIO -->
-                            <!-- <td> -->
-                              <!--
-                              <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editarUsuario_">
+                            <td>
+                              <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
                                 <i class="bi bi-pencil-square"></i>
                               </button>
-                              -->
                                 <!-- Modal -->
                               <div class="modal fade" id="editarUsuario_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <form action="../includes/editUser.inc.php" method="POST">
                                       <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Editar datos de usuario</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar datos de usuario: <?php echo $user["user"]?></h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
                                       <div class="modal-body">
@@ -186,19 +169,68 @@
                                             </div>
                                           </div>
                                           <div class="col-md-6 col-sm-12">
-                                            Contraseña
-                                            <div class="mb-3">
-                                              <input name="password" class="form-control" type="text" value="" aria-label="readonly input example">
+                                            <div class="col-md-12 mb-3">
+                                              Seleccionar rol
+                                                <select class="form-select" aria-label="rol" name="rol" required>
+                                                  <?php
+                                                      //Vuelvo a correr el execute().
+                                                      //¿Porque?:
+                                                      //PDOStatment (el cual $roles es) es un cursor que se mueve hacia adelante, por lo tanto una vez consumido, este no volvera a la posicion inicial.
+                                                      //Por eso es necesario volver ejecutar el PDOStatmente, para reiniciar la posicion de este :=)
+                                                      $roles->execute();                       
+                                                      while($rol = $roles->fetch(PDO::FETCH_ASSOC)){
+                                                    ?>
+                                                    <option 
+                                                      value="<?php echo $rol["id"]?>"
+                                                        <?php if($user["rol_name"] ==  $rol["rol_name"]){?> 
+                                                          selected 
+                                                        <?php }?>
+                                                      >
+                                                        <?php echo $rol["rol_name"]?>
+                                                    </option>
+                                                  <?php }?>
+                                                </select>
+                                              </div>
                                             </div>
-                                          </div>
                                         </div>
                                         <div class="row">
-                                          <div class="col-mn-12">
-                                            <select name="rol" class="form-select" aria-label="Default select example">
-                                              <option selected>Seleccionar Rol</option>
-                                              <option value="1">Admin</option>
-                                              <option value="2">Usuario</option>
-                                            </select>
+                                          <div class="col-md-12">
+                                            <p>
+                                              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                Cambio de contraseña
+                                              </button>
+                                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Editar Usuario</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Editar Contraseña</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        Contraseña
+        <div class="mb-3">
+          <input name="password1" class="form-control" type="password" aria-label=" input example">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        Repetir contraseña
+        <div class="mb-3">
+          <input name="password2" class="form-control"  type="password" aria-label=" input example">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                                            </p>
+                                            <div class="collapse" id="collapseExample">
+                                              <div class="card card-body">
+
+                                              </div>
                                             </div>
                                           </div>
                                         </div>
@@ -210,17 +242,14 @@
                                   </div>
                                 </div>
                               </div> 
-                            <!-- </td> -->
+                            </td>
                             <!-- /EDITAR USUARIO -->
 
                             <!-- ELIMINAR USUARIO -->
-                            <!-- <td> -->
-
-                              <!--
-                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete_">
+                            <td>
+                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
                                   <i class="bi bi-trash3-fill"></i>
-                              </button> -->
-
+                              </button>
                                 <!-- Modal -->
                               <div class="modal fade" id="delete_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -238,7 +267,7 @@
                                   </div>
                                 </div>
                               </div>
-                            <!-- </td> -->
+                            </td>
                             <!-- /ELIMINAR USUARIO -->
 
                           </tr>

@@ -1,6 +1,6 @@
 
 <?php include '../views/components/upperPart.php';?>
-<?php include '../includes/showUsers.inc.php';?>
+<?php include '../includes/administrateUsers.inc.php';?>
 
   <script>
         document.querySelector('.administrar_usuarios').classList.add('link-active');
@@ -73,8 +73,13 @@
                     <div class="col-md-12 mb-3">
                       Seleccionar rol
                       <select class="form-select" aria-label="rol" name="rol" required>
-                        <option value="1">Admin</option>
-                        <option value="3">Usuario</option>
+                        <?php
+                          while($userRol = $roles->fetch(PDO::FETCH_ASSOC)){?>
+                          <option 
+                            value="<?php echo $userRol["id"]?>">
+                              <?php echo $userRol["rol_name"]?>
+                          </option>
+                        <?php }?>
                       </select>
                     </div>
                   </div>
@@ -136,55 +141,105 @@
                               <div class="modal fade" id="editarUsuario_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
-                                    <form action="../includes/editUser.inc.php" method="POST">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Editar datos de usuario</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Editar datos de usuario: <?php echo $user["user"]?></h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Editar Usuario</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Editar Contraseña</button>
+                                        </li>
+                                      </ul>
+                                      <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                          <form action="../includes/editUser.inc.php" method="POST">
+                                            <div class="row">
+                                              <div class="col-md-6 col-sm-12">
+                                                Nombre
+                                                <div class="mb-3">
+                                                  <input name="firstname" class="form-control" type="text" value="<?php echo $user["firstname"]; ?>" aria-label="readonly input example">
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-sm-12">
+                                                Apellido
+                                                <div class="mb-3">
+                                                  <input name="lastname" class="form-control" type="text" value="<?php echo $user["lastname"]; ?>" aria-label="readonly input example">
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                              <div class="col-md-6 col-sm-12">
+                                                Usuario
+                                                <div class="mb-3">
+                                                  <input name="username" class="form-control" type="text" value="<?php echo $user["user"]; ?>" aria-label="readonly input example">
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-sm-12">
+                                                <div class="col-md-12 mb-3">
+                                                  Seleccionar rol
+                                                  <select class="form-select" aria-label="rol" name="rol" required>
+                                                    <?php
+                                                        //Vuelvo a correr el execute().
+                                                        //¿Porque?:
+                                                        //PDOStatment (el cual $roles es) es un cursor que se mueve hacia adelante, por lo tanto una vez consumido, este no volvera a la posicion inicial.
+                                                        //Por eso es necesario volver ejecutar el PDOStatmente, para reiniciar la posicion de este :=)
+                                                        $roles->execute();                       
+                                                        while($rol = $roles->fetch(PDO::FETCH_ASSOC)){
+                                                      ?>
+                                                      <option 
+                                                        value="<?php echo $rol["id"]?>"
+                                                          <?php if($user["rol_name"] ==  $rol["rol_name"]){?> 
+                                                            selected 
+                                                          <?php }?>
+                                                        >
+                                                          <?php echo $rol["rol_name"]?>
+                                                      </option>
+                                                    <?php }?>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                              <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
+                                            </div>
+                                          </form>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                          <form action="">
+                                            <div class="row">
+                                              <div class="col-md-2">
+                                                <button type="button" class="btn btn-secondary" id="showPassword"><i class="bi bi-eye-fill"></i></button>
+                                              </div>
+                                              <div class="col-md-10">
+                                                  Contraseña
+                                                  <div class="mb-3">
+                                                    <input id="password" name="password1" class="form-control" type="password" aria-label=" input example">
+                                                  </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                  Repetir contraseña
+                                                  <div class="mb-3">
+                                                    <input id="password" name="password2" class="form-control"  type="password" aria-label=" input example">
+                                                  </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                  <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
+                                                </div>
+                                              
+                                            </div>
+                                          </form>
+                                        </div>
                                       </div>
-                                      <div class="modal-body">
-                                        <div class="row">
-                                          <div class="col-md-6 col-sm-12">
-                                            Nombre
-                                            <div class="mb-3">
-                                              <input name="firstname" class="form-control" type="text" value="<?php echo $user["firstname"]; ?>" aria-label="readonly input example">
-                                            </div>
-                                          </div>
-                                          <div class="col-md-6 col-sm-12">
-                                            Apellido
-                                            <div class="mb-3">
-                                              <input name="lastname" class="form-control" type="text" value="<?php echo $user["lastname"]; ?>" aria-label="readonly input example">
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="row">
-                                          <div class="col-md-6 col-sm-12">
-                                            Usuario
-                                            <div class="mb-3">
-                                              <input name="username" class="form-control" type="text" value="<?php echo $user["user"]; ?>" aria-label="readonly input example">
-                                            </div>
-                                          </div>
-                                          <div class="col-md-6 col-sm-12">
-                                            Contraseña
-                                            <div class="mb-3">
-                                              <input name="password" class="form-control" type="text" value="" aria-label="readonly input example">
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="row">
-                                          <div class="col-mn-12">
-                                            <select name="rol" class="form-select" aria-label="Default select example">
-                                              <option selected>Seleccionar Rol</option>
-                                              <option value="1">Admin</option>
-                                              <option value="2">Usuario</option>
-                                            </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                          <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
-                                        </div>
-                                    </form>
                                   </div>
                                 </div>
                               </div> 
@@ -232,5 +287,21 @@
     </main>
   <!-- /MAIN CONTENT OF THE PAGE-->    
 
+<script>
+  var btn = document.querySelector("#showPassword");
+  var passwordInput = document.querySelector("#password");
 
+
+  btn.addEventListener('click', () => {
+    if(passwordInput.type == "text"){
+      passwordInput.innerHTML = "Esconder"
+      passwordInput.type = "password";
+    }else if(passwordInput.type == "password"){
+      passwordInput.innerHTML = "Mostrar contraseña"
+      passwordInput.type = "text";
+    }
+    
+  });
+
+</script>
  <?php include '../views/components/lowerPart.php' ?>
