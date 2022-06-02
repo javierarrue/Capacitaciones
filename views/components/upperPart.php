@@ -14,9 +14,9 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="../css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">-->
     <link rel="icon" href="../resources/AMP-LOGO-2-01.png">
-
+    <link rel="stylesheet" href="../css/icons/bootstrap-icons.css">
     <title>Sistema de Cargos Específicos</title>
   </head>
   <body>
@@ -107,6 +107,7 @@
                 <span class="text-uppercase">Visualizar</span>
               </a>
             </li>
+            <!--
             <li class="hover-section mb-1">
               <a href="registrar_usuario.php" class="nav-link px-3 active registrar_usuario">
                 <span class="me-2">
@@ -115,6 +116,7 @@
                 <span class="text-uppercase">Registrar Usuario</span>
               </a>
             </li>
+              -->
             <li class="hover-section mb-1">
               <a href="admin_usuarios.php" class="nav-link px-3 active administrar_usuarios">
                 <span class="me-2">

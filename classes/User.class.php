@@ -46,7 +46,7 @@ class User extends DbConnection{
     }
 
     protected function getUsers(){
-        $stmt = $this->connect()->prepare("SELECT * FROM user;");
+        $stmt = $this->connect()->prepare("SELECT * FROM usersandroles;");
 
         if(!$stmt->execute()){
             $stmt = null;  

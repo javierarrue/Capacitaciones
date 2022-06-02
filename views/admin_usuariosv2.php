@@ -110,28 +110,50 @@
                         style="width: 100%">
                         <thead>
                           <tr>
+                            <th>Accion</th>
                             <th>Rol</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Usuario</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
+                            <!--<th>Editar</th>
+                            <th>Eliminar</th>-->
                           </tr>
                         </thead>
                         <tbody>
                           <?php
                           while($user = $users->fetch(PDO::FETCH_ASSOC)){?>
                           <tr>
-                            <td><?php echo $user["rol_name"]; ?></td>
+                            <!-- EDITAR/ELIMINAR USUARIO -->
+                            <td>
+                              <a class="nav-link nav-item" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots-vertical"></i>
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                  <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
+                                    Editar
+                                  </a>
+                                </li>
+                                <li>
+                                  <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                                    Eliminar
+                                  </a>
+                                </li>
+                              </ul>
+                            </td>
+                            <!--/ EDITAR/ELIMINAR USUARIO -->
+                            <td><?php echo $user["rol_id"]; ?></td>
                             <td><?php echo $user["firstname"]; ?></td>
                             <td><?php echo $user["lastname"]; ?></td>
                             <td><?php echo $user["user"]; ?></td>
                             
                             <!-- EDITAR USUARIO -->
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
+                            <!-- <td> -->
+                              <!--
+                              <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editarUsuario_">
                                 <i class="bi bi-pencil-square"></i>
                               </button>
+                              -->
                                 <!-- Modal -->
                               <div class="modal fade" id="editarUsuario_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -188,14 +210,17 @@
                                   </div>
                                 </div>
                               </div> 
-                            </td>
+                            <!-- </td> -->
                             <!-- /EDITAR USUARIO -->
 
                             <!-- ELIMINAR USUARIO -->
-                            <td>
-                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                            <!-- <td> -->
+
+                              <!--
+                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete_">
                                   <i class="bi bi-trash3-fill"></i>
-                              </button>
+                              </button> -->
+
                                 <!-- Modal -->
                               <div class="modal fade" id="delete_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -213,7 +238,7 @@
                                   </div>
                                 </div>
                               </div>
-                            </td>
+                            <!-- </td> -->
                             <!-- /ELIMINAR USUARIO -->
 
                           </tr>
