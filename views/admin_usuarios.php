@@ -213,24 +213,26 @@
                                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                                           <form action="">
                                             <div class="row">
-                                              <div class="col-md-2">
-                                                <button type="button" class="btn btn-secondary" id="showPassword"><i class="bi bi-eye-fill"></i></button>
+                                              <div class="col-md-12">
+                                              Contraseña
+                                              <div class="input-group mb-3">
+                                                <button class="btn btn-outline-secondary" type="button" id="showPassword"><i class="bi bi-eye-fill"></i></button>
+                                                <input id="password" name="password1" type="text" class="form-control"">
                                               </div>
-                                              <div class="col-md-10">
-                                                  Contraseña
-                                                  <div class="mb-3">
-                                                    <input id="password" name="password1" class="form-control" type="password" aria-label=" input example">
-                                                  </div>
                                               </div>
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-md-12">
-                                                  Repetir contraseña
-                                                  <div class="mb-3">
-                                                    <input id="password" name="password2" class="form-control"  type="password" aria-label=" input example">
-                                                  </div>
-                                                </div>
+                                              <div class="col-md-12">
+                                              Repetir contraseña
+                                              <div class="input-group mb-3">
+                                                <button class="btn btn-outline-secondary" type="button" id="showPassword"><i class="bi bi-eye-fill"></i></button>
+                                                <input id="password" name="password1" type="text" class="form-control"">
+                                              </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="row">
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                                   <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
@@ -290,14 +292,15 @@
 <script>
   var btn = document.querySelector("#showPassword");
   var passwordInput = document.querySelector("#password");
+  var eye = document.createElement("i");
 
 
   btn.addEventListener('click', () => {
     if(passwordInput.type == "text"){
-      passwordInput.innerHTML = "Esconder"
+      //btn.textContent = "<i class='bi bi-eye-slash-fill'></i>"
       passwordInput.type = "password";
     }else if(passwordInput.type == "password"){
-      passwordInput.innerHTML = "Mostrar contraseña"
+      //btn.textContent = "<i class='bi bi-eye-fill'></i>"
       passwordInput.type = "text";
     }
     
