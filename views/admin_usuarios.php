@@ -63,14 +63,6 @@
                       </div>
                     </div>
                     <div class="col-md-6 mb-3">
-                      Contraseña
-                      <div class="mb-3">
-                        <input class="form-control" type="password" aria-label="password" name="password" required>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 mb-3">
                       Seleccionar rol
                       <select class="form-select" aria-label="rol" name="rol" required>
                         <?php
@@ -82,6 +74,25 @@
                         <?php }?>
                       </select>
                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      Contraseña
+                      <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="showPassword1"><i id="eye1" class="bi bi-eye-fill"></i></button>
+                        <input id="password1" name="password1" type="password" class="form-control"">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      Repetir contraseña
+                      <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="showPassword2"><i id="eye2" class="bi bi-eye-fill"></i></button>
+                        <input id="password2" name="password2" type="password" class="form-control"">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -148,14 +159,15 @@
                                     <div class="modal-body">
                                       <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item" role="presentation">
-                                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Editar Usuario</button>
+                                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#user-tab-<?php echo $user["id"]?>" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Editar Usuario</button>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Editar Contraseña</button>
+                                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#password-tab-<?php echo $user["id"]?>" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Editar Contraseña</button>
                                         </li>
                                       </ul>
                                       <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                        <!-- EDITAR DATOS -->
+                                        <div class="tab-pane fade show active" id="user-tab-<?php echo $user["id"]?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                           <form action="../includes/editUser.inc.php" method="POST">
                                             <div class="row mt-2">
                                               <div class="col-md-6 col-sm-12">
@@ -210,15 +222,18 @@
                                             </div>
                                           </form>
                                         </div>
-
-                                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                          <form action="">
+                                        <!--/EDITAR DATOS -->
+                                        <!-- EDITAR CONTRASEÑA-->
+                                        <div class="tab-pane fade" id="password-tab-<?php echo $user["id"]?>" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                          <form action="../includes/editPassword.inc.php" method="POST">
                                             <div class="row mt-2">
                                               <div class="col-md-12">
                                               Contraseña
                                               <div class="input-group mb-3">
-                                                <button class="btn btn-outline-secondary" type="button" id="showPassword1"><i id="eye1" class="bi bi-eye-fill"></i></button>
-                                                <input id="password1" name="password1" type="password" class="form-control"">
+                                                <button class="btn btn-outline-secondary" type="button" onclick="showOrhidePassword1(<?php echo $user["id"]?>)">
+                                                  <i id="eye1-<?php echo $user["id"]?>" class="bi bi-eye-fill"></i>
+                                                </button>
+                                                <input id="password1-<?php echo $user["id"]?>" name="password1" type="password" class="form-control"">
                                               </div>
                                               </div>
                                             </div>
@@ -227,8 +242,10 @@
                                               <div class="col-md-12">
                                                 Repetir contraseña
                                                 <div class="input-group mb-3">
-                                                  <button class="btn btn-outline-secondary" type="button" id="showPassword2"><i id="eye2" class="bi bi-eye-fill"></i></button>
-                                                  <input id="password2" name="password2" type="password" class="form-control"">
+                                                  <button class="btn btn-outline-secondary" type="button" onclick="showOrhidePassword2(<?php echo $user["id"]?>)">
+                                                    <i id="eye2-<?php echo $user["id"]?>" class="bi bi-eye-fill"></i>
+                                                  </button>
+                                                  <input id="password2-<?php echo $user["id"]?>" name="password2" type="password" class="form-control"">
                                                 </div>
                                               </div>
                                             </div>
@@ -236,12 +253,13 @@
                                             <div class="row">
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                  <input type="hidden" name="user_id" value="<?php echo $user["id"]?>">
                                                   <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
                                                 </div>
-                                              
                                             </div>
                                           </form>
                                         </div>
+                                        <!-- /EDITAR CONTRASEÑA-->
                                       </div>
                                   </div>
                                 </div>
@@ -321,6 +339,32 @@
     }
     
   });
+
+function showOrhidePassword1(id){
+  var passwordInput1 = document.querySelector("#password1-"+id);
+  var eye1 = document.querySelector("#eye1-"+id);
+  
+  if(passwordInput1.type == "text"){
+      passwordInput1.type = "password";
+      eye1.classList = "bi bi-eye-fill";
+    }else if(passwordInput1.type == "password"){
+      passwordInput1.type = "text";
+      eye1.className = "bi bi-eye-slash-fill";
+    }
+}
+
+function showOrhidePassword2(id){
+  var passwordInput2 = document.querySelector("#password2-"+id);
+  var eye2 = document.querySelector("#eye2-"+id);
+
+  if(passwordInput2.type == "text"){
+      passwordInput2.type = "password";
+      eye2.classList = "bi bi-eye-fill";
+    }else if(passwordInput2.type == "password"){
+      passwordInput2.type = "text";
+      eye2.className = "bi bi-eye-slash-fill";
+    }
+}
 
 </script>
  <?php include '../views/components/lowerPart.php' ?>

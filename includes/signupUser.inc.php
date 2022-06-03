@@ -5,7 +5,8 @@
         $firstname = $_POST["firstname"];
         $lastname = $_POST["lastname"];
         $username = $_POST["username"];
-        $password = $_POST["password"];
+        $password1 = $_POST["password1"];
+        $password2 = $_POST["password2"];
         $rol = $_POST["rol"];
 
         //Instanciar clase Signup-Controller
@@ -15,10 +16,10 @@
         
         //Objeto de Clase SignUpController, se le pasan los parametros (datos de registro)
         //En esta clase se hacen las validaciones a los campos solicitados.
-        $signup = new UserController($firstname, $lastname, $username, $password, $rol,"");
+        $signup = new UserController($firstname, $lastname, $username, $password1,$password2, $rol,"");
 
         //Registro de un usuario
         $signup->signUpUser();
 
-        header("location: ../views/admin_usuarios.php?success=Usuario registrado");
+        //header("location: ../views/admin_usuarios.php?success=Usuario registrado");
     }

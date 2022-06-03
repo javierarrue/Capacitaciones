@@ -12,7 +12,7 @@ if(isset($_POST["submit"])){
     $user_id = $_POST["user_id"];
     $rol_id = $_POST["rol_id"];
 
-    $obj = new UserController($firstname,$lastname,$username,"",$rol_id,$user_id);
+    $obj = new UserController($firstname,$lastname,$username,"","",$rol_id,$user_id);
     $obj->editSelectedUser();
     
     header("location: ../views/admin_usuarios.php?success=Datos del usuario ". $username . " han sido cambiados");

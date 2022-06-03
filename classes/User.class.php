@@ -77,5 +77,18 @@ class User extends DbConnection{
         }        
     }
 
+    protected function changePassword($password, $user_id){
+
+        $stmt = $this->connect()->prepare("UPDATE user SET password = ? WHERE id = ?;");
+
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        if(!$stmt->execute(array($hashedPassword, $user_id))){
+            $stmt = null;  
+            header("location: ../views/admin_usuarios.php?error=stmtfailed");
+            exit();
+        }  
+    }
+
 
 }

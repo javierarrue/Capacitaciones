@@ -6,16 +6,18 @@ class UserController extends User{
     private $firstname;
     private $lastname;
     private $username;
-    private $password;
+    private $password1;
+    private $password2;
     private $rol;
     private $user_id;
 
-    public function __construct($firstname, $lastname, $username, $password, $rol, $user_id)
+    public function __construct($firstname, $lastname, $username, $password1, $password2, $rol, $user_id)
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->username = $username;
-        $this->password = $password;
+        $this->password1 = $password1;
+        $this->password2 = $password2;
         $this->rol = $rol;
         $this->user_id = $user_id;
     }
@@ -35,14 +37,18 @@ class UserController extends User{
             exit();
         }
 
+        if(!$this->checkPasswordMatch()){
+            header("location: ../views/admin_usuarios.php?error=Las contraseñas deben coincidir.");
+            exit();
+        }
+
         $this->setUser($this->firstname,$this->lastname,$this->username,$this->password, $this->rol);
     }
 
     //Validar si hay inputs vacios.
     private function checkForEmptyInputs(){
 
-        if(empty($this->firstname) || empty($this->lastname) || empty($this->username) || empty($this->password)){
-            echo $this->firstname;
+        if(empty($this->firstname) || empty($this->lastname) || empty($this->username) || empty($this->password1) || empty($this->password2)){
             return false;
         }else{
             return true;
@@ -75,6 +81,13 @@ class UserController extends User{
         }
     }
 
+    private function checkPasswordMatch(){
+        if($this->password1 != $this->password2){
+            return false;
+        }
+        return true;
+    }
+
     public function showUsers(){
         return $this->getUsers();
     }
@@ -85,6 +98,14 @@ class UserController extends User{
 
     public function editSelectedUser(){
         $this->editUser($this->user_id, $this->username, $this->firstname, $this->lastname, $this->rol);
+    }
+
+    public function changeUserPassword(){
+        if($this->checkPasswordMatch()){
+            $this->changePassword($this->password1, $this->user_id);
+        }
+        header("location: ../views/admin_usuarios.php?error=Las contraseñas deben coincidir.");
+        exit();
     }
 
 }

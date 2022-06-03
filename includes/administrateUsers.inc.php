@@ -5,7 +5,7 @@
   include "../classes/Roles.class.php";
   include "../classes/RolesController.php";
 
- $user = new UserController("","","","","","");
+ $user = new UserController("","","","","","","");
  $rol = new RolesController();
  
  $users = $user->showUsers();
