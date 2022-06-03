@@ -8,14 +8,16 @@ class UserController extends User{
     private $username;
     private $password;
     private $rol;
+    private $user_id;
 
-    public function __construct($firstname, $lastname, $username, $password, $rol)
+    public function __construct($firstname, $lastname, $username, $password, $rol, $user_id)
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->username = $username;
         $this->password = $password;
         $this->rol = $rol;
+        $this->user_id = $user_id;
     }
 
     //Metodo que ejectua los validaciones de los campos del formulario
@@ -79,6 +81,10 @@ class UserController extends User{
 
     public function deleteSelectedUser(){
         $this->deleteUser($this->username);
-    }   
+    }
+
+    public function editSelectedUser(){
+        $this->editUser($this->user_id, $this->username, $this->firstname, $this->lastname, $this->rol);
+    }
 
 }

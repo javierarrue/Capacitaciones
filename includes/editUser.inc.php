@@ -1,23 +1,20 @@
 <?php
 //Edicion de usuarios
 if(isset($_POST["submit"])){
+
+    include "../classes/dbConnection.class.php";
+    include "../classes/User.class.php";
+    include "../classes/UserController.php";
+
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $username = $_POST["username"];
-    $password = $_POST["password"];
-    $rol = $_POST["rol"];
+    $user_id = $_POST["user_id"];
+    $rol_id = $_POST["rol_id"];
 
-    echo "Usuario: " . $username . " <br>";
-    echo "Nombre: " . $firstname . " <br>";
-    echo "Apellido: " . $lastname . " <br>";
-    echo "Contraseña: " . $password . " <br>";
-    echo "Rol: " . $rol . " <br>";
-   //header("location: ../views/admin_usuarios.php?password=".$password);
-
-/*
-CREATE VIEW UsersAndRoles AS 
-SELECT user.id, user.user, user.password, user.firstname, user.lastname, rol.id AS id_rol, rol.rol_name FROM user JOIN rol WHERE user.rol_id = rol.id 
-
-*/
+    $obj = new UserController($firstname,$lastname,$username,"",$rol_id,$user_id);
+    $obj->editSelectedUser();
+    
+    header("location: ../views/admin_usuarios.php?success=Datos del usuario ". $username . " han sido cambiados");
 
 }

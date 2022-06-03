@@ -181,7 +181,7 @@
                                               <div class="col-md-6 col-sm-12">
                                                 <div class="col-md-12 mb-3">
                                                   Seleccionar rol
-                                                  <select class="form-select" aria-label="rol" name="rol" required>
+                                                  <select class="form-select" aria-label="rol" name="rol_id" required>
                                                     <?php
                                                         //Vuelvo a correr el execute().
                                                         //¿Porque?:
@@ -205,6 +205,7 @@
                                             </div>
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                              <input type="hidden" name="user_id" value="<?php echo $user["id"]?>">
                                               <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
                                             </div>
                                           </form>

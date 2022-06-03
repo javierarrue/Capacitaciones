@@ -67,5 +67,15 @@ class User extends DbConnection{
         }
     }
 
+    protected function editUser( $user_id, $username, $firstname, $lastname, $rol){
+        $stmt = $this->connect()->prepare("UPDATE user SET user = ?, firstname = ?, lastname = ?, rol_id = ? WHERE id = ?;");
+
+        if(!$stmt->execute(array( $username, $firstname, $lastname, $rol, $user_id))){
+            $stmt = null;  
+            header("location: ../views/admin_usuarios.php?error=stmtfailed");
+            exit();
+        }        
+    }
+
 
 }
