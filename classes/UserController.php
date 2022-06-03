@@ -25,24 +25,24 @@ class UserController extends User{
     //Metodo que ejectua los validaciones de los campos del formulario
     public function signUpUser(){
         if(!$this->checkForEmptyInputs()){
-            header("location: ../views/admin_usuarios.php?error=Inserte los datos solicitados.");
+            header("location: ../views/admin_usuarios.php?errorRegister=Inserte los datos solicitados.");
             exit();
         }
         if(!$this->checkForInvalidUserName()){
-            header("location: ../views/admin_usuarios.php?error=Caracteres inválidos. Permitido: a-z, 0-9");
+            header("location: ../views/admin_usuarios.php?errorRegister=Caracteres inválidos. Permitido: a-z, 0-9");
             exit();
         }
         if(!$this->chekcIfUserIsTaken()){
-            header("location: ../views/admin_usuarios.php?error=El nombre de usuario ya existe.");
+            header("location: ../views/admin_usuarios.php?errorRegister=El nombre de usuario ya existe.");
             exit();
         }
 
         if(!$this->checkPasswordMatch()){
-            header("location: ../views/admin_usuarios.php?error=Las contraseñas deben coincidir.");
+            header("location: ../views/admin_usuarios.php?errorRegister=Las contraseñas deben coincidir.");
             exit();
         }
 
-        $this->setUser($this->firstname,$this->lastname,$this->username,$this->password, $this->rol);
+        $this->setUser($this->firstname,$this->lastname,$this->username,$this->password1, $this->rol);
     }
 
     //Validar si hay inputs vacios.
@@ -74,7 +74,7 @@ class UserController extends User{
 
         //Para validar esto, es necesario ejecutar un query en la BD.
         //Por lo tanto llamo el metodo de checkIfUserExist la clase - SignUp -
-        if($this->checkIfUserExist($this->username)){
+        if($this->checkIfUserExist($this->username["username_new"])){
             return false;
         }else{
             return true;
@@ -96,15 +96,31 @@ class UserController extends User{
         $this->deleteUser($this->username);
     }
 
+    //VALIDAR -> SI EL USUARIO SE LLAMA -javier-, Y SOLO VA A CAMBIBAR SU ROL u OTRO CAMPO QUE NO SEA SU USUARIO..
+    //EL USUARIO QUE SE ENVIARA SERA TAMBIEN -javier- (el que actualmente posee), POR LO TANTO DARA ERROR DE:
+    //YA EXISTE UN USUARIO CON ESE NOMBRE
     public function editSelectedUser(){
-        $this->editUser($this->user_id, $this->username, $this->firstname, $this->lastname, $this->rol);
+        //Si el usuario nuevo es el mismo que ya tiene almacenado en la BD:
+        //Bypass la validacion de si checkIfUserIsTaken().
+        if($this->username["username_new"] == $this->username["username_old"]){
+            $this->editUser($this->user_id, $this->username["username_new"], $this->firstname, $this->lastname, $this->rol);
+        }else{
+            //Si el usuario entrante es diferente al usuario que ya tiene guardado:
+            //Validar que el usuario nuevo no esté tomado por otro usuario.
+            if(!$this->chekcIfUserIsTaken()){
+                header("location: ../views/admin_usuarios.php?errorEdit=El nombre de usuario ya existe.&user=".$this->username["username_old"]);
+                exit();
+            }
+            $this->editUser($this->user_id, $this->username["username_new"], $this->firstname, $this->lastname, $this->rol);
+        }
+        
     }
 
     public function changeUserPassword(){
         if($this->checkPasswordMatch()){
             $this->changePassword($this->password1, $this->user_id);
         }
-        header("location: ../views/admin_usuarios.php?error=Las contraseñas deben coincidir.");
+        header("location: ../views/admin_usuarios.php?errorEdit=Las contraseñas deben coincidir.");
         exit();
     }
 

@@ -21,5 +21,5 @@
         //Registro de un usuario
         $signup->signUpUser();
 
-        //header("location: ../views/admin_usuarios.php?success=Usuario registrado");
+        header("location: ../views/admin_usuarios.php?success=Usuario registrado con éxito.");
     }

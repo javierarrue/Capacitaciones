@@ -4,16 +4,20 @@
 
   <script>
         document.querySelector('.administrar_usuarios').classList.add('link-active');
-        /* --> MOSTRAR MODAL EN CARGA
-        $(document).ready(function(){
-        $("#nuevoUsuario").modal('show');
-      });
-      */
   </script>
-
   <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
+        <?php if(isset($_GET["success"])){?>
+          <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong><?php echo $_GET["success"]?></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+        <?php }?>
         <div class="row">
           <div class="col-md-12 fw-bold fs-3">
             <div class="card">
@@ -41,6 +45,12 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                  <?php if(isset($_GET["errorRegister"])){?>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><?php echo $_GET["errorRegister"]?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  <?php } ?>
                   <div class="row">
                     <div class="col-md-6 mb-3">
                       Nombre
@@ -168,6 +178,12 @@
                                       <div class="tab-content" id="myTabContent">
                                         <!-- EDITAR DATOS -->
                                         <div class="tab-pane fade show active" id="user-tab-<?php echo $user["id"]?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                          <?php if(isset($_GET["errorEdit"])){?>
+                                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong><?php echo $_GET["errorEdit"]?></strong>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                          </div>
+                                          <?php } ?>
                                           <form action="../includes/editUser.inc.php" method="POST">
                                             <div class="row mt-2">
                                               <div class="col-md-6 col-sm-12">
@@ -187,7 +203,7 @@
                                               <div class="col-md-6 col-sm-12">
                                                 Usuario
                                                 <div class="mb-3">
-                                                  <input name="username" class="form-control" type="text" value="<?php echo $user["user"]; ?>" aria-label="readonly input example">
+                                                  <input name="username_new" class="form-control" type="text" value="<?php echo $user["user"]; ?>" aria-label="readonly input example">
                                                 </div>
                                               </div>
                                               <div class="col-md-6 col-sm-12">
@@ -218,6 +234,7 @@
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                               <input type="hidden" name="user_id" value="<?php echo $user["id"]?>">
+                                              <input type="hidden" name="username_old" value="<?php echo $user["user"]?>">
                                               <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
                                             </div>
                                           </form>
@@ -253,7 +270,9 @@
                                             <div class="row">
                                                 <div class="modal-footer">
                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
                                                   <input type="hidden" name="user_id" value="<?php echo $user["id"]?>">
+
                                                   <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
                                                 </div>
                                             </div>
