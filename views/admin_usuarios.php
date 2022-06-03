@@ -157,7 +157,7 @@
                                       <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                           <form action="../includes/editUser.inc.php" method="POST">
-                                            <div class="row">
+                                            <div class="row mt-2">
                                               <div class="col-md-6 col-sm-12">
                                                 Nombre
                                                 <div class="mb-3">
@@ -212,23 +212,23 @@
 
                                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                                           <form action="">
-                                            <div class="row">
+                                            <div class="row mt-2">
                                               <div class="col-md-12">
                                               Contraseña
                                               <div class="input-group mb-3">
-                                                <button class="btn btn-outline-secondary" type="button" id="showPassword"><i class="bi bi-eye-fill"></i></button>
-                                                <input id="password" name="password1" type="text" class="form-control"">
+                                                <button class="btn btn-outline-secondary" type="button" id="showPassword1"><i id="eye1" class="bi bi-eye-fill"></i></button>
+                                                <input id="password1" name="password1" type="password" class="form-control"">
                                               </div>
                                               </div>
                                             </div>
 
                                             <div class="row">
                                               <div class="col-md-12">
-                                              Repetir contraseña
-                                              <div class="input-group mb-3">
-                                                <button class="btn btn-outline-secondary" type="button" id="showPassword"><i class="bi bi-eye-fill"></i></button>
-                                                <input id="password" name="password1" type="text" class="form-control"">
-                                              </div>
+                                                Repetir contraseña
+                                                <div class="input-group mb-3">
+                                                  <button class="btn btn-outline-secondary" type="button" id="showPassword2"><i id="eye2" class="bi bi-eye-fill"></i></button>
+                                                  <input id="password2" name="password2" type="password" class="form-control"">
+                                                </div>
                                               </div>
                                             </div>
 
@@ -290,18 +290,33 @@
   <!-- /MAIN CONTENT OF THE PAGE-->    
 
 <script>
-  var btn = document.querySelector("#showPassword");
-  var passwordInput = document.querySelector("#password");
-  var eye = document.createElement("i");
 
+  //BOTON - ESCONDER Y MOSTRAR CONTRASEÑA
+  var btn1 = document.querySelector("#showPassword1");
+  var passwordInput1 = document.querySelector("#password1");
+  var btn2 = document.querySelector("#showPassword2");
+  var passwordInput2 = document.querySelector("#password2");
+  var eye1 = document.querySelector("#eye1");
+  var eye2 = document.querySelector("#eye2");
 
-  btn.addEventListener('click', () => {
-    if(passwordInput.type == "text"){
-      //btn.textContent = "<i class='bi bi-eye-slash-fill'></i>"
-      passwordInput.type = "password";
-    }else if(passwordInput.type == "password"){
-      //btn.textContent = "<i class='bi bi-eye-fill'></i>"
-      passwordInput.type = "text";
+  btn1.addEventListener('click', () => {
+    if(passwordInput1.type == "text"){
+      passwordInput1.type = "password";
+      eye1.classList = "bi bi-eye-fill";
+    }else if(passwordInput1.type == "password"){
+      passwordInput1.type = "text";
+      eye1.className = "bi bi-eye-slash-fill";
+    }
+    
+  });
+
+  btn2.addEventListener('click', () => {
+    if(passwordInput2.type == "text"){
+      passwordInput2.type = "password";
+      eye2.classList = "bi bi-eye-fill";
+    }else if(passwordInput2.type == "password"){
+      passwordInput2.type = "text";
+      eye2.className = "bi bi-eye-slash-fill";
     }
     
   });
