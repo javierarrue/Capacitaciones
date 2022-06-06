@@ -12,6 +12,6 @@ if(isset($_POST["submit"])){
     $obj = new UserController("","","",$password1,$password2,"",$user_id);
     $obj->changeUserPassword();
     
-    header("location: ../views/admin_usuarios.php?success=Contraseña del usuario cambiada con éxito". $username . " han sido cambiada");
+    header("location: ../views/admin_usuarios.php?success=Contraseña del usuario ". $username . " ha sido cambiada con éxito");
 
 }

@@ -24,15 +24,15 @@ class UserController extends User{
 
     //Metodo que ejectua los validaciones de los campos del formulario
     public function signUpUser(){
-        if(!$this->checkForEmptyInputs()){
+        if(!$this->checkForEmptyInputs($this->username,$this->password1,$this->password2)){
             header("location: ../views/admin_usuarios.php?errorRegister=Inserte los datos solicitados.");
             exit();
         }
-        if(!$this->checkForInvalidUserName()){
+        if(!$this->checkForInvalidUserName($this->username)){
             header("location: ../views/admin_usuarios.php?errorRegister=Caracteres inválidos. Permitido: a-z, 0-9");
             exit();
         }
-        if(!$this->chekcIfUserIsTaken()){
+        if(!$this->chekcIfUserIsTaken($this->username)){
             header("location: ../views/admin_usuarios.php?errorRegister=El nombre de usuario ya existe.");
             exit();
         }
@@ -46,9 +46,9 @@ class UserController extends User{
     }
 
     //Validar si hay inputs vacios.
-    private function checkForEmptyInputs(){
+    private function checkForEmptyInputs($username,$password1,$password2){
 
-        if(empty($this->firstname) || empty($this->lastname) || empty($this->username) || empty($this->password1) || empty($this->password2)){
+        if(empty($this->firstname) || empty($this->lastname) || empty($username) || empty($password1) || empty($password2)){
             return false;
         }else{
             return true;
@@ -57,11 +57,11 @@ class UserController extends User{
     }
 
     //Validar si se escribio un usuario con caracteres invalidos.
-    private function checkForInvalidUserName(){
+    private function checkForInvalidUserName($username){
         //Caracteres permitidos:
         //Desde la a hasta la z, en mayusculas y minusculas
         //Numeros del 0 al 9.
-        if(!preg_match("/^[a-zA-Z0-9]*$/",$this->username)){
+        if(!preg_match("/^[a-zA-Z0-9]*$/",$username)){
             return false;
         }else{
             return true;
@@ -70,11 +70,11 @@ class UserController extends User{
     }
 
     //Validar si el usuario ya existe
-    private function chekcIfUserIsTaken(){
+    private function chekcIfUserIsTaken($user_name){
 
         //Para validar esto, es necesario ejecutar un query en la BD.
         //Por lo tanto llamo el metodo de checkIfUserExist la clase - SignUp -
-        if($this->checkIfUserExist($this->username["username_new"])){
+        if($this->checkIfUserExist($user_name)){
             return false;
         }else{
             return true;
@@ -100,20 +100,39 @@ class UserController extends User{
     //EL USUARIO QUE SE ENVIARA SERA TAMBIEN -javier- (el que actualmente posee), POR LO TANTO DARA ERROR DE:
     //YA EXISTE UN USUARIO CON ESE NOMBRE
     public function editSelectedUser(){
-        //Si el usuario nuevo es el mismo que ya tiene almacenado en la BD:
+
+        if(!$this->checkForEmptyInputs($this->username["username_new"],".",".")){
+            //echo $this->username["username_new"];
+            header("location: ../views/admin_usuarios.php?errorEdit=Inserte los datos solicitados.&user=".$this->username["username_old"]);
+            exit();
+        }
+
+        if(!$this->checkForInvalidUserName($this->username["username_new"])){
+            header("location: ../views/admin_usuarios.php?errorEdit=Caracteres inválidos. Permitido: a-z, 0-9&user=".$this->username["username_old"]);
+            exit();
+        }
+
+        //Si el usuario nuevo es el mismo del que ya tiene almacenado en la BD:
         //Bypass la validacion de si checkIfUserIsTaken().
-        if($this->username["username_new"] == $this->username["username_old"]){
+        if($this->compareNewandOldUserNames()){
             $this->editUser($this->user_id, $this->username["username_new"], $this->firstname, $this->lastname, $this->rol);
         }else{
             //Si el usuario entrante es diferente al usuario que ya tiene guardado:
             //Validar que el usuario nuevo no esté tomado por otro usuario.
-            if(!$this->chekcIfUserIsTaken()){
+            if(!$this->chekcIfUserIsTaken($this->username["username_new"])){
                 header("location: ../views/admin_usuarios.php?errorEdit=El nombre de usuario ya existe.&user=".$this->username["username_old"]);
                 exit();
             }
             $this->editUser($this->user_id, $this->username["username_new"], $this->firstname, $this->lastname, $this->rol);
         }
         
+    }
+
+    public function compareNewandOldUserNames(){
+        if($this->username["username_new"] == $this->username["username_old"]){
+            return true;
+        }
+        return false;
     }
 
     public function changeUserPassword(){
