@@ -4,7 +4,7 @@ const coursesDivWrapper = document.querySelector('.cursos');
 
 //Variable inputCounter, necesaria para diferenciar un input de otro.
 //inputCounter variable, needed to differentiate one input to another
-var inputCounter = 0;
+var inputCounter = 1;
 //HTML elements
 var textInput, rowDiv, inputDiv, btnDiv, btnDeleteField; 
 
@@ -26,6 +26,7 @@ function createHtmlElements(){
     inputDiv = document.createElement('div'); 
     btnDiv = document.createElement('div');
     btnDeleteField = document.createElement('button');
+    btnIcon = document.createElement('i');
 }
 
 function setInputType(){
@@ -34,13 +35,13 @@ function setInputType(){
 
 function setValues(){
     //Para campos editables eliminar linea de abajo
-    textInput.value = document.querySelector('.cursoSugeridoText').value;
+    //textInput.value = document.querySelector('.cursoSugeridoText').value;
 }
 
 function setAttributes(){
     //Para campos editables eliminar linea de abajo
-    textInput.setAttribute('readonly','');
-    textInput.setAttribute('name','cursoSugerido'+inputCounter);
+    //textInput.setAttribute('readonly','');
+    textInput.setAttribute('name','cursos['+inputCounter+']');
 }
 
 function setClassNames(){
@@ -51,17 +52,19 @@ function setClassNames(){
     inputDiv.className = 'col-md-10 col-sm-10';
     btnDiv.className = 'col-md-2 col-sm-2';
     btnDeleteField.className = 'btn btn-outline-danger deleteFieldBtn';
+    btnIcon.className = 'bi bi-trash3-fill';
 }
 
 //This function configures the delete button
 //Esta funcion configura el boton de eliminar un campo/input
 function configureBtnDelete(){
-    var symbol = document.createTextNode('-');
+    //var symbol = document.createTextNode('Quitar');
     //Set de current inputCounter to the button, for reference when deleting input
     //Definir el inputCounter actual, para hacer referencia cuando sea necesario eleminar el input.
     btnDeleteField.id = inputCounter;
-    btnDeleteField.appendChild(symbol);
+    //btnDeleteField.appendChild(symbol);
     btnDeleteField.type = 'button';
+    btnDeleteField.appendChild(btnIcon);
 
     //Asignando funcion onClick, para cada boton creado
     btnDeleteField.onclick = function(){

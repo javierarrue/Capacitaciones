@@ -23,7 +23,7 @@ class Login extends DbConnection{
         }
         //Verificar si encontro algun resultado:
         if($stmt->rowCount() == 0){
-            //Si no existe el usuario, devovler con error.
+            //Si no existe el usuario, devolver con error.
             $stmt = null;
             header ("location: ../views/index.php?error=Datos incorrectos. Intente nuevamente.");
             exit();
@@ -48,9 +48,5 @@ class Login extends DbConnection{
             header ("location: ../views/index.php?error=Datos incorrectos. Intente nuevamente.");
             exit();
         }
-    }
-
-    private function createSessionVariables($stmt, $result){
-
     }
 }

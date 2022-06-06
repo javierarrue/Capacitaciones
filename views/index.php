@@ -25,6 +25,9 @@
                     </div>
                     <h1 class="text-center">Bienvenido</h1>
                     <h5 class="text-center text-muted mb-4">Al Sistema de Cargos específicos</h3>
+                    <?php if(isset($_GET["error"])){?>
+                        <h5 class="text-danger text-center"><?php echo $_GET["error"];?></h5>
+                    <?php }?>
                     <form action="../includes/login.inc.php" method="POST">
                         <div class="form-floating col-9 mb-3 mx-auto">
                             <input type="text" placeholder="Usuario" class="form-control" id="user" name="username">

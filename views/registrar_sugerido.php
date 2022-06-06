@@ -77,7 +77,7 @@
                 <div class="card-body">
                   <div class="row mb-3">
 
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-12 col-md-12">
                       <div class="mb-2">Cursos oficiales</div>
                       <div class="row">
                         <div class="col-md-12">
@@ -117,7 +117,7 @@
                     </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-12 mt-3">
+                    <div class="col-lg-12 col-md-12 mt-3">
                       <div class="mb-2">
                         Registrar cursos sugeridos
                       </div>
@@ -129,7 +129,7 @@
                             <input class="form-control cursoSugeridoText" type="text" value="..." aria-label="readonly input example">
                           </div>
                           <div class="col-md-2 col-sm-6">
-                            <button type="button" class="btn btn-outline-success addFieldBtn">+</button>
+                            <button type="button" class="btn btn-outline-success addFieldBtn">Añadir</button>
                           </div>
                         </div>
                       </div>
