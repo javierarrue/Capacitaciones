@@ -151,42 +151,36 @@
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                      <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#user-tab-<?php echo $curso["id"]?>" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Editar Usuario</button>
-                                        </li>
-                                      </ul>
-                                      <div class="tab-content" id="myTabContent">
-                                        <!-- EDITAR DATOS -->
-                                        <div class="tab-pane fade show active" id="user-tab-<?php echo $curso["id"]?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                          <?php if(isset($_GET["errorEdit"])){?>
-                                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                            <strong><?php echo $_GET["errorEdit"]?></strong>
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                          </div>
-                                          <?php } ?>
-                                          <form action="../includes/editUser.inc.php" method="POST">
-                                            <div class="row mt-2">
-                                              <div class="col-md-6 col-sm-12">
-                                                Nombre del curso
-                                                <div class="mb-3">
-                                                  <input name="firstname" class="form-control" type="text" value="<?php echo $curso["name"]; ?>" aria-label="readonly input example">
-                                                </div>
+                                      <!-- EDITAR DATOS -->
+                                      <div class="tab-pane fade show active" id="user-tab-<?php echo $curso["id"]?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                        <?php if(isset($_GET["errorEdit"])){?>
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                          <strong><?php echo $_GET["errorEdit"]?></strong>
+                                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                        <?php } ?>
+                                        <form action="../includes/editUser.inc.php" method="POST">
+                                          <div class="row mt-2">
+                                            <div class="col-12">
+                                              Nombre del curso
+                                              <div class="mb-3">
+                                                <input name="firstname" class="form-control" type="text" value="<?php echo $curso["name"]; ?>" aria-label="readonly input example">
                                               </div>
                                             </div>
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                              <input type="hidden" name="id_curso" value="<?php echo $curso["id"]?>">
-                                              <input type="hidden" name="cursoNombre_old" value="<?php echo $curso["name"]?>">
-                                              <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
-                                            </div>
-                                          </form>
-                                        </div>
-                                        <!--/EDITAR DATOS -->
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <input type="hidden" name="id_curso" value="<?php echo $curso["id"]?>">
+                                            <input type="hidden" name="cursoNombre_old" value="<?php echo $curso["name"]?>">
+                                            <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
+                                          </div>
+                                        </form>
                                       </div>
+                                      <!--/EDITAR DATOS -->
+                                    </div>
                                   </div>
-                                </div>
-                              </div> 
+                                </div> 
+                              </div>
                             </td>
                             <!-- /EDITAR USUARIO -->
 
