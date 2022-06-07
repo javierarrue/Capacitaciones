@@ -1,2 +1,1 @@
-- hacer alert en contraseña no coincide (editar usuario) - > haciendo
 - Al editar o agregar un nuevo usuario, hacer hightlight al row correspondiente.
