@@ -242,6 +242,12 @@
                                         <!--/EDITAR DATOS -->
                                         <!-- EDITAR CONTRASEÑA-->
                                         <div class="tab-pane fade" id="password-tab-<?php echo $user["id"]?>" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                          <?php if(isset($_GET["errorEdit"])){?>
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                              <strong><?php echo $_GET["errorEdit"]?></strong>
+                                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                            <?php } ?>  
                                           <form action="../includes/editPassword.inc.php" method="POST">
                                             <div class="row mt-2">
                                               <div class="col-md-12">
@@ -272,7 +278,7 @@
                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
                                                   <input type="hidden" name="user_id" value="<?php echo $user["id"]?>">
-
+                                                  <input type="hidden" name="username" value="<?php echo $user["user"]?>">
                                                   <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
                                                 </div>
                                             </div>

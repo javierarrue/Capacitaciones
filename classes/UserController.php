@@ -139,7 +139,7 @@ class UserController extends User{
         if($this->checkPasswordMatch()){
             $this->changePassword($this->password1, $this->user_id);
         }
-        header("location: ../views/admin_usuarios.php?errorEdit=Las contraseñas deben coincidir.");
+        header("location: ../views/admin_usuarios.php?errorEdit=Las contraseñas deben coincidir.&user=".$this->username);
         exit();
     }
 
