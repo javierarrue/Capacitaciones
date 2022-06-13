@@ -36,11 +36,23 @@ class Login extends DbConnection{
         if(password_verify($password, $result["password"])){
             //Creacion de variables de sesion
             session_start();
+
+            $stmt2 = $this->connect()->prepare("SELECT rol_name FROM rol WHERE id = ?");
+
+            if(!$stmt2->execute(array($result["rol_id"]))){
+                $stmt = null;
+                header ("location: ../views/index.php?error=stmtError");
+                exit();
+            }
+
+            $rol = $stmt2->fetch(PDO::FETCH_ASSOC);
         
             $_SESSION["user_id"] = $result["id"];
             $_SESSION["username"] = $result["user"];
             $_SESSION["firstname"] = $result["firstname"];
             $_SESSION["lastname"] = $result["lastname"];
+            $_SESSION["rol"] = $rol["rol_name"];
+
             $stmt = null;
         }else{
             

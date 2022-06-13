@@ -45,12 +45,12 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown profile">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-fill"></i>
+              <?php echo $_SESSION["firstname"] ." ". $_SESSION["lastname"];?>
               </a>
               <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item text-uppercase" href="perfil.php">Perfil</a></li>
+                <li><a class="dropdown-item" href="perfil.php"><i class="bi bi-person me-2"></i>Perfil</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item text-uppercase" href="../includes/logout.inc.php">Cerrar Sesión</a></li>
+                <li><a class="dropdown-item" href="../includes/logout.inc.php"><i class="bi bi-box-arrow-in-right me-2"></i>Cerrar Sesión</a></li>
               </ul>
             </li>
           </ul>
