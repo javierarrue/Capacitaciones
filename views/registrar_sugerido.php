@@ -77,6 +77,32 @@
                 <div class="card-body">
                   <div class="row mb-3">
 
+                    <div class="col-lg-12 col-md-12 mt-3">
+                      <div class="mb-2">
+                        Registrar cursos sugeridos 
+                        <i class="bi bi-file-earmark-check-fill text-success"></i>
+                        <i class="bi bi-file-earmark-excel-fill text-danger"></i>
+                          
+                      </div>
+
+                      <div class="mb-1">
+                        <!-- VERSION ALTERNATIVA ✓✓✓-->
+                        <div class="row align-items-center mb-3">
+                          <div class="col-md-12 col-sm-6">
+                            <input class="form-control cursoSugeridoText" type="text" value="..." aria-label="readonly input example">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="cursos">
+                      </div>
+
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-outline-success addFieldBtn">Añadir nueva línea</button>
+                      </div>
+                     
+                    </div>
+
                     <div class="col-lg-12 col-md-12">
                       <div class="mb-2">Cursos oficiales</div>
                       <div class="row">
@@ -114,27 +140,6 @@
                             </div>
                           </div>
                         </div>
-                    </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12 mt-3">
-                      <div class="mb-2">
-                        Registrar cursos sugeridos
-                      </div>
-
-                      <div class="mb-1">
-                        <!-- VERSION ALTERNATIVA ✓✓✓-->
-                        <div class="row align-items-center mb-3">
-                          <div class="col-md-10 col-sm-6">
-                            <input class="form-control cursoSugeridoText" type="text" value="..." aria-label="readonly input example">
-                          </div>
-                          <div class="col-md-2 col-sm-6">
-                            <button type="button" class="btn btn-outline-success addFieldBtn">Añadir</button>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="cursos">
                       </div>
                     </div>
                   </div>
