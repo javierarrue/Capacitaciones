@@ -145,10 +145,16 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <?php
+                          <?php //LOGICA PARA HACER HIGHLIGHT A LA LINEA EDITADA
                           while($user = $users->fetch(PDO::FETCH_ASSOC)){?>
+                          <?php if(isset($_GET["success"])){?>
+                            <?php if($_GET["username"] == $user["user"]){ ?>
+                              <tr class="table-success">
+                            <?php } ?>
+                          <?php } else{ ?>
                           <tr>
-                            <td><?php echo $user["rol_name"]; ?></td>
+                          <?php } ?>
+                            <td ><?php echo $user["rol_name"]; ?></td>
                             <td><?php echo $user["firstname"]; ?></td>
                             <td><?php echo $user["lastname"]; ?></td>
                             <td><?php echo $user["user"]; ?></td>

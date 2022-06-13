@@ -18,6 +18,6 @@ if(isset($_POST["submit"])){
     $obj = new UserController($firstname,$lastname,$username,"","",$rol_id,$user_id);
     $obj->editSelectedUser();
     
-    header("location: ../views/admin_usuarios.php?success=Datos del usuario ". $username["username_new"] . " han sido cambiados");
+    header("location: ../views/admin_usuarios.php?success=Datos del usuario ". $username["username_new"] . " han sido cambiados&username=".$username["username_new"]);
 
 }
