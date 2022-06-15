@@ -88,3 +88,7 @@ body{
 .register-btn:hover{
     background-color: var(--apmBueHover);
 }
+
+#seccion2{
+    transition: opacity 0.5s;
+}
