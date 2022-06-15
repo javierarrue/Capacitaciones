@@ -71,6 +71,33 @@ body{
     }
 }
 
+@media screen and (max-width: 1094px) {
+    small{
+      font-size: 0.7em;
+    }
+}
+
+
+.card-pendientes{
+    border-left: 5px solid rgb(13,110,253);
+}
+.card-impartidos{
+    border-left: 5px solid rgb(25,135,84);
+}
+
+.card-cancelados{
+    border-left: 5px solid rgb(220,53,69);
+}
+
+.card-nextyear{
+    border-left: 5px solid rgb(108,117,125);
+}
+
+
+small{
+    font-weight: bold;
+}
+
 .addFieldBtn{
     padding-top: 1px;
     padding-bottom: 1px;
