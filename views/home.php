@@ -23,112 +23,121 @@
           </div>
         </div>
 
-        <div class="row row-cols-lg-4 row-cols-md-4 row-cols-sm-2 g-1 mb-1">
-          <div class="col">
-            <div class="card shadow rounded card-pendientes">
-              <div class="card-body mx-3">
-                <div class="row align-items-center">
-                  <div class="col-8">
-                    <small class="text-primary">Cursos Pendientes</small>
-                    <h4 class="card-title">25</h4>
-                  </div>
-                  <div class="col-4 text-end">
-                    <h1><i class="bi bi-hourglass-split text-primary"></i></h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow rounded card-impartidos">
-              <div class="card-body mx-3">
-                <div class="row align-items-center">
-                  <div class="col-8">
-                    <small class="text-success">Cursos Impartidos</small>
-                    <h4 class="card-title">194</h4>
-                  </div>
-                  <div class="col-4 text-end">
-                    <span class="fs-1"><i class="bi bi-file-earmark-check-fill text-success"></i></span>
+        <div class="row g-2 mb-1">
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="content">
+              <div class="card shadow rounded card-pendientes">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-8">
+                      <small class="text-primary">Pendientes</small>
+                      <h5 class="card-title">25</h5>
+                    </div>
+                    <div class="col-4 text-end">
+                      <h1><i class="bi bi-hourglass-split text-primary"></i></h1>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-                <div class="col">
-                  <div class="card shadow rounded card-cancelados">
-                      <div class="card-body mx-3">
-                        <div class="row align-items-center">
-                          <div class="col-8">
-                            <small class="text-danger">Cursos Cancelados</small>
-                            <h4 class="card-title">15</h4>
-                          </div>
-                          <div class="col-4 text-end">
-                            <h1><i class="bi bi-file-earmark-excel-fill text-danger"></i></h1>
-                          </div>
-                        </div>
-                      </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="content">
+              <div class="card shadow rounded card-impartidos">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-8">
+                    <small class="text-success">Impartidos</small>
+                      <h5 class="card-title">194</h5>
+                    </div>
+                    <div class="col-4 text-end">
+                      <h1><i class="bi bi-file-earmark-excel-fill text-success"></i></h1>
+                    </div>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="card shadow rounded card-nextyear">
-                      <div class="card-body mx-3">
-                        <div class="row align-items-center">
-                          <div class="col-8 text-wrap">
-                            <small class="text-secondary">Siguiente año</small>
-                            <h4 class="card-title">15</h4>
-                          </div>
-                          <div class="col-4 text-end">
-                            <h1><i class="bi bi-calendar-check text-secondary"></i></h1>
-                          </div>
-                        </div>
-                      </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="content">
+              <div class="card shadow rounded card-cancelados">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-8">
+                      <small class="text-danger">Cancelados</small>
+                      <h5 class="card-title">15</h5>
+                    </div>
+                    <div class="col-4 text-end">
+                      <h1><i class="bi bi-file-earmark-excel-fill text-danger"></i></h1>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="content">
+              <div class="card shadow rounded card-nextyear">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-8 text-wrap">
+                      <small class="text-secondary">Siguiente año</small>
+                      <h5 class="card-title">15</h5>
+                    </div>
+                    <div class="col-4 text-end">
+                      <h1><i class="bi bi-calendar-check text-secondary"></i></h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="row g-1">
-          <div class="col-6">
-            <div class="card">
-              <div class="card-header">
-                <div class="card-header text-center">
-                 
-                </div>
-                <div class="card-body">
-                  <!-- GRÁFICA -->
-                  <div>
-                    <canvas id="courses"></canvas>
-                  </div>
+        <!-- SECCION GRAFICAS 1 -->
+        <div class="row g-2">
 
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-6">
-          </div>
-
-      </div>
-
-      <div class="row">
-            <div class="col-12">
+          <div class="col-md-8 col-sm-12">
+            <div class="content">
               <div class="card">
-                <div class="card-header">
-                  <div class="card-header">
-                    Data tables
+                  <div class="card-header text-center">
+                    Estado de los cursos sugeridos
                   </div>
                   <div class="card-body">
                     <!-- GRÁFICA -->
                     <div>
-                    <canvas id="direcciones" style="height:100px;"></canvas>
+                      <canvas id="courses"></canvas>
                     </div>
-                    <div>
-                      <canvas id="genders"></canvas>
-                    </div>
+
                   </div>
-                </div>
               </div>
             </div>
           </div>
+
+          <div class="col-md-4 col-sm-12">
+            <div class="content">
+              <div class="card" style="height: 100%;">
+                <div class="card-header text-center">
+                  Direcciones con mas cursos sugeridos
+                </div>
+                <div class="card-body">
+                  <!-- GRÁFICA -->
+                  <div>
+                    <canvas id="direcciones"></canvas>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+
+      </div>
+      <!-- /SECCION GRAFICAS 1-->
+
+  
     </main>
   <!-- /MAIN CONTENT OF THE PAGE-->    
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

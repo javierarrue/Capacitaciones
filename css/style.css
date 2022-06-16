@@ -119,3 +119,22 @@ small{
 #seccion2{
     transition: opacity 0.5s;
 }
+
+/* DISPLAY FLEX, para controlar que las cartas sean del mismo tamaño */
+
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+.content {
+height: 100%;
+/*    padding: 20px 20px 10px;*/
+}
+
+#direcciones{
+    height: 100% !important;
+    width: 100% !important;
+}
+
+
+  

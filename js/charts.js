@@ -34,7 +34,7 @@
   };
 
   const configcourses = {
-    type: 'pie',
+    type: 'bar',
     data: datacourses,
     options: {
       scales: {
@@ -78,12 +78,8 @@
     type: 'polarArea',
     data: datadirecciones,
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    },
+      //maintainAspectRatio: false
+    }
   };
 
   const annualdirecciones = new Chart(
