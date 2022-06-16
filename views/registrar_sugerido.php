@@ -68,6 +68,7 @@
               </div>
           </div>
 
+          <!-- REGISTRAR CURSOS SUGERIDOS -->
           <div class="row" id="seccion2" style="opacity:0;">
             <div class="col-md-12">
               <div class="card">
@@ -78,27 +79,39 @@
                   <div class="row mb-3">
                     <div class="col-lg-12 col-md-12">
                       <div class="mb-1">
-                        <!-- VERSION ALTERNATIVA ✓✓✓-->
                         <div class="row align-items-center mb-3">
-                          <div class="col-lg-10 col-md-9 col-sm-6">
-                            <input class="form-control cursoSugeridoText" type="text" aria-label="readonly input example" name="cursos[0]" id="curso0" required>
+                          <div class="col-md-10 col-sm-12">
+                            <input class="form-control cursoSugeridoText" type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
                           </div>
-                          <div class="col-lg-2 col-md-3 col-sm-4">
+                          <div class="col-md-2 col-sm-12">
+
+                            <div class="btn-group" role="group" aria-label="Aceptado o No aceptado">
+                              <input type="radio" class="btn-check" name="analisis" id="btnAccept0" autocomplete="off" value="aceptado" required>
+                              <label class="btn btn-outline-success" for="btnAccept0"><i class="bi bi-check"></i></label>
+
+                              <input type="radio" class="btn-check" name="analisis" id="btnNotAccept0" autocomplete="off" value="noAceptado" required>
+                              <label class="btn btn-outline-primary" for="btnNotAccept0"> <i class="bi bi-x"></i> </label>
+                          </div>
+
+                          <!--
                             <button class="btn btn-outline-success btn-sm" type="button" onclick="accept();" id="accept0"> <i class="bi bi-check"></i> </button>
                             <button class="btn btn-outline-primary btn-sm" type="button" onclick="notAccept();" id="notAccept0"> <i class="bi bi-x"></i> </button>
+                          -->
                           </div>
                         </div>
                       </div>
 
+                      <!-- ESPACIO PARA LA CREACION DE NUEVOS INPUTS-->
                       <div class="cursos">
                       </div>
+                      <!-- /ESPACIO PARA LA CREACION DE NUEVOS INPUTS-->
 
                       <div class="d-grid gap-2 col-6 mx-auto">
                         <button type="button" class="btn btn-outline-success addFieldBtn">Añadir nueva línea</button>
                       </div>
                      
                     </div>
-
+<!--
                     <div class="col-lg-12 col-md-12">
                       <div class="mb-2 fw-bold">Cursos oficiales</div>
                       <div class="row">
@@ -138,6 +151,7 @@
                         </div>
                       </div>
                     </div>
+-->
                   </div>
 
                   <div class="row">
@@ -149,6 +163,8 @@
               </div>
             </div>
           </div>
+          <!-- /REGISTRAR CURSOS SUGERIDOS-->|
+          
         </form>
       </div>
     </main>

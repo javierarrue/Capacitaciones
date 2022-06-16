@@ -8,6 +8,8 @@ var inputCounter = 1;
 //HTML elements
 var textInput, rowDiv, inputDiv, btnDiv, btnDeleteField, btnAccept, btnNotAccept,iconDelete,iconAccept,iconNotAccept; 
 
+var btnGroup, radioAccept, labelAccept, radioNotAccept, labelNotAccept;
+
 var acceptBtn0 = document.querySelector('#accept0');
 var notAcceptBtn0 = document.querySelector('#notAccept0'); 
 var courseInput0 = document.querySelector('#curso0');
@@ -18,9 +20,12 @@ addFieldBtn.addEventListener('click', () => {
     //setValues();
     setAttributes();
     setClassNames();
+    /*
     configureBtnAccept();
     configureBtnNotAccept();
+    */
     configureBtnDelete();
+    setIcons();
     //Juntando/anexando elementos en uno solo elemento HTML
     appendChilds();
     inputCounter++;
@@ -37,10 +42,18 @@ function createHtmlElements(){
     iconDelete = document.createElement('i');
     iconAccept = document.createElement('i');
     iconNotAccept = document.createElement('i');
+
+    btnGroup = document.createElement('div');
+    radioAccept = document.createElement('input');
+    radioNotAccept = document.createElement('input');
+    labelAccept = document.createElement('label');
+    labelNotAccept = document.createElement('label');
 }
 
 function setInputType(){
     textInput.type = 'text';
+    radioAccept.type = 'radio';
+    radioNotAccept.type = 'radio';
 }
 
 function setValues(){
@@ -54,6 +67,22 @@ function setAttributes(){
     textInput.setAttribute('name','cursos['+inputCounter+']');
     textInput.setAttribute('id','curso'+inputCounter);
     textInput.setAttribute('required', '');
+
+    //RADIO GROUP
+    btnGroup.setAttribute('role', 'group');
+
+    radioAccept.setAttribute('name', 'analisis'+inputCounter);
+    radioAccept.setAttribute('id', 'btnAccept'+inputCounter);
+    radioAccept.setAttribute('required', '');
+
+    radioNotAccept.setAttribute('name', 'analisis'+inputCounter);
+    radioNotAccept.setAttribute('id', 'btnNotAccept'+inputCounter);
+    radioNotAccept.setAttribute('required', '');
+
+    labelAccept.setAttribute('for', 'btnAccept'+inputCounter);
+
+    labelNotAccept.setAttribute('for', 'btnNotAccept'+inputCounter);
+    //RADIO GROUP
 }
 
 function setClassNames(){
@@ -61,8 +90,8 @@ function setClassNames(){
     //Asignando el inputCounter al className del input, para que sea unico uno del otro. 
     rowDiv.className= 'row mb-3 cursoSugerido'+inputCounter;
     textInput.className = "form-control"
-    inputDiv.className = 'col-lg-10 col-md-9 col-sm-8';
-    btnDiv.className = 'col-lg-2 col-md-3 col-sm-4';
+    inputDiv.className = 'col-lg-10 col-md-10 col-sm-12';
+    btnDiv.className = 'col-lg-2 col-md-2 col-sm-12';
 
     btnAccept.className = 'btn btn-outline-success btn-sm me-1';
     btnNotAccept.className = 'btn btn-outline-primary btn-sm me-1';
@@ -72,6 +101,18 @@ function setClassNames(){
     iconDelete.className = 'bi bi-trash3-fill';
     iconAccept.className = 'bi bi-check';
     iconNotAccept.className = 'bi bi-x';
+
+    //RADIO GROUP   
+    btnGroup.className = 'btn-group'
+    radioAccept.className = 'btn-check';
+    radioNotAccept.className = 'btn-check';
+    labelAccept.className = 'btn btn-outline-success'
+    labelNotAccept.className = 'btn btn-outline-primary';
+}
+
+function setIcons(){
+    labelAccept.appendChild(iconAccept);
+    labelNotAccept.appendChild(iconNotAccept);
 }
 
 //This function configures the delete button
@@ -92,7 +133,7 @@ function configureBtnDelete(){
         document.querySelector('.cursoSugerido'+id).remove();
     };
 }
-
+/*
 //Esta funcion configura el boton de aceptar el curso seleccionado.
 //Cambia el estado del boton (deshabilitado a disponible y viceversa)
 function configureBtnAccept(){
@@ -192,19 +233,29 @@ function notAccept(){
         courseInput0.removeAttribute('readonly', '');
     }
 
-}
+}*/
 
 
 //Asignando elementos del documento
 function appendChilds(){
     inputDiv.appendChild(textInput);
-
+/*
     btnDiv.appendChild(btnAccept);
     btnDiv.appendChild(btnNotAccept);
     btnDiv.appendChild(btnDeleteField);
+*/
+
+    btnGroup.appendChild(radioAccept);
+    btnGroup.appendChild(labelAccept);
+    btnGroup.appendChild(radioNotAccept);
+    btnGroup.appendChild(labelNotAccept);
+    btnGroup.appendChild(btnDeleteField);
+
+    btnDiv.appendChild(btnGroup);
 
     rowDiv.appendChild(inputDiv);
     rowDiv.appendChild(btnDiv);
+    
     //Asignandolo al div ya existente dentro del HTML (rowDiv -> coursesDivWrapper)
     coursesDivWrapper.appendChild(rowDiv);
 }
