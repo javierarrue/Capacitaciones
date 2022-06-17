@@ -107,16 +107,9 @@
                 <span class="text-uppercase">Visualizar</span>
               </a>
             </li>
-            <!--
-            <li class="hover-section mb-1">
-              <a href="registrar_usuario.php" class="nav-link px-3 active registrar_usuario">
-                <span class="me-2">
-                  <i class="bi bi-person-plus-fill"></i>
-                </span>
-                <span class="text-uppercase">Registrar Usuario</span>
-              </a>
+            <li class="my-1">
+              <hr class="dropdown-divider">
             </li>
-              -->
             <li class="hover-section mb-1">
               <a href="admin_usuarios.php" class="nav-link px-3 active administrar_usuarios">
                 <span class="me-2">
@@ -133,16 +126,14 @@
                 <span class="text-uppercase">Curso requerido</span>
               </a>
             </li>
-            <li class="my-4">
-              <hr class="dropdown-divider">
-            </li>
             <!-- COLLAPSE -->
+            <!--
             <li>
               <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <span class="me-2">
                   <i class="bi bi-layout-split"></i>
                 </span>
-                <span>Layouts</span>
+                <span>ADMINISTRAR</span>
                 <span class="right-icon ms-auto">
                   <i class="bi bi-chevron-compact-down"></i>
                 </span>
@@ -154,9 +145,17 @@
                       <li>
                         <a href="" class="nav-link">
                           <span class="me-2 px-3">
-                            <i class="bi bi-layout-split"></i>
+                            <i class="bi bi-people-fill"></i>
                           </span>
-                          <span>Layouts</span>
+                          <span>USUARIOS</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="" class="nav-link">
+                          <span class="me-2 px-3">
+                            <i class="bi bi-journal-medical"></i>
+                          </span>
+                          <span>CURSOS REQUERIDOS</span>
                         </a>
                       </li>
                     </ul>
@@ -164,6 +163,7 @@
                 </div>
               </div>
             </li>
+              -->
              <!-- /COLLAPSE -->
           </ul>
         </nav>
