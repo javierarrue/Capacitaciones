@@ -6,9 +6,9 @@
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
-            <div class="card">
+            <div class="card shadow">
               <div class="card-body">
 
               <div class="row align-items-center">
@@ -27,7 +27,7 @@
         <form method="get" action="registrar_sugerido.php">
           <div class="row mb-2">
             <div class="col-md-12">
-              <div class="card">
+              <div class="card shadow">
                   <div class="card-header fw-bold">
                     Ingrese los datos solicitados
                   </div>
@@ -69,9 +69,9 @@
           </div>
 
           <!-- REGISTRAR CURSOS SUGERIDOS -->
-          <div class="row" id="seccion2" style="opacity:0;">
+          <div class="row mb-2" id="seccion2" style="opacity:0;">
             <div class="col-md-12">
-              <div class="card">
+              <div class="card shadow">
                 <div class="card-header fw-bold">
                 Registrar cursos sugeridos 
                 </div>
@@ -111,7 +111,7 @@
                       </div>
                      
                     </div>
-<!--
+                      <!--
                     <div class="col-lg-12 col-md-12">
                       <div class="mb-2 fw-bold">Cursos oficiales</div>
                       <div class="row">
@@ -151,7 +151,7 @@
                         </div>
                       </div>
                     </div>
--->
+                      -->
                   </div>
 
                   <div class="row">
@@ -163,7 +163,7 @@
               </div>
             </div>
           </div>
-          <!-- /REGISTRAR CURSOS SUGERIDOS-->|
+          <!-- /REGISTRAR CURSOS SUGERIDOS-->
           
         </form>
       </div>

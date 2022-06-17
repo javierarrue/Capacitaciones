@@ -5,9 +5,9 @@
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
-            <div class="card">
+            <div class="card shadow">
               <div class="card-body">
 
               <div class="row align-items-center">
@@ -23,9 +23,9 @@
           </div>
         </div>
         
-        <div class="row mb-2">
+        <div class="row mb-2 mb-2">
             <div class="col-md-12">
-              <div class="card">
+              <div class="card shadow">
                   <div class="card-header fw-bold">
                     Seleccione los datos solicitados
                   </div>
@@ -57,9 +57,9 @@
               </div>
           </div>
 
-        <div class="row">
+        <div class="row mb-2">
           <div class="col-md-12">
-            <div class="card">
+            <div class="card shadow">
               <div class="card-header">
                 <div class="card-header">
                   Lista de trabajadores
