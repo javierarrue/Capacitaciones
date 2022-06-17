@@ -5,6 +5,7 @@
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
+        <!-- Título de página -->
         <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
             <div class="card shadow">
@@ -22,7 +23,8 @@
             </div>
           </div>
         </div>
-        
+        <!-- /Título de página -->
+        <!-- Formulario direccion - departamento -->
         <div class="row mb-2 mb-2">
             <div class="col-md-12">
               <div class="card shadow">
@@ -55,8 +57,10 @@
                     </div>
                 </div>
               </div>
-          </div>
+        </div>
+        <!-- /Formulario direccion - departamento -->
 
+        <!-- Tabla de trabajadores -->
         <div class="row mb-2">
           <div class="col-md-12">
             <div class="card shadow">
@@ -68,51 +72,60 @@
                   <div class="table-responsive">
                     <table
                     id="example"
-                    class="table table-striped data-table"
+                    class="table table-hover data-table"
                     style="width: 100%">
                     <thead>
                       <tr>
+                        <th></th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Cédula</th>
                         <th>Cargo</th>
-                        <th>Acción</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
+                        <td class="text-end">
+                            <form action="visualizar_detalles.php">
+                              <button type="submit" class="text-primary action-btn">
+                                <i class="bi bi-search"></i></button>
+                            </form>
+                        </td>
                           <td>Javier</td>
                           <td>Arrue</td>
                           <td>8-941-1079</td>
                           <td>Analista</td>
-                          <td>
+                      </tr>
+                      <tr>
+                        <td class="text-end">
                             <form action="visualizar_detalles.php">
                               <button type="submit" class="text-primary action-btn"><i class="bi bi-search"></i></button>
                             </form>
-                          </td>
-                      </tr>
-                      <tr>
+                        </td>
                         <td>Carlos</td>
                           <td>Gonzalez</td>
                           <td>8-190-1009</td>
                           <td>Jefe</td>
-                          <td><button type="button" class="text-primary action-btn"><i class="bi bi-search"></i></button></td>
                       </tr>     
                       <tr>
+                        <td class="text-end">
+                            <form action="visualizar_detalles.php">
+                              <button type="submit" class="text-primary action-btn"><i class="bi bi-search"></i></button>
+                            </form>
+                        </td>
                         <td>Camila</td>
                           <td>Torres</td>
                           <td>8-993-231</td>
                           <td>Analista</td>
-                          <td><button type="button" class="text-primary action-btn"><i class="bi bi-search"></i></button></td>
                       </tr>
                     </tbody>
                     <tfoot>
                       <tr>
-                      <th>Nombre</th>
+                        <th></th>
+                        <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Cédula</th>
                         <th>Cargo</th>
-                        <th>Acción</th>
                       </tr>
                     </tfoot>
                   </table>
@@ -122,6 +135,8 @@
             </div>
           </div>
         </div>
+        <!-- /Tabla de trabajadores -->
+
       </div>
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
