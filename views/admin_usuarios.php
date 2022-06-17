@@ -20,7 +20,7 @@
         <?php }?>
         <div class="row">
           <div class="col-md-12 fw-bold fs-3">
-            <div class="card">
+            <div class="card shadow mb-2">
               <div class="card-body">
                 <div class="row align-items-center">
                   <div class="col-md-10 col-sm-6">
@@ -117,14 +117,20 @@
         <!-- /REGISTRAR NUEVO USUARIO -->
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
+            <div class="card shadow">
                 <div class="card-header">
-                  <!-- Button trigger modal -->
-                  <button type="button" class="mt-2 btn register-btn text-white" data-bs-toggle="modal" data-bs-target="#nuevoUsuario">
-                    <i class="bi bi-person-plus-fill"></i>
-                    Nuevo usuario
-                  </button>
+                  <div class="row align-items-center">
+                    <div class="col-6">
+                      <span class="fw-bold">Usuarios del sistema</span>
+                    </div>
+                    <div class="col-6 text-end">
+                      <!-- Button trigger modal -->
+                      <button type="button" class="mt-2 btn register-btn text-white" data-bs-toggle="modal" data-bs-target="#nuevoUsuario">
+                        <i class="bi bi-person-plus-fill"></i>
+                        Nuevo usuario
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="card-body">
                   <div class="row">
@@ -132,7 +138,7 @@
                     <div class="table-responsive">
                       <table
                         id="example"
-                        class="table table-striped data-table"
+                        class="table table-hover data-table"
                         style="width: 100%">
                         <thead>
                           <tr>
@@ -140,33 +146,60 @@
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Usuario</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
+                            <th class="text-center">Acción</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <?php //LOGICA PARA HACER HIGHLIGHT A LA LINEA EDITADA
+                          <?php 
                           while($user = $users->fetch(PDO::FETCH_ASSOC)){?>
+                          <?php 
+                          //Hacer highlight a linea editada:
+                          //Si la variable success existe, entonces pinta en color verde la linea editada.      
+                          ?>
                           <?php if(isset($_GET["success"])){?>
                             <?php if($_GET["username"] == $user["user"]){ ?>
                               <tr class="table-success">
-                            <?php } ?>
+                            <?php } //FIN highlight a linea editada?>
                           <?php } else{ ?>
                           <tr>
-                          <?php } ?>
+                            <?php } ?>
                             <td ><?php echo $user["rol_name"]; ?></td>
                             <td><?php echo $user["firstname"]; ?></td>
                             <td><?php echo $user["lastname"]; ?></td>
                             <td><?php echo $user["user"]; ?></td>
-                            
-                            <!-- EDITAR USUARIO -->
-                            <td>
-                              <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
-                                <i class="bi bi-pencil-square"></i>
+                            <td class="text-center" style="">
+                              <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
+                                <i class="bi bi-pencil-fill"></i>
                               </button>
-                                <!-- Modal -->
-                              <div class="modal fade" id="editarUsuario_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                                <i class="bi bi-trash3-fill"></i>
+                              </button>
+
+                            </td>
+                          </tr>
+                            <!-- ELIMINAR USUARIO -->
+                              <div class="modal fade" id="delete_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar el usuario <?php echo $user["user"]; ?>?</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                      <form action="../includes/deleteUser.inc.php" method="POST">
+                                        <button value="<?php echo $user["user"]; ?>" class="btn btn-danger" name="username" type="submit">Eliminar</button>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <!-- /ELIMINAR USUARIO -->
+
+                          <!-- EDITAR USUARIO -->
+                                <!-- Modal -->
+                                <div class="modal fade" id="editarUsuario_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
                                       <h5 class="modal-title" id="exampleModalLabel">Editar datos de usuario: <?php echo $user["user"]?></h5>
@@ -295,35 +328,7 @@
                                   </div>
                                 </div>
                               </div> 
-                            </td>
-                            <!-- /EDITAR USUARIO -->
-
-                            <!-- ELIMINAR USUARIO -->
-                            <td>
-                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
-                                  <i class="bi bi-trash3-fill"></i>
-                              </button>
-                                <!-- Modal -->
-                              <div class="modal fade" id="delete_<?php echo $user["user"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar el usuario <?php echo $user["user"]; ?>?</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                      <form action="../includes/deleteUser.inc.php" method="POST">
-                                        <button value="<?php echo $user["user"]; ?>" class="btn btn-danger" name="username" type="submit">Eliminar</button>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <!-- /ELIMINAR USUARIO -->
-
-                          </tr>
+                          <!-- /EDITAR USUARIO -->
                           <?php }?>
                         </tbody>
                       </table>
@@ -331,7 +336,7 @@
                     <!--/ TABLA -->
                   </div>
                 </div>
-              </div>
+              
             </div>
           </div>
         </div>
