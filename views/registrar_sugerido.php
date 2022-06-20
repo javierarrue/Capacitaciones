@@ -169,5 +169,6 @@
       </div>
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
+ <script src="../js/suggestedCourses.js"></script>
 
 <?php include '../views/components/lowerPart.php' ?>

@@ -89,7 +89,7 @@
                 </div>
                 <div class="modal-body">
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 mb-3">
+                    <div class="col-lg-6 col-md-12 mb-3">
                       <label for="direccion" class="form-label">Seleccione una direccion</label>
                       <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
                         <option selected>Dirección</option>
@@ -99,7 +99,7 @@
                       </select>
                     </div>
                     
-                    <div class="col-lg-12 col-md-12 mb-3">
+                    <div class="col-lg-6 col-md-12 mb-3">
                       <label for="departamento" class="form-label">Seleccione un departamento</label>
                       <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
                         <option selected>Departamento</option>
@@ -120,21 +120,24 @@
                   </div>
                   <div class="row">
                     <div class="col-lg-12 col-md-12 mt-3">
-                      <div class="mb-2">
-                      <button type="button" class="btn btn-outline-success addFieldBtn">Añadir nuevo</button>
-                      </div>
 
                       <div class="mb-1">
                         <!-- VERSION ALTERNATIVA ✓✓✓-->
                         <div class="row align-items-center mb-3">
                           <div class="col-md-12">
-                            <input class="form-control cursoSugeridoText" type="text" value="..." aria-label="readonly input example" name="cursos[0]">
+                            <label for="curso" class="form-label">Añadir cursos requeridos</label>
+                            <input class="form-control cursoSugeridoText" type="text" value="..." aria-label="readonly input example" name="cursos[0]" id="curso">
                           </div>
                         </div>
                       </div>
 
                       <div class="cursos">
                       </div>
+
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-outline-success addFieldBtn">Añadir nueva línea</button>
+                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -266,5 +269,5 @@
       </div>
     </main>
   <!-- /MAIN CONTENT OF THE PAGE-->    
-
+ <script src="../js/requiredCourses.js"></script>
  <?php include '../views/components/lowerPart.php' ?>

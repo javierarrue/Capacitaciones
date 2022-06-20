@@ -1,4 +1,4 @@
-<script src="../js/register.js"></script>
+
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>

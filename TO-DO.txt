@@ -1,4 +1,5 @@
 - Al editar o agregar un nuevo usuario, hacer hightlight al row correspondiente. 
     - ARREGLAR ERROR AL ELIMINAR -> Seguir en linea 148 ->admin_users.php
+- Arreglar bug al momento de cambiar contraseña.
 
 - CERRAR CONEXIONES DE BASE DE DATOS UNA VEZ USADA.
