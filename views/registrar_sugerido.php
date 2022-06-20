@@ -34,12 +34,12 @@
                   <div class="card-body">
                       <div class="row">
                         <div class="col-md-4 mb-3">
-                          <label for="direccion" class="form-label">Seleccione una direccion</label>
+                          <label for="direccion" class="form-label">Seleccione una dirección</label>
                           <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
                             <option selected>Dirección</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">Dirección 3</option>
+                            <option value="2">Dirección 2</option>
+                            <option value="3">Dirección 3</option>
                           </select>
                         </div>
       
@@ -47,20 +47,20 @@
                           <label for="departamento" class="form-label">Seleccione un departamento</label>
                           <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
                             <option selected>Departamento</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Departamento 1">Departamento </option>
+                            <option value="Departamento 2">Departamento 2</option>
+                            <option value="Departamento 3">Departamento 3</option>
                           </select>
                         </div>
                         <div class="col-md-4 mb-3">
                           <label for="cargo" class="form-label">Seleccione un cargo específico</label>
-                          <select name="cargo" class="form-select" aria-label="Default select example" id="cargo" onchange="mostrar();">
-                            <option selected value="0">Cargo específico	</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                          <select class="form-select" name="cargo" id="cargo" onchange="mostrar();">
+                            <option value="AL">Jefe</option>
+                            <option value="WY">Analista</option>
+                            <option value="WY">Secretaria</option>
                           </select>
                         </div>
+
                       </div>
 
                     </div>
@@ -171,4 +171,13 @@
  <!-- /MAIN CONTENT OF THE PAGE-->    
  <script src="../js/suggestedCourses.js"></script>
 
+  <!-- SELECT2 -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+  // In your Javascript (external .js resource or <script> tag)
+  $(document).ready(function() {
+      $('.form-select').select2();
+  });
+  </script>
+  <!-- /SELECT2 -->
 <?php include '../views/components/lowerPart.php' ?>

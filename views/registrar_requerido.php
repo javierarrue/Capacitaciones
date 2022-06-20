@@ -62,8 +62,8 @@
                     </select>
                   </div>
                   <div class="col-md-4">
-                    <label for="departamento" class="form-label">Seleccione un cargo</label>
-                    <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
+                    <label for="cargo" class="form-label">Seleccione un cargo</label>
+                    <select name="cargo" class="form-select" aria-label="Default select example" id="cargo">
                       <option selected>Cargo</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
@@ -90,8 +90,9 @@
                 <div class="modal-body">
                   <div class="row">
                     <div class="col-lg-6 col-md-12 mb-3">
-                      <label for="direccion" class="form-label">Seleccione una direccion</label>
-                      <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
+                      <label for="direccion1" class="form-label">Seleccione una direccion</label>
+                      <br>
+                      <select name="direccion1" class="form-select-modal" aria-label="Default select example" id="direccion1" style="width: 100%;">
                         <option selected>Dirección</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -100,8 +101,9 @@
                     </div>
                     
                     <div class="col-lg-6 col-md-12 mb-3">
-                      <label for="departamento" class="form-label">Seleccione un departamento</label>
-                      <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
+                      <label for="departamento1" class="form-label">Seleccione un departamento</label>
+                      <br>
+                      <select name="departamento1" class="form-select-modal" aria-label="Default select example" id="departamento1" style="width: 100%;">
                         <option selected>Departamento</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -109,8 +111,9 @@
                       </select>
                     </div>
                     <div class="col-lg-12 col-md-12 mb-3">
-                      <label for="cargo" class="form-label">Seleccione un cargo específico</label>
-                      <select name="cargo" class="form-select" aria-label="Default select example" id="cargo">
+                      <label for="cargo1" class="form-label">Seleccione un cargo específico</label>
+                      <br>
+                      <select name="cargo1" class="form-select-modal" aria-label="Default select example" id="cargo1" style="width: 100%;">
                         <option selected>Cargo específico	</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -270,4 +273,18 @@
     </main>
   <!-- /MAIN CONTENT OF THE PAGE-->    
  <script src="../js/requiredCourses.js"></script>
+   <!-- SELECT2 -->
+   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+  $(document).ready(function() {
+      $('.form-select').select2();
+  });
+  $(document).ready(function() {
+      $('.form-select-modal').select2({
+        dropdownParent: $('#nuevoUsuario')
+      });
+  });
+  </script>
+  <!-- /SELECT2 -->
+  
  <?php include '../views/components/lowerPart.php' ?>

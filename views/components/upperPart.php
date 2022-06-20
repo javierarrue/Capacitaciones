@@ -17,10 +17,15 @@
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">-->
     <link rel="icon" href="../resources/AMP-LOGO-2-01.png">
     <link rel="stylesheet" href="../css/icons/bootstrap-icons.css">
+    <!-- SELECT2 - ESTILOS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <title>Sistema de Cargos Específicos</title>
   </head>
   <body>
-
+    <!-- JSQUERY-->
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <!-- /JQUERY-->
     <!-- TOP NAV BAR-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid">

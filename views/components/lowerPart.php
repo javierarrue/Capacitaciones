@@ -1,12 +1,10 @@
 
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/jquery-3.5.1.js"></script>
-    <script src="../js/jquery.dataTables.min.js"></script>
     <script src="../js/dataTables.bootstrap5.min.js"></script>
     <script src="../js/script.js"></script>
   </body>
 
-
+  <!-- ERROR DE REGISTRO DE USUARIO NUEVO -->
   <?php if(isset($_GET["errorRegister"])){?>
   <script type="text/javascript">
           $(window).on('load', function() {
