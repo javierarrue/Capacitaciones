@@ -44,7 +44,7 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-4">
-                    <label for="direccion" class="form-label">Seleccione una direccion</label>
+                    <label for="direccion" class="form-label">Seleccione una dirección</label>
                     <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
                       <option selected>Dirección</option>
                       <option value="1">One</option>
