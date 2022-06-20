@@ -167,7 +167,7 @@
                             </select>
                           </td>
                           <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-primary bg-primary bg-opacity-10 rounded-pill border border-primary border-opacity-10">
+                            <span class="px-2 py-1 text-primary bg-primary bg-opacity-10 rounded-pill border border-primary border-opacity-10 validad">
                               Congruente
                             </span>
                           </td>
@@ -200,7 +200,7 @@
                             </select>
                           </td>
                           <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-secondary bg-secondary bg-opacity-10 rounded-pill border border-secondary border-opacity-10">
+                            <span class="px-2 py-1 text-secondary bg-secondary bg-opacity-10 rounded-pill border border-secondary border-opacity-10 validad">
                               No congruente
                             </span>
                           </td>
@@ -233,7 +233,7 @@
                             </select>
                           </td>
                         <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-secondary bg-secondary bg-opacity-10 rounded-pill border border-secondary border-opacity-10">
+                            <span class="px-2 py-1 text-secondary bg-secondary bg-opacity-10 rounded-pill border border-secondary border-opacity-10 validad">
                               No congruente
                             </span>
                         </td>
