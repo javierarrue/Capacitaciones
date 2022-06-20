@@ -131,7 +131,7 @@
                     style="width: 100%">
                     <thead>
                       <tr>
-                        <th></th>
+                        <th class="actionbtn_row"></th>
                         <th>Curso</th>
                         <th>Análisis</th>
                         <th>Estado</th>
@@ -141,6 +141,9 @@
                     <tbody>
                       <tr>
                         <td class="text-end">
+                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                            <i class="bi bi-trash3-fill"></i>
+                          </button>
                           <button type="button" class="text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
                         </td>
                         <td>GAS</td>
@@ -171,6 +174,9 @@
                       </tr>
                       <tr>
                         <td class="text-end">
+                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                            <i class="bi bi-trash3-fill"></i>
+                          </button>
                           <button type="button" class="text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
                         </td>
                         <td>Investigación de accidente</td>
@@ -201,6 +207,9 @@
                       </tr>     
                       <tr>
                         <td class="text-end">
+                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                                <i class="bi bi-trash3-fill"></i>
+                          </button>
                           <button type="button" class="text-primary action-btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
                         </td>
                         <td>Cocina</td>
@@ -241,8 +250,6 @@
       </div>
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
-
-
  <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -290,6 +297,5 @@
     </div>
   </div>
 </div>
-
 
  <?php include '../views/components/lowerPart.php' ?>

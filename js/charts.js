@@ -55,11 +55,11 @@
 
   const datadirecciones = {
     labels: [
-      'Red',
-      'Green',
-      'Yellow',
-      'Grey',
-      'Blue'
+      'Departamento 1',
+      'Departamento 2',
+      'Departamento 3',
+      'Departamento 4',
+      'Departamento 5'
     ],
     datasets: [{
       label: 'My First Dataset',

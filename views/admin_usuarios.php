@@ -167,7 +167,7 @@
                             <td><?php echo $user["firstname"]; ?></td>
                             <td><?php echo $user["lastname"]; ?></td>
                             <td><?php echo $user["user"]; ?></td>
-                            <td class="text-center" style="">
+                            <td class="text-center">
                               <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
                                 <i class="bi bi-pencil-fill"></i>
                               </button>
