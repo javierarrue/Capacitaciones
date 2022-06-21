@@ -64,8 +64,7 @@
         <div class="row mb-2">
           <div class="col-md-12">
             <div class="card shadow">
-              <div class="card-header">
-                <div class="card-header">
+                <div class="card-header fw-bold">
                   Lista de trabajadores
                 </div>
                 <div class="card-body">
@@ -131,7 +130,7 @@
                   </table>
                   </div>
                 </div>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -143,7 +142,6 @@
    <!-- SELECT2 -->
    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <script>
-  // In your Javascript (external .js resource or <script> tag)
   $(document).ready(function() {
       $('.form-select').select2();
   });
