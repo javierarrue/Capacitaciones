@@ -87,10 +87,10 @@
 
                             <div class="btn-group" role="group" aria-label="Aceptado o No aceptado">
                               <input type="radio" class="btn-check" name="analisis" id="btnAccept0" autocomplete="off" value="aceptado" required>
-                              <label class="btn btn-outline-success" for="btnAccept0"><i class="bi bi-check"></i></label>
+                              <label class="btn btn-outline-success" for="btnAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Aceptar"><i class="bi bi-check"></i></label>
 
                               <input type="radio" class="btn-check" name="analisis" id="btnNotAccept0" autocomplete="off" value="noAceptado" required>
-                              <label class="btn btn-outline-primary" for="btnNotAccept0"> <i class="bi bi-x"></i> </label>
+                              <label class="btn btn-outline-primary" for="btnNotAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Rechazar"> <i class="bi bi-x"></i> </label>
                           </div>
 
                           <!--
@@ -109,7 +109,6 @@
                       <div class="d-grid gap-2 col-6 mx-auto">
                         <button type="button" class="btn btn-outline-success addFieldBtn">Añadir nueva línea</button>
                       </div>
-                     
                     </div>
                       <!--
                     <div class="col-lg-12 col-md-12">

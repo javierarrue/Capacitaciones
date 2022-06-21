@@ -1,8 +1,14 @@
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    
     <script src="../js/dataTables.bootstrap5.min.js"></script>
     <script src="../js/script.js"></script>
   </body>
+
+<!-- BOOTSTRAP TOOLTIP -->
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  </script>
 
   <!-- ERROR DE REGISTRO DE USUARIO NUEVO -->
   <?php if(isset($_GET["errorRegister"])){?>

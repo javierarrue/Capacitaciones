@@ -26,6 +26,8 @@
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
     <!-- /JQUERY-->
+        <!-- BOOTSTRAP JS -->
+        <script src="../js/bootstrap.bundle.min.js"></script>
     <!-- TOP NAV BAR-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid">
