@@ -78,8 +78,10 @@ function setAttributes(){
     radioNotAccept.setAttribute('name', 'analisis'+inputCounter);
     radioNotAccept.setAttribute('id', 'btnNotAccept'+inputCounter);
     radioNotAccept.setAttribute('required', '');
+    labelNotAccept.setAttribute('title', 'Rechazar curso');
 
     labelAccept.setAttribute('for', 'btnAccept'+inputCounter);
+    labelAccept.setAttribute('title', 'Aceptar curso');
 
     labelNotAccept.setAttribute('for', 'btnNotAccept'+inputCounter);
     //RADIO GROUP

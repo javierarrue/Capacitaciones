@@ -191,10 +191,10 @@
                           <tr>
                             <td><?php echo $curso["name"]; ?></td>
                             <td class="text-center">
-                              <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $curso["id"]; ?>">
-                                <i class="bi bi-pencil-square"></i>
+                              <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $curso["id"]; ?>" title="Editar usuario">
+                                <i class="bi bi-pencil-fill"></i>
                               </button>
-                              <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $curso["id"]; ?>">
+                              <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $curso["id"]; ?>" title="Eliminar usuario">
                                   <i class="bi bi-trash3-fill"></i>
                               </button>
                                 <!-- Modal -->

@@ -168,10 +168,10 @@
                             <td><?php echo $user["lastname"]; ?></td>
                             <td><?php echo $user["user"]; ?></td>
                             <td class="text-center">
-                              <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>">
+                              <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#editarUsuario_<?php echo $user["user"]; ?>" title="Editar usuario">
                                 <i class="bi bi-pencil-fill"></i>
                               </button>
-                              <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                              <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>" title="Eliminar usuario">
                                 <i class="bi bi-trash3-fill"></i>
                               </button>
 

@@ -86,7 +86,7 @@
                       <tr>
                         <td class="text-end">
                             <form action="visualizar_detalles.php">
-                              <button type="submit" class="text-primary action-btn">
+                              <button type="submit" class="text-primary action-btn" title="Ver detalles">
                                 <i class="bi bi-search"></i></button>
                             </form>
                         </td>
@@ -98,7 +98,7 @@
                       <tr>
                         <td class="text-end">
                             <form action="visualizar_detalles.php">
-                              <button type="submit" class="text-primary action-btn"><i class="bi bi-search"></i></button>
+                              <button type="submit" class="text-primary action-btn" title="Ver detalles"><i class="bi bi-search"></i></button>
                             </form>
                         </td>
                         <td>Carlos</td>
@@ -109,7 +109,7 @@
                       <tr>
                         <td class="text-end">
                             <form action="visualizar_detalles.php">
-                              <button type="submit" class="text-primary action-btn"><i class="bi bi-search"></i></button>
+                              <button type="submit" class="text-primary action-btn" title="Ver detalles"><i class="bi bi-search"></i></button>
                             </form>
                         </td>
                         <td>Camila</td>
