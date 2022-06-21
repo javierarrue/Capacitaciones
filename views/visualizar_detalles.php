@@ -1,4 +1,10 @@
 <?php include '../views/components/upperPart.php' ?>
+<?php 
+  $noCongruente = 'rounded-pill badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-10 fw-normal';
+  $congruente = 'rounded-pill badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-10 fw-normal';
+  $aceptado = 'rounded-pill badge bg-success bg-opacity-10 text-success border border-success border-opacity-10 fw-normal';
+  $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-10 fw-normal';
+?>
   <script>
     document.querySelector('.visualizar').classList.add('link-active');
   </script>
@@ -149,8 +155,8 @@
                           </button>
                         </td>
                         <td>GAS</td>
-                        <td class="fw-semibold" style="font-size: 0.875em;"> 
-                          <span class="px-2 py-1 text-success bg-success bg-opacity-10 rounded-pill border border-success border-opacity-10">
+                        <td class="" style="font-size:1.1em"> 
+                          <span class="<?php echo $aceptado?>">
                             Aceptado
                           </span>
                         </td>
@@ -168,8 +174,8 @@
                               <option value="3"> Otro</option>
                             </select>
                           </td>
-                          <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-primary bg-primary bg-opacity-10 rounded-pill border border-primary border-opacity-10 validad">
+                          <td class="" style="font-size:1.1em"> 
+                            <span class="<?php echo $congruente ?>">
                               Congruente
                             </span>
                           </td>
@@ -182,8 +188,8 @@
                           <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar usuario"><i class="bi bi-pencil-fill"></i></button>
                         </td>
                         <td>Investigación de accidente</td>
-                          <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-success bg-success bg-opacity-10 rounded-pill border border-success border-opacity-10">
+                          <td class="" style="font-size:1.1em"> 
+                            <span class="<?php echo $aceptado ?>">
                               Aceptado
                             </span>
                           </td>
@@ -201,8 +207,8 @@
                               <option value="3"> Otro</option>
                             </select>
                           </td>
-                          <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-secondary bg-secondary bg-opacity-10 rounded-pill border border-secondary border-opacity-10 validad">
+                          <td class="" style="font-size:1.1em"> 
+                            <span class="<?php echo $noCongruente?>">
                               No congruente
                             </span>
                           </td>
@@ -215,8 +221,8 @@
                           <button type="button" class="btn text-primary action-btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar usuario"><i class="bi bi-pencil-fill"></i></button>
                         </td>
                         <td>Cocina</td>
-                        <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-danger bg-danger bg-opacity-10 rounded-pill border border-danger border-opacity-10">
+                        <td class="" style="font-size:1.1em"> 
+                            <span class="<?php echo $rechazado?>">
                               Rechazado
                             </span>
                         </td>
@@ -234,8 +240,8 @@
                               <option value="3"> Otro</option>
                             </select>
                           </td>
-                        <td class="fw-semibold" style="font-size: 0.875em;"> 
-                            <span class="px-2 py-1 text-secondary bg-secondary bg-opacity-10 rounded-pill border border-secondary border-opacity-10 validad">
+                        <td class="" style="font-size:1.1em"> 
+                            <span class="<?php echo $noCongruente?>">
                               No congruente
                             </span>
                         </td>

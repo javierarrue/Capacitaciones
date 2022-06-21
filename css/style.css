@@ -141,12 +141,3 @@ height: 100%;
     color:black !important;
     transition: 0.5s;
 }
-
-
-@media screen and (max-width: 1157px) {
-    .validad{
-        background-color: rgba(0, 0, 0, 0) !important;
-        border: none !important;
-        font-weight: bold !important;
-    }
-}
