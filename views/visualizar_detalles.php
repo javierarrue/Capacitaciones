@@ -141,10 +141,12 @@
                     <tbody>
                       <tr>
                         <td class="text-end">
-                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_">
                             <i class="bi bi-trash3-fill"></i>
                           </button>
-                          <button type="button" class="text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
+                          <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-pencil-fill"></i>
+                          </button>
                         </td>
                         <td>GAS</td>
                         <td class="fw-semibold" style="font-size: 0.875em;"> 
@@ -174,10 +176,10 @@
                       </tr>
                       <tr>
                         <td class="text-end">
-                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_">
                             <i class="bi bi-trash3-fill"></i>
                           </button>
-                          <button type="button" class="text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
+                          <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
                         </td>
                         <td>Investigación de accidente</td>
                           <td class="fw-semibold" style="font-size: 0.875em;"> 
@@ -207,10 +209,10 @@
                       </tr>     
                       <tr>
                         <td class="text-end">
-                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_<?php echo $user["user"]; ?>">
+                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_">
                                 <i class="bi bi-trash3-fill"></i>
                           </button>
-                          <button type="button" class="text-primary action-btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
+                          <button type="button" class="btn text-primary action-btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
                         </td>
                         <td>Cocina</td>
                         <td class="fw-semibold" style="font-size: 0.875em;"> 

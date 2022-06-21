@@ -53,7 +53,7 @@
                       <h5 class="card-title">194</h5>
                     </div>
                     <div class="col-4 text-end">
-                      <h1><i class="bi bi-file-earmark-excel-fill text-success"></i></h1>
+                      <h1><i class="bi bi-file-earmark-check-fill text-success"></i></h1>
                     </div>
                   </div>
                 </div>
@@ -81,15 +81,15 @@
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="content">
-              <div class="card shadow rounded card-nextyear">
+              <div class="card shadow rounded card-en-desarrollo">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col-8 text-wrap">
-                      <small class="text-secondary">Siguiente año</small>
+                      <small class="text-dark">En desarrollo</small>
                       <h5 class="card-title">15</h5>
                     </div>
                     <div class="col-4 text-end">
-                      <h1><i class="bi bi-calendar-check text-secondary"></i></h1>
+                      <h1><i class="bi bi-person-workspace text-dark"></i></h1>
                     </div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@
             <div class="content">
               <div class="card shadow" style="height: 100%;">
                 <div class="card-header text-center">
-                  Direcciones con mas cursos sugeridos
+                  Departamentos con mas cursos sugeridos
                 </div>
                 <div class="card-body">
                   <!-- GRÁFICA -->
