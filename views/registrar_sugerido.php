@@ -28,44 +28,42 @@
           <div class="row mb-2">
             <div class="col-md-12">
               <div class="card shadow">
-                  <div class="card-header fw-bold">
+                <div class="card-header fw-bold">
                     Ingrese los datos solicitados
-                  </div>
-                  <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-4 mb-3">
-                          <label for="direccion" class="form-label">Seleccione una dirección</label>
-                          <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
-                            <option selected>Dirección</option>
-                            <option value="1">Dirección 3</option>
-                            <option value="2">Dirección 2</option>
-                            <option value="3">Dirección 3</option>
-                          </select>
-                        </div>
-      
-                        <div class="col-md-4 mb-3">
-                          <label for="departamento" class="form-label">Seleccione un departamento</label>
-                          <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
-                            <option selected>Departamento</option>
-                            <option value="Departamento 1">Departamento </option>
-                            <option value="Departamento 2">Departamento 2</option>
-                            <option value="Departamento 3">Departamento 3</option>
-                          </select>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                          <label for="cargo" class="form-label">Seleccione un cargo específico</label>
-                          <select class="form-select" name="cargo" id="cargo" onchange="mostrar();">
-                            <option value="AL">Jefe</option>
-                            <option value="WY">Analista</option>
-                            <option value="WY">Secretaria</option>
-                          </select>
-                        </div>
-
-                      </div>
-
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <label for="direccion" class="form-label">Seleccione una dirección</label>
+                      <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
+                        <option selected>Dirección</option>
+                        <option value="1">Dirección 3</option>
+                        <option value="2">Dirección 2</option>
+                        <option value="3">Dirección 3</option>
+                      </select>
                     </div>
+                    
+                    <div class="col-md-4 mb-3">
+                      <label for="departamento" class="form-label">Seleccione un departamento</label>
+                      <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
+                        <option selected>Departamento</option>
+                        <option value="Departamento 1">Departamento </option>
+                        <option value="Departamento 2">Departamento 2</option>
+                        <option value="Departamento 3">Departamento 3</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="cargo" class="form-label">Seleccione un cargo específico</label>
+                      <select class="form-select" name="cargo" id="cargo" onchange="mostrar();">
+                        <option value="AL">Jefe</option>
+                        <option value="WY">Analista</option>
+                        <option value="WY">Secretaria</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
           </div>
 
           <!-- REGISTRAR CURSOS SUGERIDOS -->
@@ -81,7 +79,7 @@
                       <div class="mb-1">
                         <div class="row align-items-center mb-3">
                           <div class="col-md-10 col-sm-12">
-                            <input class="form-control cursoSugeridoInput " type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
+                            <input class="form-control cursoSugeridoInput cursoSugeridoText" type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
                           </div>
                           <div class="col-md-2 col-sm-12">
 
@@ -91,7 +89,7 @@
 
                               <input type="radio" class="btn-check" name="analisis" id="btnNotAccept0" autocomplete="off" value="noAceptado" required>
                               <label class="btn btn-outline-primary" for="btnNotAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Rechazar curso"> <i class="bi bi-x"></i> </label>
-                          </div>
+                            </div>
 
                           <!--
                             <button class="btn btn-outline-success btn-sm" type="button" onclick="accept();" id="accept0"> <i class="bi bi-check"></i> </button>

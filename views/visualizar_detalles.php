@@ -31,7 +31,7 @@
 
         <div class="row mb-2 g-2">
           <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
-            <div class="card shadow">
+            <div class="card shadow" style="height: 100%;">
               <div class="card-header">
                 <div class="row">
                   <div class="col-8">
@@ -55,27 +55,32 @@
                         <br>
                         <b> Javier Arrue</b>
                       </p>
+                    </div>
+
+                    <div class="col-6">
                       <p>
                         <span class="text-muted">Cédula</span>
                         <br>
                         <b>8-941-1079</b> 
                       </p>
                     </div>
+                </div>
 
-                    <div class="col-6">
-                      <p>
-                        <span class="text-muted">Dirección</span>
-                        <br>
-                        <b>...</b> 
-                      </p>                      
-                      
-                      <p>
-                        <span class="text-muted"> Departamento </span>  
-                        <br>
-                        <b>...</b>
-                      </p>
-                        
-                    </div>
+                <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                    <p>
+                      <span class="text-muted">Dirección</span>
+                      <br>
+                      <b>...</b> 
+                    </p>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                    <p>
+                      <span class="text-muted"> Departamento </span>
+                      <br>
+                      <b>...</b>
+                    </p>
+                  </div>
                 </div>
 
                 <div class="row">
@@ -114,7 +119,7 @@
                         </tr>
                         <tr>
                           <td>Excel</td>
-                        </tr>     
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -141,6 +146,8 @@
                         <th>Curso</th>
                         <th>Análisis</th>
                         <th>Estado</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
                         <th>Validad</th>
                       </tr>
                     </thead>
@@ -174,6 +181,8 @@
                               <option value="3"> Otro</option>
                             </select>
                           </td>
+                          <td>-</td>
+                          <td>-</td>
                           <td class="" style="font-size:1.1em"> 
                             <span class="<?php echo $congruente ?>">
                               Congruente
@@ -196,8 +205,8 @@
                           <td>
                             <select class="form-select" aria-label="Default select example">
                               <option> Pendiente </option>
-                              <option value="1"> Impartido</option>
-                              <option value="2" selected> En desarrollo</option>
+                              <option value="1" selected> Impartido</option>
+                              <option value="2"> En desarrollo</option>
                               <option value="3"> Cancelado</option>
                               <option value="3"> Para el siguiente año</option>
                               <option value="3"> En trámite de compras</option>
@@ -206,6 +215,12 @@
                               <option value="3"> A incluir en el PAC del siguiente año</option>
                               <option value="3"> Otro</option>
                             </select>
+                          </td>
+                          <td>
+                            <input type="date" name="" id="" value="2022-03-10">
+                          </td>
+                          <td>
+                            <input type="date" name="" id="" value="2022-03-15">
                           </td>
                           <td class="" style="font-size:1.1em"> 
                             <span class="<?php echo $noCongruente?>">
@@ -240,6 +255,8 @@
                               <option value="3"> Otro</option>
                             </select>
                           </td>
+                          <td>-</td>
+                          <td>-</td>
                         <td class="" style="font-size:1.1em"> 
                             <span class="<?php echo $noCongruente?>">
                               No congruente
@@ -253,6 +270,38 @@
             </div>
           </div>
 
+        </div>
+
+        <div class="row mb-2 g-1">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="card shadow">
+                <div class="card-header">
+                  <b>Cursos impartidos</b>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table
+                        id="table1"
+                        class="table table-striped data-table table-hover"
+                        style="width: 100%">
+                      <thead>
+                        <tr>
+                          <th>Curso</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>GAS</td>
+                        </tr>
+                        <tr>
+                          <td>Excel</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
 
       </div>
