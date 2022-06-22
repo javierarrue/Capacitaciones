@@ -3,7 +3,7 @@
 :root{
     --apmBlue: rgb(16,67, 130); /* rgb(46, 49, 146);*/
     --apmBueHover: rgb(30, 115, 190);
-    --offcanvas-width: 270px;
+    --offcanvas-width: 250px;
     --topNavbarheight: 56px;
 }
 

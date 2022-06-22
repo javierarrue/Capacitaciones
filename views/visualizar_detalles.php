@@ -15,15 +15,14 @@
           <div class="col-md-12 fw-bold fs-3">
             <div class="card shadow">
               <div class="card-body">
-
-              <div class="row align-items-center">
-                <div class="col-md-10 col-sm-6">
-                  Visualizar cargos y trabajadores
+                <div class="row align-items-center">
+                  <div class="col-md-10 col-sm-6">
+                    Visualizar cargos y trabajadores
+                  </div>
+                  <div class="col-md-2 col-sm-6 text-center">
+                    <img src="../resources/AMP-LOGO-2-01.png" alt="" class="img-fluid " style="width:5rem;">
+                  </div>
                 </div>
-                <div class="col-md-2 col-sm-6 text-center">
-                  <img src="../resources/AMP-LOGO-2-01.png" alt="" class="img-fluid " style="width:5rem;">
-                </div>
-              </div>
               </div>
             </div>
           </div>

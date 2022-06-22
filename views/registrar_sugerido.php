@@ -67,7 +67,7 @@
           </div>
 
           <!-- REGISTRAR CURSOS SUGERIDOS -->
-          <div class="row mb-2" id="seccion2" style="opacity:1;">
+          <div class="row mb-2" id="seccion2" style="opacity:0;">
             <div class="col-md-12">
               <div class="card shadow">
                 <div class="card-header fw-bold">
