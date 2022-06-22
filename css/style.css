@@ -7,6 +7,10 @@
     --topNavbarheight: 56px;
 }
 
+.cursoSugeridoInput{
+    background-color: rgb(236, 236, 236) !important;
+}
+
 .hover-section a {
     transition: 0.2s;
 }

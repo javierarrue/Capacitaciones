@@ -69,7 +69,7 @@
           </div>
 
           <!-- REGISTRAR CURSOS SUGERIDOS -->
-          <div class="row mb-2" id="seccion2" style="opacity:0;">
+          <div class="row mb-2" id="seccion2" style="opacity:1;">
             <div class="col-md-12">
               <div class="card shadow">
                 <div class="card-header fw-bold">
@@ -81,7 +81,7 @@
                       <div class="mb-1">
                         <div class="row align-items-center mb-3">
                           <div class="col-md-10 col-sm-12">
-                            <input class="form-control cursoSugeridoText" type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
+                            <input class="form-control cursoSugeridoInput " type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
                           </div>
                           <div class="col-md-2 col-sm-12">
 

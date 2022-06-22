@@ -91,7 +91,7 @@ function setClassNames(){
     //Setting the inputCounter into the className of the input, so that is unique from each other.
     //Asignando el inputCounter al className del input, para que sea unico uno del otro. 
     rowDiv.className= 'row mb-3 cursoSugerido'+inputCounter;
-    textInput.className = "form-control"
+    textInput.className = "form-control cursoSugeridoInput"
     inputDiv.className = 'col-lg-10 col-md-10 col-sm-12';
     btnDiv.className = 'col-lg-2 col-md-2 col-sm-12';
 
