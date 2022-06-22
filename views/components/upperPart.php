@@ -114,6 +114,14 @@
                 <span class="text-uppercase">Visualizar</span>
               </a>
             </li>
+            <li class="hover-section mb-1">
+              <a href="registrar_requerido.php" class="nav-link px-3 active registrar_requerido">
+                <span class="me-2">
+                  <i class="bi bi-journal-medical"></i>
+                </span>
+                <span class="text-uppercase">Curso requerido</span>
+              </a>
+            </li>
             <li class="my-1">
               <hr class="dropdown-divider">
             </li>
@@ -123,14 +131,6 @@
                   <i class="bi bi-people-fill"></i>
                 </span>
                 <span class="text-uppercase">Administrar Usuarios</span>
-              </a>
-            </li>
-            <li class="hover-section mb-1">
-              <a href="registrar_requerido.php" class="nav-link px-3 active registrar_requerido">
-                <span class="me-2">
-                  <i class="bi bi-journal-medical"></i>
-                </span>
-                <span class="text-uppercase">Curso requerido</span>
               </a>
             </li>
             <!-- COLLAPSE -->
