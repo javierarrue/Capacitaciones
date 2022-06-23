@@ -1,6 +1,9 @@
 
     
     <script src="../js/dataTables.bootstrap5.min.js"></script>
+    <script src="../js/datatable/datatables.min.js"></script>
+    <script src="../js/datatable/pdfmake.min.js"></script>
+    <script src="../js/datatable/vfs_fonts.js"></script>
     <script src="../js/script.js"></script>
   </body>
 

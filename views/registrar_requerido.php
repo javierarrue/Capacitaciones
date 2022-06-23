@@ -39,7 +39,19 @@
           <div class="col-md-12">
             <div class="card shadow">
               <div class="card-header fw-bold">
-                Seleccione los datos solicitados
+                <div class="row">
+                  <div class="col-6">
+                    Seleccione los datos solicitados
+                  </div>
+                  <div class="col-6 text-end">
+                      <!-- Button trigger modal -->
+                    <button type="button" class="mt-2 btn register-btn text-white" data-bs-toggle="modal" data-bs-target="#nuevoUsuario">
+                      <i class="bi bi-plus-lg"></i>
+                      Nuevo curso requerido
+                    </button>
+                  </div>
+                </div>
+                
               </div>
               <div class="card-body">
                 <div class="row">
@@ -129,7 +141,7 @@
                         <div class="row align-items-center mb-3">
                           <div class="col-md-12">
                             <label for="curso" class="form-label">Añadir cursos requeridos</label>
-                            <input class="form-control cursoSugeridoText" type="text" value="..." aria-label="readonly input example" name="cursos[0]" id="curso">
+                            <input class="form-control cursoSugeridoText cursoSugeridoInput" type="text" value="..." aria-label="readonly input example" name="cursos[0]" id="curso">
                           </div>
                         </div>
                       </div>
@@ -162,13 +174,6 @@
                     <div class="col-6">
                       <span class="fw-bold">Cursos requeridos</span>
                     </div>
-                    <div class="col-6 text-end">
-                      <!-- Button trigger modal -->
-                      <button type="button" class="mt-2 btn register-btn text-white" data-bs-toggle="modal" data-bs-target="#nuevoUsuario">
-                        <i class="bi bi-plus-lg"></i>
-                        Nuevo curso requerido
-                      </button>
-                    </div>
                   </div>
                 </div>
                 <div class="card-body">
@@ -176,7 +181,7 @@
                     <!-- TABLA -->
                     <div class="table-responsive">
                       <table
-                        id="example"
+                        id="table1"
                         class="table table-hover data-table"
                         style="width: 100%">
                         <thead>

@@ -11,7 +11,7 @@
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-2">
       <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="row mb-2 mt-2">
           <div class="col-md-12 fw-bold fs-3">
             <div class="card shadow">
               <div class="card-body">
@@ -137,16 +137,16 @@
                   <div class="table-responsive">
                     <table
                     id="table2"
-                    class="table data-table table-hover"
+                    class="table data-table table-hover table-responsive"
                     style="width: 100%">
                     <thead>
                       <tr>
-                        <th class="actionbtn_row"></th>
-                        <th>Curso</th>
-                        <th>Análisis</th>
+                        <th class="actionbtn_row" data-priority="1"></th>
+                        <th data-priority="1">Curso</th>
+                        <th data-priority="1">Análisis</th>
                         <th>Estado</th>
-                        <th>Fecha Inicio</th>
-                        <th>Fecha Fin</th>
+                        <th data-priority="2">Fecha Inicio</th>
+                        <th data-priority="2">Fecha Fin</th>
                         <th>Validad</th>
                       </tr>
                     </thead>

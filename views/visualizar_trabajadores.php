@@ -25,7 +25,7 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table
-                    id="example"
+                    id="table1"
                     class="table table-striped data-table"
                     style="width: 100%"
                   >

@@ -70,7 +70,7 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table
-                    id="example"
+                    id="table1"
                     class="table table-hover data-table"
                     style="width: 100%">
                     <thead>

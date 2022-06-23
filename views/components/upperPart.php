@@ -12,6 +12,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" >
+    
+    <link href="../css/datatable/datatables.min.css" rel="stylesheet" >
+
     <link rel="stylesheet" href="../css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">-->
@@ -22,12 +25,16 @@
     <title>Sistema de Cargos Específicos</title>
   </head>
   <body>
+
     <!-- JSQUERY-->
     <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/jquery.dataTables.min.js"></script>
     <!-- /JQUERY-->
-        <!-- BOOTSTRAP JS -->
-        <script src="../js/bootstrap.bundle.min.js"></script>
+    
+    <!-- BOOTSTRAP JS -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- /BOOTSTRAP JS -->
+
     <!-- TOP NAV BAR-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-fluid">
