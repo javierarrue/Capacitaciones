@@ -16,7 +16,7 @@ $(document).ready(function() {
 } );
 
 $(document).ready(function() {
-  $('#table1').DataTable({
+  $('table#table1').DataTable({
     "lengthMenu": [ 5, 10, 25, 50, 75, 100 ],
     "language" : {
       "url" : "../resources/datatable/espaniol/es_es.json"

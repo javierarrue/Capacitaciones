@@ -145,8 +145,8 @@
                         <th data-priority="1">Curso</th>
                         <th data-priority="1">Análisis</th>
                         <th>Estado</th>
-                        <th data-priority="2">Fecha Inicio</th>
-                        <th data-priority="2">Fecha Fin</th>
+                        <th data-priority="1">Fecha Inicio</th>
+                        <th data-priority="1">Fecha Fin</th>
                         <th>Validad</th>
                       </tr>
                     </thead>
