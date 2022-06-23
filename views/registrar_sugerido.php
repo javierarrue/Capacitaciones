@@ -79,7 +79,7 @@
                       <div class="mb-1">
                         <div class="row align-items-center mb-3">
                           <div class="col-md-10 col-sm-12">
-                            <input class="form-control cursoSugeridoInput cursoSugeridoText" type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
+                            <input class="form-control cursoSugeridoInput cursoSugeridoText"  placeholder="Nombre del curso" type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
                           </div>
                           <div class="col-md-2 col-sm-12">
 

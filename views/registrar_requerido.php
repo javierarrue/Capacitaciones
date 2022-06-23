@@ -141,7 +141,7 @@
                         <div class="row align-items-center mb-3">
                           <div class="col-md-12">
                             <label for="curso" class="form-label">Añadir cursos requeridos</label>
-                            <input class="form-control cursoSugeridoText cursoSugeridoInput" type="text" value="..." aria-label="readonly input example" name="cursos[0]" id="curso">
+                            <input class="form-control cursoSugeridoText cursoSugeridoInput" placeholder="Nombre del curso" type="text" aria-label="readonly input example" name="cursos[0]" id="curso">
                           </div>
                         </div>
                       </div>

@@ -51,6 +51,7 @@ function setAttributes(){
     textInput.setAttribute('name','cursos['+inputCounter+']');
     textInput.setAttribute('id','curso'+inputCounter);
     textInput.setAttribute('required', '');
+    textInput.setAttribute('placeholder', 'Nombre del curso');
 }
 
 function setClassNames(){
