@@ -95,6 +95,12 @@
     border-left: 5px solid rgb(0, 0, 0);
 }
 
+.card:hover{
+    transition: 0.3s !important;
+    -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.33) !important; 
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.33) !important;
+}
+
 small{
     font-weight: bold;
 }
