@@ -99,8 +99,13 @@ body{
     border-left: 5px solid rgb(0, 0, 0);
 }
 
-.card:hover{
+.card{
+    transition-timing-function: ease-in;
     transition: 0.3s !important;
+}
+
+.card:hover{
+
     -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.33) !important; 
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.33) !important;
 }
