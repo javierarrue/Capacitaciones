@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../css/icons/bootstrap-icons.css">
     <!-- SELECT2 - ESTILOS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <title>Sistema de Cargos Específicos</title>
+    <title>Sistema de Cursos Sugeridos</title>
   </head>
   <body>
 
@@ -36,7 +36,7 @@
     <!-- /BOOTSTRAP JS -->
 
     <!-- TOP NAV BAR-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
       <div class="container-fluid">
       
         <!-- OFF CANVAS BUTTON --> 
@@ -45,11 +45,6 @@
           <span class="navbar-toggler-icon" data-bs-target="#offcanvasExample" ></span>
         </button>
         <!-- /OFF CANVAS BUTTON -->
-
-        <!--
-        <a class="navbar-brand fw-bold text-uppercase me-auto ms-1" href="#">SISTEMA DE CARGOS ESPECÍFICOS</a>
-        -->
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -58,8 +53,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown profile">
-              <a class="nav-link dropdown-toggle text-end" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="fw-bold"><?php echo $_SESSION["firstname"] ." ". $_SESSION["lastname"];?></span>
+              <a class="nav-link dropdown-toggle text-end text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span><?php echo $_SESSION["firstname"] ." ". $_SESSION["lastname"];?></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="perfil.php"><i class="bi bi-person me-2"></i>Perfil</a></li>
@@ -86,39 +81,67 @@
             alt="" class="img-fluid" style="width:4rem;">
 
             <div class="fw-bold text-uppercase px-3">
-              SISTEMA DE CARGOS ESPECÍFICOS
+              Sistema de cursos sugeridos
             </div>
             
           </div>
 
           <ul class="navbar-nav">
-            <li class="mt-3 mb-2">
-              <div class="fw-bold text-uppercase px-3">
-                Menú
-              </div>
-            </li>
             <li class="hover-section mb-1">
-              <a href="home.php" class="nav-link px-3 active home">
+              <a href="home.php" class="nav-link px-3 mt-4 active home">
                 <span class="me-2">
                 <i class="bi bi-house-door-fill"></i>
                 </span>
                 <span class="text-uppercase">Inicio</span>
               </a>
             </li>
+            <li class="my-1">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="my-2">
+              <div class="text-uppercase text-white text-opacity-50 px-2">
+                Registrar
+              </div>
+            </li>
             <li class="hover-section mb-1">
               <a href="registrar_sugerido.php" class="nav-link px-3 active section-link registrar_sugerido">
                 <span class="me-2">
                   <i class="bi bi-journal-text"></i>
                 </span>
-                <span class="text-uppercase">Curso sugerido</span>
+                <span class="text-uppercase">Cursos sugeridos</span>
               </a>
+            </li>
+            <li class="my-1">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="my-2">
+              <div class="text-uppercase text-white text-opacity-50 px-2">
+                Visualizar
+              </div>
             </li>
             <li class="hover-section mb-1">
               <a href="visualizar.php" class="nav-link px-3 active visualizar">
                 <span class="me-2">
                   <i class="bi bi-table"></i>
                 </span>
-                <span class="text-uppercase">Visualizar</span>
+                <span class="text-uppercase">Cargos</span>
+              </a>
+            </li>
+
+            <li class="my-1">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="my-2">
+              <div class="text-uppercase text-white text-opacity-50 px-2">
+                Administrar
+              </div>
+            </li>
+            <li class="hover-section mb-1">
+              <a href="admin_usuarios.php" class="nav-link px-3 active administrar_usuarios">
+                <span class="me-2">
+                  <i class="bi bi-people-fill"></i>
+                </span>
+                <span class="text-uppercase">Usuarios</span>
               </a>
             </li>
             <li class="hover-section mb-1">
@@ -126,22 +149,11 @@
                 <span class="me-2">
                   <i class="bi bi-journal-medical"></i>
                 </span>
-                <span class="text-uppercase">Curso requerido</span>
-              </a>
-            </li>
-            <li class="my-1">
-              <hr class="dropdown-divider">
-            </li>
-            <li class="hover-section mb-1">
-              <a href="admin_usuarios.php" class="nav-link px-3 active administrar_usuarios">
-                <span class="me-2">
-                  <i class="bi bi-people-fill"></i>
-                </span>
-                <span class="text-uppercase">Administrar Usuarios</span>
+                <span class="text-uppercase">Cursos requeridos</span>
               </a>
             </li>
             <!-- COLLAPSE -->
-            <!--
+<!--
             <li>
               <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <span class="me-2">
@@ -156,20 +168,20 @@
                 <div class="">
                   <div>
                     <ul class="navbar-nav ps-3">
-                      <li>
-                        <a href="" class="nav-link">
-                          <span class="me-2 px-3">
-                            <i class="bi bi-people-fill"></i>
-                          </span>
-                          <span>USUARIOS</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class="nav-link">
-                          <span class="me-2 px-3">
+                      <li class="hover-section mb-1">
+                        <a href="registrar_requerido.php" class="nav-link px-3 active registrar_requerido">
+                          <span class="me-2">
                             <i class="bi bi-journal-medical"></i>
                           </span>
-                          <span>CURSOS REQUERIDOS</span>
+                          <span class="text-uppercase">Curso requerido</span>
+                        </a>
+                      </li>
+                      <li class="hover-section mb-1">
+                        <a href="admin_usuarios.php" class="nav-link px-3 active administrar_usuarios">
+                          <span class="me-2">
+                            <i class="bi bi-people-fill"></i>
+                          </span>
+                          <span class="text-uppercase">Usuarios</span>
                         </a>
                       </li>
                     </ul>
@@ -177,7 +189,62 @@
                 </div>
               </div>
             </li>
-              -->
+
+            <li>
+              <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseVisualizar" role="button" aria-expanded="false" aria-controls="collapseVisualizar">
+                <span class="me-2">
+                  <i class="bi bi-layout-split"></i>
+                </span>
+                <span>VISUALIZAR</span>
+                <span class="right-icon ms-auto">
+                  <i class="bi bi-chevron-compact-down"></i>
+                </span>
+              </a>
+              <div class="collapse" id="collapseVisualizar">
+                <div class="">
+                  <div>
+                    <ul class="navbar-nav ps-3">
+                      <li class="hover-section mb-1">
+                        <a href="visualizar.php" class="nav-link px-3 active visualizar">
+                          <span class="me-2">
+                            <i class="bi bi-table"></i>
+                          </span>
+                          <span class="text-uppercase">Cargos específicos</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseRegistrar" role="button" aria-expanded="false" aria-controls="collapseRegistrar">
+                <span class="me-2">
+                  <i class="bi bi-layout-split"></i>
+                </span>
+                <span class="text-uppercase">Registrar</span>
+                <span class="right-icon ms-auto">
+                  <i class="bi bi-chevron-compact-down"></i>
+                </span>
+              </a>
+              <div class="collapse" id="collapseRegistrar">
+                <div class="">
+                  <div>
+                    <ul class="navbar-nav ps-3">
+                      <li class="hover-section mb-1">
+                        <a href="registrar_sugerido.php" class="nav-link px-3 active registrar_requerido">
+                          <span class="me-2">
+                            <i class="bi bi-journal-text"></i>
+                          </span>
+                          <span class="text-uppercase">Cursos sugeridos</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+-->
              <!-- /COLLAPSE -->
           </ul>
         </nav>
