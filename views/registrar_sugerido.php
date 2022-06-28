@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
-            <div class="card shadow">
+            <div class="card shadow-sm">
               <div class="card-body">
 
               <div class="row align-items-center">
@@ -27,7 +27,7 @@
         <form method="get" action="registrar_sugerido.php">
           <div class="row mb-2">
             <div class="col-md-12">
-              <div class="card shadow">
+              <div class="card shadow-sm">
                 <div class="card-header fw-bold">
                     Ingrese los datos solicitados
                 </div>
@@ -69,7 +69,7 @@
           <!-- REGISTRAR CURSOS SUGERIDOS -->
           <div class="row mb-2" id="seccion2" style="opacity:0;">
             <div class="col-md-12">
-              <div class="card shadow">
+              <div class="card shadow-sm">
                 <div class="card-header fw-bold">
                 Registrar cursos sugeridos 
                 </div>

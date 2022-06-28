@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-md-12 fs-3">
-            <div class="card shadow">
+            <div class="card shadow-sm">
               <div class="card-body">
                 <div class="row align-items-center">
                   <div class="col-md-10 col-sm-6">
@@ -27,7 +27,7 @@
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="content">
-              <div class="card shadow rounded card-pendientes card-homepage">
+              <div class="card shadow-sm rounded card-pendientes card-homepage">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col-8">
@@ -45,7 +45,7 @@
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="content">
-              <div class="card shadow rounded card-impartidos card-homepage">
+              <div class="card shadow-sm rounded card-impartidos card-homepage">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col-8">
@@ -63,7 +63,7 @@
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="content">
-              <div class="card shadow rounded card-cancelados card-homepage">
+              <div class="card shadow-sm rounded card-cancelados card-homepage">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col-8">
@@ -81,7 +81,7 @@
 
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="content">
-              <div class="card shadow rounded card-en-desarrollo card-homepage">
+              <div class="card shadow-sm rounded card-en-desarrollo card-homepage">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col-8 text-wrap">
@@ -103,7 +103,7 @@
 
           <div class="col-md-8 col-sm-12">
             <div class="content">
-              <div class="card shadow">
+              <div class="card shadow-sm">
                   <div class="card-header text-center fw-bold">
                     Estado de los cursos sugeridos
                   </div>
@@ -120,7 +120,7 @@
 
           <div class="col-md-4 col-sm-12">
             <div class="content">
-              <div class="card shadow" style="height: 100%;">
+              <div class="card shadow-sm" style="height: 100%;">
                 <div class="card-header text-center fw-bold">
                   Departamentos con mas cursos sugeridos
                 </div>

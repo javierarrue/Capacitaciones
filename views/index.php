@@ -24,7 +24,7 @@
                         <img src="../resources/AMP-LOGO-2-01.png" alt="" class="img-fluid" width="80">
                     </div>
                     <h1 class="text-center">Bienvenido</h1>
-                    <h5 class="text-center text-muted mb-4">Al Sistema de Cargos específicos</h3>
+                    <h5 class="text-center text-muted mb-4">Al Sistema de Cursos sugeridos</h3>
                     <?php if(isset($_GET["error"])){?>
                         <h5 class="text-danger text-center"><?php echo $_GET["error"];?></h5>
                     <?php }?>

@@ -7,6 +7,10 @@
     --topNavbarheight: 56px;
 }
 
+body{
+    background-color:rgb(233, 238, 248);
+}
+
 .cursoSugeridoInput{
     background-color: rgb(231,236,247) !important;
 }
@@ -32,7 +36,7 @@
 }
 
 .navbar{
-    background-color: var(--apmBlue);
+    background-color: white;/*var(--apmBlue)*/;
 }
 
 .sidebar-nav{
@@ -97,8 +101,8 @@
 
 .card:hover{
     transition: 0.3s !important;
-    -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.33) !important; 
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.33) !important;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.33) !important; 
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.33) !important;
 }
 
 small{

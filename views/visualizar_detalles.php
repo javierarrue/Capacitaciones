@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <div class="row mb-2 mt-2">
           <div class="col-md-12 fw-bold fs-3">
-            <div class="card shadow">
+            <div class="card shadow-sm">
               <div class="card-body">
                 <div class="row align-items-center">
                   <div class="col-md-10 col-sm-6">
@@ -30,7 +30,7 @@
 
         <div class="row mb-2 g-2">
           <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
-            <div class="card shadow" style="height: 100%;">
+            <div class="card shadow-sm" style="height: 100%;">
               <div class="card-header">
                 <div class="row">
                   <div class="col-8">
@@ -97,7 +97,7 @@
           </div>
 
           <div class="col-lg-8 col-md-12 col-sm-12">
-            <div class="card shadow">
+            <div class="card shadow-sm">
                 <div class="card-header">
                   <b>Cursos requeridos</b>
                 </div>
@@ -129,7 +129,7 @@
 
         <div class="row mb-2 g-1">
           <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="card shadow">
+            <div class="card shadow-sm">
                 <div class="card-header">
                   <b>Cursos Sugeridos</b>
                 </div>
@@ -273,7 +273,7 @@
 
         <div class="row mb-2 g-1">
           <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="card shadow">
+              <div class="card shadow-sm">
                 <div class="card-header">
                   <b>Cursos impartidos</b>
                 </div>

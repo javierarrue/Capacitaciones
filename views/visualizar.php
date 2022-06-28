@@ -8,7 +8,7 @@
         <!-- Título de página -->
         <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
-            <div class="card shadow">
+            <div class="card shadow-sm">
               <div class="card-body">
 
               <div class="row align-items-center">
@@ -27,7 +27,7 @@
         <!-- Formulario direccion - departamento -->
         <div class="row mb-2 mb-2">
             <div class="col-md-12">
-              <div class="card shadow">
+              <div class="card shadow-sm">
                   <div class="card-header fw-bold">
                     Seleccione los datos solicitados
                   </div>
@@ -63,7 +63,7 @@
         <!-- Tabla de trabajadores -->
         <div class="row mb-2">
           <div class="col-md-12">
-            <div class="card shadow">
+            <div class="card shadow-sm">
                 <div class="card-header fw-bold">
                   Lista de trabajadores
                 </div>

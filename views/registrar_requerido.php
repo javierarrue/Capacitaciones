@@ -20,7 +20,7 @@
         <?php }?>
         <div class="row">
           <div class="col-md-12 fw-bold fs-3">
-            <div class="card shadow mb-2">
+            <div class="card shadow-sm mb-2">
               <div class="card-body">
                 <div class="row align-items-center">
                   <div class="col-md-10 col-sm-6">
@@ -37,7 +37,7 @@
         <!-- Formulario direccion - departamento -->
         <div class="row mb-2 mb-2">
           <div class="col-md-12">
-            <div class="card shadow">
+            <div class="card shadow-sm">
               <div class="card-header fw-bold">
                 <div class="row">
                   <div class="col-6">
@@ -168,7 +168,7 @@
         <!-- /REGISTRAR NUEVO USUARIO -->
         <div class="row">
           <div class="col-md-12">
-            <div class="card shadow">
+            <div class="card shadow-sm">
                 <div class="card-header">
                   <div class="row align-items-center">
                     <div class="col-6">

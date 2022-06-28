@@ -4,7 +4,7 @@
       <div class="container-fluid">
       <div class="row mb-2">
           <div class="col-md-12 fs-3">
-            <div class="card shadow">
+            <div class="card shadow-sm">
               <div class="card-body">
                 <div class="row align-items-center">
                   <div class="col-md-10 col-sm-6">
