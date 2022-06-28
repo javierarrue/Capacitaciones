@@ -53,7 +53,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown profile">
-              <a class="nav-link dropdown-toggle text-end text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-end text-dark fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <span><?php echo $_SESSION["firstname"] ." ". $_SESSION["lastname"];?></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
