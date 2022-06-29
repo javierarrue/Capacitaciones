@@ -21,7 +21,7 @@
     <link rel="icon" href="../resources/AMP-LOGO-2-01.png">
     <link rel="stylesheet" href="../css/icons/bootstrap-icons.css">
     <!-- SELECT2 - ESTILOS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="../css/select2.css" rel="stylesheet" />
     <title>Sistema de Cursos Sugeridos</title>
   </head>
   <body>

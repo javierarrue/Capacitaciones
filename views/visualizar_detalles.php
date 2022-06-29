@@ -131,7 +131,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card shadow-sm">
                 <div class="card-header">
-                  <b>Cursos Sugeridos</b>
+                  <b>Cursos Sugeridos para el cargo</b>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -275,7 +275,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="card shadow-sm">
                 <div class="card-header">
-                  <b>Cursos impartidos</b>
+                  <b>Cursos impartidos por el trabajador</b>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">

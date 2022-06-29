@@ -140,7 +140,7 @@
   
     </main>
   <!-- /MAIN CONTENT OF THE PAGE-->    
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/chart.js"></script>
   <script src="../js/charts.js"></script>
 
 <?php include '../views/components/lowerPart.php' ?>
