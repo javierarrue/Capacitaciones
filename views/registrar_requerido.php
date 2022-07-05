@@ -39,7 +39,7 @@
           <div class="col-md-12">
             <div class="card shadow-sm">
               <div class="card-header fw-bold">
-                <div class="row">
+                <div class="row align-items-center">
                   <div class="col-6">
                     Seleccione los datos solicitados
                   </div>
