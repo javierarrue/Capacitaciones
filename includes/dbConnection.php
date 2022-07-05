@@ -7,4 +7,4 @@
     }
     catch (PDOException $e) {
         die("conexión a la base de datos fallida: ".$e->getMessage());
-    }
+    } 
