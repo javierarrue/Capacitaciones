@@ -1,4 +1,5 @@
 <?php include '../views/components/upperPart.php' ?>
+<?php include '../includes/mostrarDirecciones.inc.php' ?>
   <script>
     document.querySelector('.registrar_sugerido').classList.add('link-active');
   </script>
@@ -36,10 +37,9 @@
                     <div class="col-md-4 mb-3">
                       <label for="direccion" class="form-label">Seleccione una dirección</label>
                       <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
-                        <option selected>Dirección</option>
-                        <option value="1">Dirección 3</option>
-                        <option value="2">Dirección 2</option>
-                        <option value="3">Dirección 3</option>
+                        <?php foreach($direcciones as $direccion => $direccion_codigo) {?>
+                          <option value=<?php echo $direccion_codigo ?>><?php echo $direccion?></option>
+                        <?php }?>
                       </select>
                     </div>
                     
