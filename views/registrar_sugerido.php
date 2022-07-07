@@ -4,7 +4,7 @@
     document.querySelector('.registrar_sugerido').classList.add('link-active');
   </script>
     <!-- MAIN CONTENT OF THE PAGE-->
-    <main class="mt-4 pt-3">
+    <main class="mt-5 pt-3">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
@@ -33,24 +33,24 @@
                 </div>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-6 mb-3">
                       <label for="direccion" class="form-label">Seleccione una dirección</label>
                       <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
-                        <option selected>Direccion</option>
+                        <option class="fw-bold" selected>Direccion</option>
                         <?php foreach($direcciones as $direccion => $direccion_codigo) {?>
                           <option value=<?php echo $direccion_codigo ?>><?php echo $direccion?></option>
                         <?php }?>
                       </select>
                     </div>
                     
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-6 mb-3">
                       <label for="departamento" class="form-label">Seleccione un departamento</label>
                       <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
                         <option selected>Seleccione una Dirección</option>
                       </select>
                     </div>
 
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-12 mb-3">
                       <label for="cargo" class="form-label">Seleccione un cargo específico</label>
                       <select class="form-select" name="cargo" id="cargo" onchange="mostrar();">
                         <option selected>Seleccione un departamento</option>

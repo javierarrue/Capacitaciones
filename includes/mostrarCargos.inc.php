@@ -13,10 +13,10 @@ if(isset($_POST['C_DEPTO'])){
 
         foreach($cargos as $value){
             echo '<option value=" '. $value["C_OCUP"] .' ">';
+            echo $value["cargo"] . " | ";
             echo $value["nombre"] . " ";
-            echo $value["apellido"] . " ";
+            echo $value["apellido"] . " | ";
             echo $value["cedula"] . " ";
-            echo $value["cargo"];
             echo "</option>";
         }
     }else{
