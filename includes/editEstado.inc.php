@@ -5,10 +5,11 @@ if(isset($_POST["estado_id"])){
     include "../classes/EstadosController.php";
 
     $estadoId = $_POST["estado_id"];
+    $estado = $_POST["estado"];
 
-    $obj = new EstadosController("",$estadoId);
+    $obj = new EstadosController($estado, $estadoId);
 
-    $obj->deleteEstado();
+    $obj->changeEstado();
 
     header("location: ../views/admin_estados.php?success=Curso eliminado.");
     

@@ -159,7 +159,7 @@
                                 <div class="modal fade" id="editarEstado_<?php echo $estado["id_estado"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                            <form action="../includes/nuevoEstado.inc.php" method="POST">
+                                            <form action="../includes/editEstado.inc.php" method="POST">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Editar estado</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -182,7 +182,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary text-uppercase" data-bs-dismiss="modal">Cerrar</button>
-                                                    <button type="submit" name="submit" class="btn register-btn text-uppercase text-white">Registrar</button>
+                                                    <button type="submit" name="estado_id" value="<?php echo $estado["id_estado"]; ?>" class="btn register-btn text-uppercase text-white">Registrar</button>
                                                 </div>
                                             </form>
                                         </div>

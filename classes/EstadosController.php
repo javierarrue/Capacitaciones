@@ -1,9 +1,10 @@
 <?php
 class EstadosController extends Estados{
-    private $estado;
+    private $estado,$idEstado;
 
-    public function __construct($estado){
+    public function __construct($estado, $idEstado){
         $this->estado = $estado;
+        $this->idEstado = $idEstado;
     }
 
     public function createNewStatus(){
@@ -15,6 +16,10 @@ class EstadosController extends Estados{
     }
 
     public function deleteEstado(){
-        $this->deleteStatus($this->estado);
+        $this->deleteStatus($this->idEstado);
+    }
+
+    public function changeEstado(){
+        $this->editEstado($this->idEstado, $this->estado);
     }
 }

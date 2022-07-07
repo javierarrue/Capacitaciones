@@ -41,4 +41,14 @@ class Estados extends DbConnection{
             exit();
         }
     }
+
+    protected function editEstado( $statusId,$status){
+        $stmt = $this->connect()->prepare("UPDATE estados SET estado = ? WHERE id_estado = ?;");
+
+        if(!$stmt->execute(array( $status,$statusId))){
+            $stmt = null;  
+            header("location: ../views/admin_usuarios.php?error=stmtfailed");
+            exit();
+        }        
+    }
 }

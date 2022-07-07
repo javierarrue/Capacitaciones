@@ -6,7 +6,7 @@ if(isset($_POST["submit"])){
 
     $estados = $_POST["estados"];
 
-    $obj = new EstadosController($estados);
+    $obj = new EstadosController($estados,"");
 
     $obj->createNewStatus();
     header("location: ../views/admin_estados.php?success=Cursos registrados con éxito.");
