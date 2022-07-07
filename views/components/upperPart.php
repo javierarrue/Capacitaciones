@@ -149,6 +149,14 @@
                 <span class="text-uppercase">Cursos requeridos</span>
               </a>
             </li>
+            <li class="hover-section mb-1">
+              <a href="admin_estados.php" class="nav-link px-3 active administrar_estados">
+                <span class="me-2">
+                <i class="bi bi-clipboard-check"></i>
+                </span>
+                <span class="text-uppercase">Estados</span>
+              </a>
+            </li>
             <!-- COLLAPSE -->
 <!--
             <li>
@@ -248,5 +256,3 @@
       </div>
     </div>
     <!-- /OFF CANVAS (SIDE NAV)-->
-    
-    <!-- LINK ACTIVE -->

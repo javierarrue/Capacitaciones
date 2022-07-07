@@ -3,7 +3,7 @@
 <?php include '../includes/administrateUsers.inc.php';?>
 
   <script>
-        document.querySelector('.administrar_usuarios').classList.add('link-active');
+        document.querySelector('.administrar_estados').classList.add('link-active');
   </script>
   <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
