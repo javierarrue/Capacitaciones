@@ -12,11 +12,11 @@ class DbConnection{
     
         //Para que logre conectar, tengo que colocar una de las dos llaves:
         //"TrustServerCertificate" => true
+        // ó
         //"Encrypt" => false
     
         $conn = sqlsrv_connect(HOST_mssql,$connectionInfo);
         if( $conn ) {
-            echo "Conexión establecida.<br />";
             return $conn;
         }else{
             echo "Conexión no se pudo establecer.<br />";

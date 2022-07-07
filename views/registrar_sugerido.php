@@ -3,9 +3,8 @@
   <script>
     document.querySelector('.registrar_sugerido').classList.add('link-active');
   </script>
-
     <!-- MAIN CONTENT OF THE PAGE-->
-    <main class="mt-5 pt-3">
+    <main class="mt-4 pt-3">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
@@ -37,6 +36,7 @@
                     <div class="col-md-4 mb-3">
                       <label for="direccion" class="form-label">Seleccione una dirección</label>
                       <select name="direccion" class="form-select" aria-label="Default select example" id="direccion">
+                        <option selected>Direccion</option>
                         <?php foreach($direcciones as $direccion => $direccion_codigo) {?>
                           <option value=<?php echo $direccion_codigo ?>><?php echo $direccion?></option>
                         <?php }?>
@@ -46,18 +46,14 @@
                     <div class="col-md-4 mb-3">
                       <label for="departamento" class="form-label">Seleccione un departamento</label>
                       <select name="departamento" class="form-select" aria-label="Default select example" id="departamento">
-                        <option selected>Departamento</option>
-                        <option value="Departamento 1">Departamento </option>
-                        <option value="Departamento 2">Departamento 2</option>
-                        <option value="Departamento 3">Departamento 3</option>
+                        <option selected>Seleccione una Dirección</option>
                       </select>
                     </div>
+
                     <div class="col-md-4 mb-3">
                       <label for="cargo" class="form-label">Seleccione un cargo específico</label>
                       <select class="form-select" name="cargo" id="cargo" onchange="mostrar();">
-                        <option value="AL">Jefe</option>
-                        <option value="WY">Analista</option>
-                        <option value="WY">Secretaria</option>
+                        <option selected>Seleccione un departamento</option>
                       </select>
                     </div>
                   </div>
@@ -166,10 +162,8 @@
       </div>
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
- <script src="../js/suggestedCourses.js"></script>
-
-  <!-- SELECT2 -->
-  <script src="../js/select2.js"></script>
+   <!-- SELECT2 -->
+   <script src="../js/select2.js"></script>
   <script>
   // In your Javascript (external .js resource or <script> tag)
   $(document).ready(function() {
@@ -177,4 +171,9 @@
   });
   </script>
   <!-- /SELECT2 -->
+
+ <script src="../js/suggestedCourses.js"></script>
+ <script src="../js/ajaxSelect.js"></script>
+
+
 <?php include '../views/components/lowerPart.php' ?>
