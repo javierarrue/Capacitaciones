@@ -3,8 +3,6 @@
     include "../classes/Estados.class.php";
     include "../classes/EstadosController.php";
 
-    $obj = new EstadosController();
+    $obj = new EstadosController("");
 
     $estados = $obj->showEstados();
-
-    var_dump($estados);
