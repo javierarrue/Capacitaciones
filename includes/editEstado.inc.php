@@ -11,6 +11,6 @@ if(isset($_POST["estado_id"])){
 
     $obj->changeEstado();
 
-    header("location: ../views/admin_estados.php?success=Curso eliminado.");
+    header("location: ../views/admin_estados.php?success=Curso editado.");
     
 }
