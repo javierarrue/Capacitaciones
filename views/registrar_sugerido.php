@@ -3,6 +3,7 @@
   <script>
     document.querySelector('.registrar_sugerido').classList.add('link-active');
   </script>
+  
     <!-- MAIN CONTENT OF THE PAGE-->
     <main class="mt-5 pt-3">
       <div class="container-fluid">
@@ -24,7 +25,7 @@
           </div>
         </div>
 
-        <form method="get" action="registrar_sugerido.php">
+        <form method="POST" action="../includes/nuevoCursoSugerido.inc.php">
           <div class="row mb-2">
             <div class="col-md-12">
               <div class="card shadow-sm">
@@ -63,7 +64,7 @@
           </div>
 
           <!-- REGISTRAR CURSOS SUGERIDOS -->
-          <div class="row mb-2" id="seccion2" style="opacity:0;">
+          <div class="row mb-2" id="seccion2" style="opacity:1;">
             <div class="col-md-12">
               <div class="card shadow-sm">
                 <div class="card-header fw-bold">
@@ -80,17 +81,12 @@
                           <div class="col-md-2 col-sm-12">
 
                             <div class="btn-group" role="group" aria-label="Aceptado o No aceptado">
-                              <input type="radio" class="btn-check" name="analisis" id="btnAccept0" autocomplete="off" value="aceptado" required>
+                              <input type="radio" class="btn-check" name="analisis0" id="btnAccept0" autocomplete="off" value="aceptado" required>
                               <label class="btn btn-outline-success" for="btnAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Aceptar curso"><i class="bi bi-check"></i></label>
 
-                              <input type="radio" class="btn-check" name="analisis" id="btnNotAccept0" autocomplete="off" value="noAceptado" required>
+                              <input type="radio" class="btn-check" name="analisis0" id="btnNotAccept0" autocomplete="off" value="noAceptado" required>
                               <label class="btn btn-outline-primary" for="btnNotAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Rechazar curso"> <i class="bi bi-x"></i> </label>
                             </div>
-
-                          <!--
-                            <button class="btn btn-outline-success btn-sm" type="button" onclick="accept();" id="accept0"> <i class="bi bi-check"></i> </button>
-                            <button class="btn btn-outline-primary btn-sm" type="button" onclick="notAccept();" id="notAccept0"> <i class="bi bi-x"></i> </button>
-                          -->
                           </div>
                         </div>
                       </div>
@@ -149,7 +145,7 @@
 
                   <div class="row">
                     <div class="d-grid gap-2 col-md-4 mx-auto">
-                      <button type="submit" class="btn btn-primary text-uppercase register-btn">Registrar</button>
+                      <button type="submit" name="submit" class="btn btn-primary text-uppercase register-btn">Registrar</button>
                     </div>
                   </div>
                 </div>

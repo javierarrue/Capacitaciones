@@ -75,12 +75,17 @@ function setAttributes(){
     radioAccept.setAttribute('name', 'analisis'+inputCounter);
     radioAccept.setAttribute('id', 'btnAccept'+inputCounter);
     radioAccept.setAttribute('required', '');
+    radioAccept.setAttribute('value', 'aceptado');
     labelAccept.setAttribute('for', 'btnAccept'+inputCounter);
     labelAccept.setAttribute('title', 'Aceptar curso');
+    labelAccept.setAttribute('data-bs-toggle','tooltip');
+    labelAccept.setAttribute('data-bs-placement','top');
+
     //Boton e input no aceptar curso
     radioNotAccept.setAttribute('name', 'analisis'+inputCounter);
     radioNotAccept.setAttribute('id', 'btnNotAccept'+inputCounter);
     radioNotAccept.setAttribute('required', '');
+    radioNotAccept.setAttribute('value', 'noAceptado');
     labelNotAccept.setAttribute('title', 'Rechazar curso');
     labelNotAccept.setAttribute('for', 'btnNotAccept'+inputCounter);
 }
