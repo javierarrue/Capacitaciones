@@ -15,7 +15,7 @@ class CSugeridosController extends CSugeridos{
     }
 
     public function mostrarTodosLosCursos(){
-        $this->obtenerTodosLosCursos();
+        return $this->obtenerTodosLosCursos();
     }
 
 }

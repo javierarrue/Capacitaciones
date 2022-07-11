@@ -89,11 +89,16 @@
                               <label class="btn btn-outline-primary" for="btnNotAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Rechazar curso"> <i class="bi bi-x"></i> </label>
                             </div>
                           </div>
-                          <div class="col-12">
+                          <div class="col-md-10 col-sm-12">
                             <label for="cursos" class="form-label">Cursos Sugeridos</label>
                             <select name="cursos" class="form-select" aria-label="Default select example" id="cursos">
                               <option class="fw-bold" selected>Cursos</option>
-
+                              <?php while($curso = $cursos_sugeridos->fetch(PDO::FETCH_ASSOC)){ ?>
+                                <option 
+                                  value="<?php echo $curso["id"]?>">
+                                    <?php echo $curso["nombre"]?>
+                                </option>
+                              <?php } ?> 
                             </select>
                           </div>
                         </div>

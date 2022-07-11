@@ -52,7 +52,7 @@ class CSugeridos extends DbConnection{
     }
 
     protected function obtenerTodosLosCursos(){
-       $stmt = $this->connect()->prepare("SELECT * FROM rol;");
+       $stmt = $this->connect()->prepare("SELECT * FROM curso_sugerido;");
 
         if(!$stmt->execute()){
             $stmt = null;  
