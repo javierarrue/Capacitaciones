@@ -14,8 +14,8 @@ class CSugeridosController extends CSugeridos{
         $this->insertarNuevosCursos($this->cedula, $this->c_cargo, $this->c_dir, $this->c_dep, $this->cursos);
     }
 
-    public function mostrarCursos(){
-        
+    public function mostrarTodosLosCursos(){
+        $this->obtenerTodosLosCursos();
     }
 
 }

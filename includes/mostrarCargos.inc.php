@@ -1,4 +1,5 @@
 <?php
+require('../includes/config.php');
 include "../classes/dbConnection_SqlServer.class.php";
 include "../classes/Cargos.class.php";
 include "../classes/CargosController.php";

@@ -1,5 +1,6 @@
-<?php include '../views/components/upperPart.php' ?>
-<?php include '../includes/mostrarDirecciones.inc.php' ?>
+<?php include '../views/components/upperPart.php'; ?>
+<?php include '../includes/cursosSugeridos.inc.php'; ?>
+
   <script>
     document.querySelector('.registrar_sugerido').classList.add('link-active');
   </script>
@@ -53,7 +54,7 @@
 
                     <div class="col-md-12 mb-3">
                       <label for="cargo" class="form-label">Seleccione un cargo específico</label>
-                      <select multiple="multiple" class="form-select" name="cargo" id="cargo" onchange="mostrar();">
+                      <select class="form-select" name="cargo" id="cargo" onchange="mostrar();">
                         <option selected>Seleccione un departamento</option>
                       </select>
                     </div>
@@ -68,7 +69,7 @@
             <div class="col-md-12">
               <div class="card shadow-sm">
                 <div class="card-header fw-bold">
-                Registrar cursos sugeridos 
+                  Registrar cursos sugeridos 
                 </div>
                 <div class="card-body">
                   <div class="row mb-3">
@@ -87,6 +88,13 @@
                               <input type="radio" class="btn-check" name="analisis0" id="btnNotAccept0" autocomplete="off" value="noAceptado" required>
                               <label class="btn btn-outline-primary" for="btnNotAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Rechazar curso"> <i class="bi bi-x"></i> </label>
                             </div>
+                          </div>
+                          <div class="col-12">
+                            <label for="cursos" class="form-label">Cursos Sugeridos</label>
+                            <select name="cursos" class="form-select" aria-label="Default select example" id="cursos">
+                              <option class="fw-bold" selected>Cursos</option>
+
+                            </select>
                           </div>
                         </div>
                       </div>
@@ -163,9 +171,7 @@
   <script>
   // In your Javascript (external .js resource or <script> tag)
   $(document).ready(function() {
-    $('.form-select').select2({
-      tags: true
-    });
+      $('.form-select').select2();
   });
   </script>
   <!-- /SELECT2 -->

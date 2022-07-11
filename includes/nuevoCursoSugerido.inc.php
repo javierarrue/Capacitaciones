@@ -23,7 +23,7 @@ if(isset($_POST["submit"])){
     $obj = new CSugeridosController($cedula,$c_cargo, $c_dir, $c_dep, $curso_analisis);
     $obj->crearNuevosCursos();
 
-    header("location: ../views/registrar_sugerido.php?success=Cursos registrados con éxito.");
+    //header("location: ../views/registrar_sugerido.php?success=Cursos registrados con éxito.");
 
     //RECORRER ARREGLO $CURSO_ANALISIS
     /*

@@ -1,5 +1,5 @@
 <?php
-    class Cargos extends DbConnection{
+    class Cargos extends DbConnectionSQLServer{
 
         protected function getCharges(/*$c_dir,*/$c_depto){
             $result = array();

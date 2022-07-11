@@ -1,5 +1,5 @@
 <?php
-    class Departamentos extends DbConnection{
+    class Departamentos extends DbConnectionSQLServer{
         //Consultar direcciones de la AMP
         protected function getDepartments($c_direccion){
             $result = array();

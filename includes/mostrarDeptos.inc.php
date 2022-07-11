@@ -1,10 +1,11 @@
 <?php
+require('../includes/config.php');
 include "../classes/dbConnection_SqlServer.class.php";
 include "../classes/Departamentos.class.php";
 include "../classes/DepartamentosController.php";
 
 if(isset($_POST['C_DIR'])){
-    echo 'bruh;';
+
     $obj = new DepartamentosController($_POST['C_DIR']);
 
     $departamentos = $obj->showDepartments();

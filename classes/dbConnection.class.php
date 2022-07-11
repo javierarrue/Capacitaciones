@@ -1,6 +1,4 @@
 <?php
-require('../includes/config.php');
-
 class DbConnection{
 
     protected function connect(){

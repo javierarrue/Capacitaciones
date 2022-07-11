@@ -1,7 +1,7 @@
 <?php
-require('../includes/config.php');
 
-class DbConnection{
+
+class DbConnectionSQLServer{
 
     protected function connect(){
         $connectionInfo = array("Database"=>DB_mssql, 
@@ -26,19 +26,23 @@ class DbConnection{
 
 }
 /*
-$host = 'file-server';
-$dbname = DB_mssql;
-$username = USER_mssql;
-$password = PASSWORD_mssql;
-$puerto = '1433';
-try{
-    $conn = new PDO("sqlsrv:Server=$host;Database=$dbname",$username,$password);
-    echo "Conexion exitosa";
-    return $conn;
-}catch(PDOException $e){
-    print "Error: ".$e->getMessage()."<br/>";
-    die();
-}
 
+Warning: Constant HOST already defined in C:\xampp\htdocs\web-app\includes\config.php on line 2
+
+Warning: Constant USER already defined in C:\xampp\htdocs\web-app\includes\config.php on line 3
+
+Warning: Constant PASSWORD already defined in C:\xampp\htdocs\web-app\includes\config.php on line 4
+
+Warning: Constant DB already defined in C:\xampp\htdocs\web-app\includes\config.php on line 5
+
+Warning: Constant HOST_mssql already defined in C:\xampp\htdocs\web-app\includes\config.php on line 7
+
+Warning: Constant USER_mssql already defined in C:\xampp\htdocs\web-app\includes\config.php on line 8
+
+Warning: Constant PASSWORD_mssql already defined in C:\xampp\htdocs\web-app\includes\config.php on line 9
+
+Warning: Constant DB_mssql already defined in C:\xampp\htdocs\web-app\includes\config.php on line 10
+
+Warning: Constant MYSQL_CODE_DUPLICATE_KEY already defined in C:\xampp\htdocs\web-app\includes\config.php on line 12
 
 */
