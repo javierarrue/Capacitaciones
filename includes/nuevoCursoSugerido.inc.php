@@ -10,8 +10,10 @@ if(isset($_POST["submit"])){
     $trabajador = explode(',',$_POST["cargo"]);
     $c_cargo = $trabajador[0];
     $cedula = $trabajador[1];
-    //Lista del nombre de los cursos a registrar.
+    //Listado de cursos a registrar.
     $cursos = $_POST["cursos"];
+    //Arrglo $curso_analisis almacena: nombre del curso y si ha sido aceptado o no.
+    //Ejemplo: Curso 1 => Aceptado, Curso 2 => No Aceptado ...
     $curso_analisis = array();
 
     for($i = 0; $i<count($cursos); $i++){
@@ -20,6 +22,8 @@ if(isset($_POST["submit"])){
 
     $obj = new CSugeridosController($cedula,$c_cargo, $c_dir, $c_dep, $curso_analisis);
     $obj->crearNuevosCursos();
+
+    header("location: ../views/registrar_sugerido.php?success=Cursos registrados con éxito.");
 
     //RECORRER ARREGLO $CURSO_ANALISIS
     /*

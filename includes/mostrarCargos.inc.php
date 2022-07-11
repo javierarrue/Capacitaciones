@@ -10,14 +10,24 @@ if(isset($_POST['C_DEPTO'])){
 
     if(count($cargos)>0){
         echo '<option value="" selected> Seleccione un cargo </option>';
-
+        $temp = "";
         foreach($cargos as $value){
-            echo '<option value=" ' . $value["C_OCUP"] .',' . $value["cedula"] . '">';
-            echo $value["cargo"] . " | ";
-            echo $value["nombre"] . " ";
-            echo $value["apellido"] . " | ";
-            echo $value["cedula"] . " ";
-            echo '</option>';
+            
+            if($temp != $value["cargo"]){
+                echo '<optgroup label="' .$value["cargo"] . '">';
+            }
+                echo '<option value=" ' . $value["C_OCUP"] .',' . $value["cedula"] . '">';
+                echo $value["cargo"] . " | ";
+                echo $value["nombre"] . " ";
+                echo $value["apellido"] . " | ";
+                echo $value["cedula"] . " ";
+                echo '</option>';
+            $temp = $value["cargo"];
+
+            if($temp != $value["cargo"]){
+                echo '</optgroup>';
+            }
+            
         }
     }else{
         echo '<option value="" selected> Departamento no disponible </option>';

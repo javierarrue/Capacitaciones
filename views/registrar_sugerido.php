@@ -53,7 +53,7 @@
 
                     <div class="col-md-12 mb-3">
                       <label for="cargo" class="form-label">Seleccione un cargo específico</label>
-                      <select class="form-select" name="cargo" id="cargo" onchange="mostrar();">
+                      <select multiple="multiple" class="form-select" name="cargo" id="cargo" onchange="mostrar();">
                         <option selected>Seleccione un departamento</option>
                       </select>
                     </div>
@@ -163,7 +163,9 @@
   <script>
   // In your Javascript (external .js resource or <script> tag)
   $(document).ready(function() {
-      $('.form-select').select2();
+    $('.form-select').select2({
+      tags: true
+    });
   });
   </script>
   <!-- /SELECT2 -->
