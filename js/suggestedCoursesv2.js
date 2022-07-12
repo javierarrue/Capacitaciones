@@ -6,7 +6,7 @@ const coursesDivWrapper = document.querySelector('.cursos');
 
 //Variable inputCounter, necesaria para diferenciar un input de otro.
 //inputCounter variable, needed to differentiate one input to another
-var inputCounter = 0;
+var inputCounter = 1;
 //HTML elements
 var textInput, rowDiv, inputDiv, btnDiv, btnDeleteField, btnAccept, btnNotAccept,iconDelete,iconAccept,iconNotAccept; 
 var btnGroup, radioAccept, labelAccept, radioNotAccept, labelNotAccept;
@@ -16,22 +16,20 @@ var notAcceptBtn0 = document.querySelector('#notAccept0');
 var courseInput0 = document.querySelector('#curso0');
 */
 addFieldBtn.addEventListener('click', () => {
-    if(validInput()){
-        createHtmlElements();
-        setInputType();
-        setValues();
-        setAttributes();
-        setClassNames();
-        /*
-        configureBtnAccept();
-        configureBtnNotAccept();
-        */
-        configureBtnDelete();
-        setIcons();
-        //Juntando/anexando elementos en un solo elemento HTML
-        appendChilds();
-        inputCounter++;
-    }
+    createHtmlElements();
+    setInputType();
+    //setValues();
+    setAttributes();
+    setClassNames();
+    /*
+    configureBtnAccept();
+    configureBtnNotAccept();
+    */
+    configureBtnDelete();
+    setIcons();
+    //Juntando/anexando elementos en un solo elemento HTML
+    appendChilds();
+    inputCounter++;
 })
 
 function createHtmlElements(){
@@ -61,23 +59,12 @@ function setInputType(){
 
 function setValues(){
     //Para campos no editables quitar comentarios de linea
-    textInput.value = document.querySelector('#cursoSugerido').selectedOptions[0].text;
-}
-
-function validInput(){
-    var inputValue = document.querySelector('#cursoSugerido').value;
-    if(inputValue == "null"){
-        return false
-    }else{
-        return true
-    }
-    
-    
+    //textInput.value = document.querySelector('.cursoSugeridoText').value;
 }
 
 function setAttributes(){
     //Para campos no editablesquitar comentarios de linea
-    textInput.setAttribute('readonly','');
+    //textInput.setAttribute('readonly','');
     textInput.setAttribute('name','cursos['+inputCounter+']');
     textInput.setAttribute('id','curso'+inputCounter);
     textInput.setAttribute('required', '');

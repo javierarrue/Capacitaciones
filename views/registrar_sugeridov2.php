@@ -84,27 +84,33 @@
                 <div class="card-body">
                   <div class="row mb-3">
                     <div class="col-lg-12 col-md-12">
-                      <div class="row align-items-center mb-3">
-                        <div class="col-md-10 col-sm-12">
-                          <label for="cursoSugerido" class="form-label">Escriba el nombre del curso</label>
-                            <select name="cursos" class="form-select" aria-label="Default select example" id="cursoSugerido">
-                              <option value="null" selected></option>
-                              <?php while($curso = $cursos_sugeridos->fetch(PDO::FETCH_ASSOC)){ ?>
-                              <option 
-                                value="<?php echo $curso["id"]?>">
-                                <?php echo $curso["nombre"]?>
-                              </option>
-                              <?php } ?> 
-                            </select>
-                        </div>
-                        <div class="d-grid gap-2 col-md-2 col-sm-12 align-self-end">
-                          <button type="button" class="btn btn-outline-success addFieldBtn">Añadir</button>
+                      <div class="mb-1">
+                        <div class="row align-items-center mb-3">
+                          <div class="col-md-10 col-sm-12">
+                            <input class="form-control cursoSugeridoInput cursoSugeridoText"  placeholder="Nombre del curso" type="text" aria-label="input example" name="cursos[0]" id="curso0" required>
+                          </div>
+                          <div class="col-md-2 col-sm-12">
+
+                            <div class="btn-group" role="group" aria-label="Aceptado o No aceptado">
+                              <input type="radio" class="btn-check" name="analisis0" id="btnAccept0" autocomplete="off" value="aceptado" required>
+                              <label class="btn btn-outline-success" for="btnAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Aceptar curso"><i class="bi bi-check"></i></label>
+
+                              <input type="radio" class="btn-check" name="analisis0" id="btnNotAccept0" autocomplete="off" value="noAceptado" required>
+                              <label class="btn btn-outline-primary" for="btnNotAccept0" data-bs-toggle="tooltip" data-bs-placement="top" title="Rechazar curso"> <i class="bi bi-x"></i> </label>
+                            </div>
+                          </div> 
                         </div>
                       </div>
+
                       <!-- ESPACIO PARA LA CREACION DE NUEVOS INPUTS-->
                       <div class="cursos">
                       </div>
                       <!-- /ESPACIO PARA LA CREACION DE NUEVOS INPUTS-->
+
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-outline-success addFieldBtn">Añadir nueva línea</button>
+                      </div>
+
                     </div>
                   </div>
 
@@ -135,7 +141,7 @@
   </script>
   <!-- /SELECT2 -->
 
- <script src="../js/suggestedCourses.js"></script>
+ <script src="../js/suggestedCoursesv2.js"></script>
  <script src="../js/ajaxSelect.js"></script>
 
 
