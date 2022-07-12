@@ -117,7 +117,7 @@
               </div>
             </li>
             <li class="hover-section mb-1">
-              <a href="visualizar.php" class="nav-link px-3 active visualizar">
+              <a href="visualizar_cargos_trabajadores.php" class="nav-link px-3 active visualizar">
                 <span class="me-2">
                   <i class="bi bi-table"></i>
                 </span>
