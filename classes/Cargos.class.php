@@ -42,7 +42,12 @@
                     "apellido" => $apellido, 
                     "cedula" => $cedula, 
                     "cargo" => $cargo,
-                    "C_OCUP" => $c_ocup
+                    "C_OCUP" => $c_ocup,
+                    "btn_detalle" => "
+                        <form action='visualizar_detalles.php'>
+                            <button type='submit' class='text-primary action-btn' title='Ver detalles'>
+                            <i class='bi bi-search'></i></button>
+                        </form>"
                 );
                 $i++;
             }
