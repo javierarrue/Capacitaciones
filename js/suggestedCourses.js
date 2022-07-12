@@ -1,6 +1,5 @@
 //Boton de agregar un nuevo input
 const addFieldBtn = document.querySelector('.addFieldBtn');
-//const deleteFieldBtn = document.querySelector('.deleteFieldBtn');
 //Este es el div en donde se apendizaran los elementos html
 const coursesDivWrapper = document.querySelector('.cursos');
 
@@ -10,11 +9,6 @@ var inputCounter = 0;
 //HTML elements
 var textInput, rowDiv, inputDiv, btnDiv, btnDeleteField, btnAccept, btnNotAccept,iconDelete,iconAccept,iconNotAccept; 
 var btnGroup, radioAccept, labelAccept, radioNotAccept, labelNotAccept;
-/*
-var acceptBtn0 = document.querySelector('#accept0');
-var notAcceptBtn0 = document.querySelector('#notAccept0'); 
-var courseInput0 = document.querySelector('#curso0');
-*/
 addFieldBtn.addEventListener('click', () => {
     if(validInput()){
         createHtmlElements();
@@ -22,10 +16,6 @@ addFieldBtn.addEventListener('click', () => {
         setValues();
         setAttributes();
         setClassNames();
-        /*
-        configureBtnAccept();
-        configureBtnNotAccept();
-        */
         configureBtnDelete();
         setIcons();
         //Juntando/anexando elementos en un solo elemento HTML
@@ -71,8 +61,6 @@ function validInput(){
     }else{
         return true
     }
-    
-    
 }
 
 function setAttributes(){
@@ -149,117 +137,10 @@ function configureBtnDelete(){
         document.querySelector('.cursoSugerido'+id).remove();
     };
 }
-/*
-//Esta funcion configura el boton de aceptar el curso seleccionado.
-//Cambia el estado del boton (deshabilitado a disponible y viceversa)
-function configureBtnAccept(){
-    //Definir el id y value del boton aceptar, esto servirá como apuntador o identificador.
-    btnAccept.id = "accept"+inputCounter;
-    btnAccept.value = inputCounter;
-
-    btnAccept.type = 'button';
-    btnAccept.appendChild(iconAccept);
-
-    //Asignando funcion onClick, para cada boton creado
-    btnAccept.onclick = function(){
-        //Este valor será usado para referenciar los id de los botones correspondientes
-        var id = this.value;
-
-        console.log(id);
-
-        var accept = document.querySelector('#accept' + id);
-        var notAccept = document.querySelector('#notAccept' + id);
-        var courseInput = document.querySelector('#curso'+id);
-        //Si el boton -aceptar- no ha sido seleccionado:
-        if(accept.classList.contains('btn-outline-success')){
-            //Marcalo como seleccionado y deshabilita el boton de -no aceptar-
-            accept.classList.replace('btn-outline-success','btn-success');
-            notAccept.disabled = true;
-            courseInput.setAttribute('readonly', '');
-        }else{
-            //Viceversa (si está seleccionado, marcalo no seleccionado y habilita el boton de -no aceptar-)
-            accept.classList.replace('btn-success','btn-outline-success');
-            notAccept.disabled = false;
-            courseInput.removeAttribute('readonly', '');
-        }
-
-    };
-}
-
-//Esta funcion configura el boton de no aceptar el curso seleccionado
-//Cambia el estado del boton (deshabilitado a disponible y viceversa)
-function configureBtnNotAccept(){
-     //Definir el id y value del boton aceptar, esto servirá como apuntador o identificador.
-    btnNotAccept.id = "notAccept"+inputCounter;
-    btnNotAccept.value = inputCounter;
-
-    btnNotAccept.type = 'button';
-    btnNotAccept.appendChild(iconNotAccept);
-
-    //Asignando funcion onClick, para cada boton creado
-    btnNotAccept.onclick = function(){
-         //Este valor será usado para referenciar los id de los botones correspondientes
-        var id = this.value;
-
-        var accept = document.querySelector('#accept' + id);
-        var notAccept = document.querySelector('#notAccept' + id);
-        var courseInput = document.querySelector('#curso'+id);
-        //Si el boton -no aceptar- no ha sido seleccionado:
-        if(notAccept.classList.contains('btn-outline-primary')){
-            //Marcalo como seleccionado y deshabilitar el boton de -aceptar-
-            notAccept.classList.replace('btn-outline-primary','btn-primary');
-            accept.disabled = true;
-            courseInput.setAttribute('readonly', '');
-        }else{
-            //Viceversa (si está seleccionado, marcalo no seleccionado y habilita el boton de -aceptar-)
-            notAccept.classList.replace('btn-primary','btn-outline-primary');
-            accept.disabled = false;
-            courseInput.removeAttribute('readonly', '');
-        }
-    };
-}
-
-//Misma funcion anterior, pero esta es para el primer campo que siempre del documento
-function accept(){
-    //Si el boton -aceptar- no ha sido seleccionado:
-    if(acceptBtn0.classList.contains('btn-outline-success')){
-        //Marcalo como seleccionado y deshabilita el boton de -no aceptar-
-        acceptBtn0.classList.replace('btn-outline-success','btn-success');
-        notAcceptBtn0.disabled = true;
-        courseInput0.setAttribute('readonly', '');
-    }else{
-        //Viceversa (si está seleccionado, marcalo no seleccionado y habilita el boton de -no aceptar-)
-        acceptBtn0.classList.replace('btn-success','btn-outline-success');
-        notAcceptBtn0.disabled = false;
-        courseInput0.removeAttribute('readonly', '');
-    }
-}
-
-function notAccept(){
-
-    if(notAcceptBtn0.classList.contains('btn-outline-primary')){
-        //Marcalo como seleccionado y deshabilitar el boton de -aceptar-
-        notAcceptBtn0.classList.replace('btn-outline-primary','btn-primary');
-        acceptBtn0.disabled = true;
-        courseInput0.setAttribute('readonly', '');
-    }else{
-        //Viceversa (si está seleccionado, marcalo no seleccionado y habilita el boton de -aceptar-)
-        notAcceptBtn0.classList.replace('btn-primary','btn-outline-primary');
-        acceptBtn0.disabled = false;
-        courseInput0.removeAttribute('readonly', '');
-    }
-
-}*/
-
 
 //Asignando elementos al documento html
 function appendChilds(){
     inputDiv.appendChild(textInput);
-/*
-    btnDiv.appendChild(btnAccept);
-    btnDiv.appendChild(btnNotAccept);
-    btnDiv.appendChild(btnDeleteField);
-*/
     btnGroup.appendChild(radioAccept);
     btnGroup.appendChild(labelAccept);
     btnGroup.appendChild(radioNotAccept);

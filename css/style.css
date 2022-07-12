@@ -160,3 +160,7 @@ height: 100%;
     color:black !important;
     transition: 0.5s;
 }
+
+.btn-group{
+    width:100% !important;
+}

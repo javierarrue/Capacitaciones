@@ -1,5 +1,6 @@
 <?php include '../views/components/upperPart.php'; ?>
 <?php include '../includes/cursosSugeridos.inc.php'; ?>
+<?php include '../includes/mostrarDirecciones.inc.php'; ?>
 
   <script>
     document.querySelector('.registrar_sugerido').classList.add('link-active');
@@ -9,7 +10,7 @@
     <main class="mt-5 pt-3">
       <div class="container-fluid">
       <?php if(isset($_GET["success"])){?>
-          <div class="row">
+        <div class="row">
           <div class="col-md-12">
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong><?php echo $_GET["success"]?></strong>
@@ -17,7 +18,16 @@
             </div>
           </div>
         </div>
-        <?php }?>
+        <?php }elseif(isset($_GET["error"])){?>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong><?php echo $_GET["error"]?></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>       
+        <?php } ?>
         <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
             <div class="card shadow-sm">
