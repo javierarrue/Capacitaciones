@@ -44,9 +44,10 @@
                     "cargo" => $cargo,
                     "C_OCUP" => $c_ocup,
                     "btn_detalle" => "
-                        <form action='visualizar_detalles.php'>
+                        <form action='visualizar_detalles.php' method='GET'>
                             <button type='submit' class='text-primary action-btn' title='Ver detalles'>
                             <i class='bi bi-search'></i></button>
+                            <input type='hidden' value='$cedula' name='cedula'>
                         </form>"
                 );
                 $i++;
