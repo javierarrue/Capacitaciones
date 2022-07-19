@@ -1,9 +1,11 @@
 <?php
-$cedulaNoFormat = $_GET["cedula"];
+$cedulaNoFormat = array();
+$cedulaNoFormat[0] = $_GET["cedula"];
 //str_split("",$cedulaNoFormat);
 
-$pattern = "/ +(0)|0/";
-echo preg_replace($pattern, '-',$cedulaNoFormat);
+$pattern = "/^(?:(0)?(\d{1,2})?)?(  )?(PE)?(N)?(E)?( )?(1PI)?(1AV)?/";
+$result = preg_grep($pattern,$cedulaNoFormat);
+var_dump($result);
 
 ///^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i
 
@@ -30,7 +32,7 @@ Población indigena (provinciaPI-libro-tomo). Ej: 1PI-1234-12345
  * Patron para primera parte de la cedula (provincia|PE|E|1PI|1AV):
  * ^(?:(0)?(\d{1,2})?)?(  )?(PE)?(N)?(E)?( )?(1PI)?(1AV)?
  * O un poco mas limpio
- * ^(\d{2})?(  )?(PE)?(N)?(E)?( )?(1PI)?(1AV)?
+ *  
  * 
  * Patron para sacar el libro (4 digitos) y tomo (5 digitos) de la cedula.
  * (\d{4})(\d{5})
