@@ -1,4 +1,6 @@
 <?php
+include "formatCedula.class.php";
+
     class Cargos extends DbConnectionSQLServer{
 
         protected function getCharges(/*$c_dir,*/$c_depto){
@@ -30,10 +32,11 @@
             $i = 0;
 
             while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+                $obj = new formatCedula($row['cedula']);
 
                 $nombre = $row['nombre'];
                 $apellido = $row['apellido'];
-                $cedula = $row['cedula'];
+                $cedula = $obj->formatCedula();
                 $cargo = $row['ocupacion'];
                 $c_ocup = $row['C_OCUP'];
 
