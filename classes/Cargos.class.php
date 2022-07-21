@@ -36,21 +36,22 @@ include "formatCedula.class.php";
 
                 $nombre = $row['nombre'];
                 $apellido = $row['apellido'];
-                $cedula = $obj->formatCedula();
+                $cedulaConGuiones = $obj->formatCedula();
+                $cedulaSinGuiones = $row['cedula'];
                 $cargo = $row['ocupacion'];
                 $c_ocup = $row['C_OCUP'];
 
                 $result[$i] = array(
                     "nombre" => $nombre, 
                     "apellido" => $apellido, 
-                    "cedula" => $cedula, 
+                    "cedula" => $cedulaConGuiones, 
                     "cargo" => $cargo,
                     "C_OCUP" => $c_ocup,
                     "btn_detalle" => "
                         <form action='visualizar_detalles.php' method='GET'>
                             <button type='submit' class='text-primary action-btn' title='Ver detalles'>
                             <i class='bi bi-search'></i></button>
-                            <input type='hidden' value='$cedula' name='cedula'>
+                            <input type='hidden' value='$cedulaSinGuiones' name=cedula'>
                         </form>"
                 );
                 $i++;
