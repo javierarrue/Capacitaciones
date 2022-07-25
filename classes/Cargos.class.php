@@ -6,7 +6,7 @@ include "formatCedula.class.php";
         protected function getCharges(/*$c_dir,*/$c_depto){
             $result = array();
             $conn = $this->connect();
-            $sql = "SELECT nombre, apellido, cedula, ocupacion, ocupaciones.C_OCUP 
+            $sql = "SELECT nombre, apellido, cedula, ocupacion, ocupaciones.C_OCUP, departamentos.depto, direcciones.direccion
                     FROM personal
                     JOIN DEPARTAMENTOS ON personal.C_DEPTO = departamentos.C_DEPTO
                     JOIN ocupaciones ON personal.c_ocup = ocupaciones.C_OCUP
@@ -40,6 +40,8 @@ include "formatCedula.class.php";
                 $cedulaSinGuiones = $row['cedula'];
                 $cargo = $row['ocupacion'];
                 $c_ocup = $row['C_OCUP'];
+                $depto = $row['depto'];
+                $direccion = $row['direccion'];
 
                 $result[$i] = array(
                     "nombre" => $nombre, 
@@ -48,10 +50,10 @@ include "formatCedula.class.php";
                     "cargo" => $cargo,
                     "C_OCUP" => $c_ocup,
                     "btn_detalle" => "
-                        <form action='visualizar_detalles.php' method='GET'>
+                        <form target='_blank' action='../views/visualizar_detalles.php' method='GET'>
                             <button type='submit' class='text-primary action-btn' title='Ver detalles'>
                             <i class='bi bi-search'></i></button>
-                            <input type='hidden' value='$cedulaSinGuiones' name=cedula'>
+                            <input type='hidden' value='$cedulaSinGuiones' name=cedula>
                         </form>"
                 );
                 $i++;
@@ -59,19 +61,3 @@ include "formatCedula.class.php";
             return $result;
         }
     }
-
-    /*
-    
-    resultado = (
-        {
-            nombre => Javier
-            apellido => Arrue
-        },
-        {
-            nombre => Sasha
-            apellido => GOnzalez
-        },
-        {}
-    )
-    
-    * */

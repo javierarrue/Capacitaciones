@@ -1,4 +1,6 @@
 <?php include '../views/components/upperPart.php' ?>
+<?php include '../includes/mostrarDetalleColaborador.inc.php' ?>
+
 <?php 
   $noCongruente = 'rounded-pill badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-10 fw-normal';
   $congruente = 'rounded-pill badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-10 fw-normal';
@@ -52,7 +54,15 @@
                       <p>
                         <span class="text-muted">Nombre</span>
                         <br>
-                        <b> Javier Arrue</b>
+                        <?php echo $colaboradorDetalle["nombre"]?>
+                      </p>
+                    </div>
+
+                    <div class="col-6">
+                      <p>
+                        <span class="text-muted">Apellido</span>
+                        <br>
+                        <?php echo $colaboradorDetalle["apellido"]?>
                       </p>
                     </div>
 
@@ -60,7 +70,7 @@
                       <p>
                         <span class="text-muted">Cédula</span>
                         <br>
-                        <b>8-941-1079</b> 
+                        <?php echo $colaboradorDetalle["cedula"]?>
                       </p>
                     </div>
                 </div>
@@ -70,14 +80,14 @@
                     <p>
                       <span class="text-muted">Dirección</span>
                       <br>
-                      <b>...</b> 
+                      <?php echo $colaboradorDetalle["direccion"]?>
                     </p>
                   </div>
                   <div class="col-lg-6 col-md-12">
                     <p>
                       <span class="text-muted"> Departamento </span>
                       <br>
-                      <b>...</b>
+                      <?php echo $colaboradorDetalle["depto"]?>
                     </p>
                   </div>
                 </div>
@@ -87,7 +97,7 @@
                     <p>
                       <span class="text-muted">Cargo</span>
                       <br>
-                      <b>Analista</b> 
+                      <?php echo $colaboradorDetalle["ocupacion"]?>
                     </p>
                   </div>
                 </div>
@@ -113,12 +123,11 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>GAS</td>
-                        </tr>
-                        <tr>
-                          <td>Excel</td>
-                        </tr>
+                        <?php for($i= 0 ; $i<count($cSugeridosColaborador);$i++){ ?>
+                          <tr>
+                            <td><?php echo $cSugeridosColaborador[$i]["csugerido"]?></td>
+                          </tr>
+                        <?php }?>
                       </tbody>
                     </table>
                   </div>
@@ -151,6 +160,46 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php for($i= 0 ; $i<count($cSugeridosColaborador);$i++){ ?>
+                        <tr>
+                          <td class="text-end">
+                            <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_" title="Eliminar usuario">
+                              <i class="bi bi-trash3-fill"></i>
+                            </button>
+                            <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar usuario">
+                              <i class="bi bi-pencil-fill"></i>
+                            </button>
+                          </td>
+                          <td><?php echo $cSugeridosColaborador[$i]["csugerido"]?></td>
+                          <td class="" style="font-size:1.1em"> 
+                            <span class="<?php echo $aceptado?>">
+                              <?php echo $cSugeridosColaborador[$i]["analisis"]?>
+                            </span>
+                          </td>
+                          <td>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected> Pendiente </option>
+                              <option value="1"> Impartido</option>
+                              <option value="2"> En desarrollo</option>
+                              <option value="3"> Cancelado</option>
+                              <option value="3"> Para el siguiente año</option>
+                              <option value="3"> En trámite de compras</option>
+                              <option value="3"> En trámite con proveedor local</option>
+                              <option value="3"> Solicitado a organismo internacional</option>
+                              <option value="3"> A incluir en el PAC del siguiente año</option>
+                              <option value="3"> Otro</option>
+                            </select>
+                          </td>
+                          <td><?php echo $cSugeridosColaborador[$i]["fecha_inicio"]?></td>
+                          <td><?php echo $cSugeridosColaborador[$i]["fecha_fin"]?></td>
+                          <td class="" style="font-size:1.1em"> 
+                            <span class="<?php echo $congruente ?>">
+                              Congruente
+                            </span>
+                          </td>
+                        </tr>
+                      <?php }?>
+
                       <tr>
                         <td class="text-end">
                           <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_" title="Eliminar usuario">
