@@ -46,7 +46,8 @@ include "formatCedula.class.php";
                 $result[$i] = array(
                     "nombre" => $nombre, 
                     "apellido" => $apellido, 
-                    "cedula" => $cedulaConGuiones, 
+                    "cedula" => $cedulaConGuiones,
+                    "cedula_sin_guiones" => $cedulaSinGuiones,
                     "cargo" => $cargo,
                     "C_OCUP" => $c_ocup,
                     "btn_detalle" => "

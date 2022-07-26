@@ -17,7 +17,7 @@ if(isset($_POST['C_DEPTO'])){
             if($temp != $value["cargo"]){
                 echo '<optgroup label="' .$value["cargo"] . '">';
             }
-                echo '<option value=" ' . $value["C_OCUP"] .',' . $value["cedula"] . '">';
+                echo '<option value=" ' . $value["C_OCUP"] .',' . $value["cedula_sin_guiones"] . '">';
                 echo $value["cargo"] . " | ";
                 echo $value["nombre"] . " ";
                 echo $value["apellido"] . " | ";
