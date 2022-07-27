@@ -11,9 +11,19 @@
     document.querySelector('.visualizar').classList.add('link-active');
   </script>
     <!-- MAIN CONTENT OF THE PAGE-->
-    <main class="mt-5 pt-2">
+    <main class="mt-5 pt-3">
       <div class="container-fluid">
-        <div class="row mb-2 mt-2">
+      <?php if(isset($_GET["success"])){?>
+          <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong><?php echo $_GET["success"]?></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+        <?php }?>
+        <div class="row mb-2">
           <div class="col-md-12 fw-bold fs-3">
             <div class="card shadow-sm">
               <div class="card-body">
@@ -31,7 +41,7 @@
         </div>
 
         <div class="row mb-2 g-2">
-          <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+          <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="card shadow-sm" style="height: 100%;">
               <div class="card-header">
                 <div class="row">
@@ -70,7 +80,7 @@
                       <p>
                         <span class="text-muted">Cédula</span>
                         <br>
-                        <?php echo $colaboradorDetalle["cedula"]?>
+                         <span id="cedula_trabajador"><?php echo $colaboradorDetalle["cedula"]?></span>
                       </p>
                     </div>
                 </div>
@@ -160,157 +170,103 @@
                       </tr>
                     </thead>
                     <tbody>
+
                       <?php for($i= 0 ; $i<count($cSugeridosColaborador);$i++){ ?>
-                        <tr>
+                        <tr id="tr_<?php echo $i?>">
                           <td class="text-end">
-                            <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_" title="Eliminar usuario">
+                            <button type="button" data-role="delete" data-id="<?php echo $i ?>" class="btn text-danger action-btn" title="Eliminar Curso" id="delete">
                               <i class="bi bi-trash3-fill"></i>
                             </button>
-                            <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar usuario">
+                            <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#edit_<?php echo $i ?>" title="Editar Curso">
                               <i class="bi bi-pencil-fill"></i>
                             </button>
                           </td>
-                          <td><?php echo $cSugeridosColaborador[$i]["csugerido"]?></td>
-                          <td class="" style="font-size:1.1em"> 
+                          <td data-target="nombre" id="csugerido-nombre_<?php echo $i?>"><?php echo $cSugeridosColaborador[$i]["csugerido"]?></td>
+                          <td class="" style="font-size:1.1em" data-target="analisis"> 
+                          <?php if($cSugeridosColaborador[$i]["analisis"] == "aceptado"){?>
                             <span class="<?php echo $aceptado?>">
+                          <?php }else{?>
+                            <span class="<?php echo $rechazado?>">
+                          <?php }?>
                               <?php echo $cSugeridosColaborador[$i]["analisis"]?>
                             </span>
                           </td>
-                          <td>
+                          <td data-target="estado"><!-- ESTADOS -->
                             <select class="form-select" aria-label="Default select example">
-                              <option selected> Pendiente </option>
-                              <option value="1"> Impartido</option>
-                              <option value="2"> En desarrollo</option>
-                              <option value="3"> Cancelado</option>
-                              <option value="3"> Para el siguiente año</option>
-                              <option value="3"> En trámite de compras</option>
-                              <option value="3"> En trámite con proveedor local</option>
-                              <option value="3"> Solicitado a organismo internacional</option>
-                              <option value="3"> A incluir en el PAC del siguiente año</option>
-                              <option value="3"> Otro</option>
+                              <?php 
+                                while($estado = $estados->fetch(PDO::FETCH_ASSOC)){?>
+
+                                <option value="<?php echo $estado["id_estado"];?>"
+                                  <?php if($cSugeridosColaborador[$i]["estado"] ==  $estado["id_estado"]){?> selected <?php }?>>
+                                  <?php echo $estado["estado"];?>
+                                </option>
+
+                              <?php }
+                                //Vuelvo a correr el execute().
+                                //¿Porque?:
+                                //PDOStatment (el cual $roles es) es un cursor que se mueve hacia adelante, por lo tanto una vez consumido, este no volvera a la posicion inicial.
+                                //Por eso es necesario volver ejecutar el PDOStatmente, para reiniciar la posicion de este :=)
+                               $estados->execute();  
+                            ?>
                             </select>
-                          </td>
-                          <td><?php echo $cSugeridosColaborador[$i]["fecha_inicio"]?></td>
-                          <td><?php echo $cSugeridosColaborador[$i]["fecha_fin"]?></td>
+                          </td><!-- /ESTADOS -->
+                          <!-- FECHA INICIO -->
+                          <td data-target="fecha_inicio"><input type="date" name="fecha_inicio" value="<?php echo $cSugeridosColaborador[$i]["fecha_inicio"]?>"> </td>
+                          <!-- FECHA FIN -->
+                          <td data-target="fecha_fin"><input type="date" name="fecha_fin" value="<?php echo $cSugeridosColaborador[$i]["fecha_fin"]?>"> </td>
+                          <!-- CONGRUENCIA -->
                           <td class="" style="font-size:1.1em"> 
                             <span class="<?php echo $congruente ?>">
                               Congruente
                             </span>
                           </td>
+                          <!-- /CONGRUENCIA -->
                         </tr>
+
+                        <!-- Modal EDITAR-->
+                        <div class="modal fade" id="edit_<?php echo $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Editar curso: <?php echo $cSugeridosColaborador[$i]["csugerido"] ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row">
+                                  <div class="col-6">
+                                    <label for="status" class="form-label">Estado</label>
+                                    <select class="form-select" aria-label="Default select example" id="status">
+                                      <option selected> Pendiente </option>
+                                      <option value="1"> Impartido</option>
+                                      <option value="2"> En desarrollo</option>
+                                      <option value="3"> Cancelado</option>
+                                      <option value="3"> Para el siguiente año</option>
+                                      <option value="3"> En trámite de compras</option>
+                                      <option value="3"> En trámite con proveedor local</option>
+                                      <option value="3"> Solicitado a organismo internacional</option>
+                                      <option value="3"> A incluir en el PAC del siguiente año</option>
+                                      <option value="3"> Otro</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-6">
+                                    <label for="analisis" class="form-label">Análisis</label>
+                                    <select class="form-select" aria-label="Default select example" id="analisis">
+                                      <option selected> Aceptado </option>
+                                      <option value="1"> Rechazado</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary register-btn">Guardar cambios</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /MODAL EDITAR -->
                       <?php }?>
 
-                      <tr>
-                        <td class="text-end">
-                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_" title="Eliminar usuario">
-                            <i class="bi bi-trash3-fill"></i>
-                          </button>
-                          <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar usuario">
-                            <i class="bi bi-pencil-fill"></i>
-                          </button>
-                        </td>
-                        <td>GAS</td>
-                        <td class="" style="font-size:1.1em"> 
-                          <span class="<?php echo $aceptado?>">
-                            Aceptado
-                          </span>
-                        </td>
-                        <td>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected> Pendiente </option>
-                              <option value="1"> Impartido</option>
-                              <option value="2"> En desarrollo</option>
-                              <option value="3"> Cancelado</option>
-                              <option value="3"> Para el siguiente año</option>
-                              <option value="3"> En trámite de compras</option>
-                              <option value="3"> En trámite con proveedor local</option>
-                              <option value="3"> Solicitado a organismo internacional</option>
-                              <option value="3"> A incluir en el PAC del siguiente año</option>
-                              <option value="3"> Otro</option>
-                            </select>
-                          </td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td class="" style="font-size:1.1em"> 
-                            <span class="<?php echo $congruente ?>">
-                              Congruente
-                            </span>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td class="text-end">
-                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_" title="Eliminar usuario">
-                            <i class="bi bi-trash3-fill"></i>
-                          </button>
-                          <button type="button" class="btn text-primary action-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar usuario"><i class="bi bi-pencil-fill"></i></button>
-                        </td>
-                        <td>Investigación de accidente</td>
-                          <td class="" style="font-size:1.1em"> 
-                            <span class="<?php echo $aceptado ?>">
-                              Aceptado
-                            </span>
-                          </td>
-                          <td>
-                            <select class="form-select" aria-label="Default select example">
-                              <option> Pendiente </option>
-                              <option value="1" selected> Impartido</option>
-                              <option value="2"> En desarrollo</option>
-                              <option value="3"> Cancelado</option>
-                              <option value="3"> Para el siguiente año</option>
-                              <option value="3"> En trámite de compras</option>
-                              <option value="3"> En trámite con proveedor local</option>
-                              <option value="3"> Solicitado a organismo internacional</option>
-                              <option value="3"> A incluir en el PAC del siguiente año</option>
-                              <option value="3"> Otro</option>
-                            </select>
-                          </td>
-                          <td>
-                            <input type="date" name="" id="" value="2022-03-10">
-                          </td>
-                          <td>
-                            <input type="date" name="" id="" value="2022-03-15">
-                          </td>
-                          <td class="" style="font-size:1.1em"> 
-                            <span class="<?php echo $noCongruente?>">
-                              No congruente
-                            </span>
-                          </td>
-                      </tr>     
-                      <tr>
-                        <td class="text-end">
-                          <button type="button" class="btn text-danger action-btn" data-bs-toggle="modal" data-bs-target="#delete_" title="Eliminar usuario">
-                                <i class="bi bi-trash3-fill"></i>
-                          </button>
-                          <button type="button" class="btn text-primary action-btn edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar usuario"><i class="bi bi-pencil-fill"></i></button>
-                        </td>
-                        <td>Cocina</td>
-                        <td class="" style="font-size:1.1em"> 
-                            <span class="<?php echo $rechazado?>">
-                              Rechazado
-                            </span>
-                        </td>
-                        <td>
-                            <select class="form-select" aria-label="Default select example">
-                              <option> Pendiente </option>
-                              <option value="1"> Impartido</option>
-                              <option value="2"> En desarrollo</option>
-                              <option value="3" selected> Cancelado</option>
-                              <option value="3"> Para el siguiente año</option>
-                              <option value="3"> En trámite de compras</option>
-                              <option value="3"> En trámite con proveedor local</option>
-                              <option value="3"> Solicitado a organismo internacional</option>
-                              <option value="3"> A incluir en el PAC del siguiente año</option>
-                              <option value="3"> Otro</option>
-                            </select>
-                          </td>
-                          <td>-</td>
-                          <td>-</td>
-                        <td class="" style="font-size:1.1em"> 
-                            <span class="<?php echo $noCongruente?>">
-                              No congruente
-                            </span>
-                        </td>
-                      </tr>
                     </tbody>
                   </table>
                   </div>
@@ -355,52 +311,53 @@
       </div>
     </main>
  <!-- /MAIN CONTENT OF THE PAGE-->    
- <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar curso: GAS</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row mb-2">
-          <div class="col-12">
-            <label for="courseName" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="courseName" placeholder="Curso" value="GAS">
-          </div>
+
+
+  <!-- ELIMINAR USUARIO -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar el curso <span id="delete_nombre_csugerido"></span> ?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="row">
-          <div class="col-6">
-            <label for="status" class="form-label">Estado</label>
-            <select class="form-select" aria-label="Default select example" id="status">
-              <option selected> Pendiente </option>
-              <option value="1"> Impartido</option>
-              <option value="2"> En desarrollo</option>
-              <option value="3"> Cancelado</option>
-              <option value="3"> Para el siguiente año</option>
-              <option value="3"> En trámite de compras</option>
-              <option value="3"> En trámite con proveedor local</option>
-              <option value="3"> Solicitado a organismo internacional</option>
-              <option value="3"> A incluir en el PAC del siguiente año</option>
-              <option value="3"> Otro</option>
-            </select>
-          </div>
-          <div class="col-6">
-            <label for="analisis" class="form-label">Análisis</label>
-            <select class="form-select" aria-label="Default select example" id="analisis">
-              <option selected> Aceptado </option>
-              <option value="1"> Rechazado</option>
-            </select>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <form action="../includes/deleteCSugeridoColaborador.inc.php" method="POST">
+            <button value="" class="btn btn-danger" name="id" type="submit" id="delete_id_csugerido">Eliminar</button>
+            <input type="hidden" name="cedula" value="" id="delete_cedula_trabajador">
+          </form>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary register-btn">Guardar cambios</button>
       </div>
     </div>
   </div>
-</div>
+  <!-- /ELIMINAR USUARIO -->
+
+  <script>
+    $(document).ready(function(){
+      $(document).on('click', 'button[data-role=delete]',function(){
+        
+        var id = $(this).data('id');
+         /*
+        
+        var analisis = $('#tr_'+id).children('td[data-target=analisis]').text();
+        var estado = $('#tr_'+id).children('td[data-target=estado]').text();
+        var fecha_inicio = $('#tr_'+id).children('td[data-target=fecha_inicio]').text();
+        var fecha_fin = $('#tr_'+id).children('td[data-target=fecha_fin]').text();
+        */
+        var cedula = $('#cedula_trabajador').text();
+        var nombre = $('#tr_'+id).children('td[data-target=nombre]').text();
+
+        console.log("Nombre: " + nombre)
+        console.log("Cedula: " + cedula)
+
+        document.querySelector('#delete_nombre_csugerido').textContent = nombre;
+        document.querySelector('#delete_cedula_trabajador').value = cedula;
+        
+        $('#deleteModal').modal('toggle');
+      })
+    })
+  </script>
+
 
  <?php include '../views/components/lowerPart.php' ?>

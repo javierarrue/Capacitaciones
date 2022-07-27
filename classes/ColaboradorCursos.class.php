@@ -24,6 +24,7 @@ class ColaboradorCursos extends DbConnection{
             $cursoSugerido = $stmt2->fetch(PDO::FETCH_ASSOC);
             
             $detallesCursos[$i] = array(
+                "id" => $result["id"],
                 "csugerido" => $cursoSugerido["nombre"],
                 "analisis" => $result["analisis"],
                 "estado" => $result["id_estado"],
@@ -34,5 +35,26 @@ class ColaboradorCursos extends DbConnection{
         }
         
         return $detallesCursos;
+    }
+
+    protected function eliminarCSugeridoTrabajador($id){
+        $stmt = $this->connect()->prepare("DELETE FROM csugerido_cargo_trabajador WHERE id = ?;");
+
+        if(!$stmt->execute(array($id))){
+            $stmt = null;  
+            header("location: ../views/admin_usuarios.php?error=stmtfailed");
+            exit();
+        }
+    }
+
+    protected function editarCSugeridoTrabajador($datos){
+        //TENER CUIDADO CON EL NOMBRE DEL CURSO, DEBE SER UNICO
+        $stmt = $this->connect()->prepare("UPDATE csugerido_cargo_trabajador SET estado = ?, analisis = ? WHERE id = ?;");
+
+        if(!$stmt->execute(array($datos["estado"], $datos["analisis"], $datos["id"]))){
+            $stmt = null;  
+            header("location: ../views/admin_usuarios.php?error=stmtfailed");
+            exit();
+        }   
     }
 }
