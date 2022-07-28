@@ -1,6 +1,7 @@
 <?php
 
-class ColaboradorCursosController extends ColaboradorCursos{
+class ColaboradorCursosController extends ColaboradorCursos
+{
     private $cedula;
 
     public function __construct($cedula)
@@ -8,12 +9,19 @@ class ColaboradorCursosController extends ColaboradorCursos{
         $this->cedula = $cedula;
     }
 
-    public function mostrarCursosSugeridosTrabajador(){
+    public function mostrarCursosSugeridosTrabajador()
+    {
         return $this->obtenerCursosSugeridosTrabajador($this->cedula);
     }
 
-    public function eliminarCSugeridoSeleccionado(){
+    public function eliminarCSugeridoSeleccionado()
+    {
         //Uso la variable $cedula, pero realmente, esta tiene el ID del curso sugerido seleccionado, este hace referencia al almacenado en la tabla 'csugerido_cargo_trabajador' de la bd
         $this->eliminarCSugeridoTrabajador($this->cedula);
+    }
+
+    public function editarCSugeridoSeleccionado()
+    {
+        $this->editarCSugeridoTrabajador($this->cedula);
     }
 }

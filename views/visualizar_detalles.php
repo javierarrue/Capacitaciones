@@ -166,23 +166,23 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
                 <tbody>
 
                   <?php for ($i = 0; $i < count($cSugeridosColaborador); $i++) { ?>
-                    <tr id="tr_<?php echo $i ?>">
+                    <tr id="tr_<?php echo $cSugeridosColaborador[$i]["id"] ?>">
                       <!-- BOTONES DE ACCION -->
                       <td class="text-end">
-                        <button type="button" data-role="delete" data-id="<?php echo $i ?>" class="btn text-danger action-btn" title="Eliminar Curso" id="delete">
+                        <button type="button" data-role="delete" data-id="<?php echo $cSugeridosColaborador[$i]["id"] ?>" class="btn text-danger action-btn" title="Eliminar Curso" id="delete">
                           <i class="bi bi-trash3-fill"></i>
                         </button>
-                        <button type="button" data-role="edit" data-id="<?php echo $i ?>" class="btn text-primary action-btn" title="Editar Curso">
+                        <button type="button" data-role="edit" data-id="<?php echo $cSugeridosColaborador[$i]["id"] ?>" class="btn text-primary action-btn" title="Editar Curso">
                           <i class="bi bi-pencil-fill"></i>
                         </button>
                       </td>
                       <!-- NOMBRE DEL CURSO -->
-                      <td id="csugerido_nombre_<?php echo $i ?>">
+                      <td id="csugerido_nombre_<?php echo $cSugeridosColaborador[$i]["id"] ?>">
                         <?php echo $cSugeridosColaborador[$i]["csugerido"] ?>
                       </td>
                       <!-- ANALISIS -->
-                      <td class="" style="font-size:1.1em" id="analisis_<?php echo $i ?>">
-                        <?php if ($cSugeridosColaborador[$i]["analisis"] == "aceptado") { ?>
+                      <td class="" style="font-size:1.1em" id="analisis_<?php echo $cSugeridosColaborador[$i]["id"] ?>">
+                        <?php if ($cSugeridosColaborador[$i]["analisis"] == "Aceptado") { ?>
                           <span class="<?php echo $aceptado ?>">
                           <?php } else { ?>
                             <span class="<?php echo $rechazado ?>">
@@ -192,31 +192,32 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
                       </td>
                       <!-- ESTADOS -->
                       <td>
-                        <select class="form-select" aria-label="Default select example">
-                          <?php
-                          while ($estado = $estados->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <?php
+                        while ($estado = $estados->fetch(PDO::FETCH_ASSOC)) { ?>
 
-                            <option value="<?php echo $estado["id_estado"]; ?>" <?php if ($cSugeridosColaborador[$i]["estado"] ==  $estado["id_estado"]) { ?> selected id="estado_<?php echo $i ?>" <?php } ?>>
-                              <?php echo $estado["estado"]; ?>
-                            </option>
+                          <?php if ($cSugeridosColaborador[$i]["estado"] ==  $estado["id_estado"]) { ?>
 
-                          <?php }
-                          //Vuelvo a correr el execute().
-                          //¿Porque?:
-                          //PDOStatment (el cual $roles es) es un cursor que se mueve hacia adelante, por lo tanto una vez consumido, este no volvera a la posicion inicial.
-                          //Por eso es necesario volver ejecutar el PDOStatmente, para reiniciar la posicion de este :=)
-                          $estados->execute();
-                          ?>
-                        </select>
+                            <span id="estado_<?php echo $cSugeridosColaborador[$i]["id"] ?>"> <?php echo $estado["estado"]; ?> </span>
+                            <input type="hidden" id="estado_id_<?php echo $cSugeridosColaborador[$i]["id"] ?>" value="<?php echo $estado["id_estado"]; ?>">
+
+                          <?php } ?>
+
+                        <?php }
+                        //Vuelvo a correr el execute().
+                        //¿Porque?:
+                        //PDOStatment (el cual $roles es) es un cursor que se mueve hacia adelante, por lo tanto una vez consumido, este no volvera a la posicion inicial.
+                        //Por eso es necesario volver ejecutar el PDOStatmente, para reiniciar la posicion de este :=)
+                        $estados->execute();
+                        ?>
                       </td>
                       <!-- /ESTADOS -->
                       <!-- FECHA INICIO -->
                       <td>
-                        <input id="fecha_inicio_<?php echo $i ?>" type="date" name="fecha_inicio" value="<?php echo $cSugeridosColaborador[$i]["fecha_inicio"] ?>">
+                        <input id="fecha_inicio_<?php echo $cSugeridosColaborador[$i]["id"]  ?>" type="date" name="fecha_inicio" value="<?php echo $cSugeridosColaborador[$i]["fecha_inicio"] ?>">
                       </td>
                       <!-- FECHA FIN -->
                       <td>
-                        <input id="fecha_fin_<?php echo $i ?>" type="date" name="fecha_fin" value="<?php echo $cSugeridosColaborador[$i]["fecha_fin"] ?>">
+                        <input id="fecha_fin_<?php echo $cSugeridosColaborador[$i]["id"]  ?>" type="date" name="fecha_fin" value="<?php echo $cSugeridosColaborador[$i]["fecha_fin"] ?>">
                       </td>
                       <!-- CONGRUENCIA -->
                       <td class="" style="font-size:1.1em">
@@ -224,55 +225,10 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
                           Congruente
                         </span>
                         <!-- ID DE CURSO SUGERIDO. Referencia para ejecutar la eliminacion de un curso seleccionado-->
-                        <input type="hidden" name="" id="id_csugerido_<?php echo $i ?>" value="<?php echo $cSugeridosColaborador[$i]["id"] ?>">
+                        <input type="hidden" name="" id="id_csugerido_<?php echo $cSugeridosColaborador[$i]["id"] ?>" value="<?php echo $cSugeridosColaborador[$i]["id"] ?>">
                       </td>
                       <!-- /CONGRUENCIA -->
                     </tr>
-
-                    <!-- Modal EDITAR-->
-                    <!--
-                        <div class="modal fade" id="edit_<?php echo $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Editar curso: <?php echo $cSugeridosColaborador[$i]["csugerido"] ?></h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                <div class="row">
-                                  <div class="col-6">
-                                    <label for="status" class="form-label">Estado</label>
-                                    <select class="form-select" aria-label="Default select example" id="status">
-                                      <option selected> Pendiente </option>
-                                      <option value="1"> Impartido</option>
-                                      <option value="2"> En desarrollo</option>
-                                      <option value="3"> Cancelado</option>
-                                      <option value="3"> Para el siguiente año</option>
-                                      <option value="3"> En trámite de compras</option>
-                                      <option value="3"> En trámite con proveedor local</option>
-                                      <option value="3"> Solicitado a organismo internacional</option>
-                                      <option value="3"> A incluir en el PAC del siguiente año</option>
-                                      <option value="3"> Otro</option>
-                                    </select>
-                                  </div>
-                                  <div class="col-6">
-                                    <label for="analisis" class="form-label">Análisis</label>
-                                    <select class="form-select" aria-label="Default select example" id="analisis">
-                                      <option selected> Aceptado </option>
-                                      <option value="1"> Rechazado</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary register-btn">Guardar cambios</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        -->
-                    <!-- /MODAL EDITAR -->
                   <?php } ?>
 
                 </tbody>
@@ -350,9 +306,9 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
           <!--ANALISIS-->
           <div class="col-6">
             <label for="analisis" class="form-label">Análisis</label>
-            <select class="form-select" aria-label="Default select example" id="analisis" name="analisis">
-              <option selected> Aceptado </option>
-              <option value="1"> Rechazado</option>
+            <select class="form-select" aria-label="Default select example" id="edit_analisis" name="analisis">
+              <option value="Aceptado"> Aceptado </option>
+              <option value="Rechazado"> Rechazado</option>
             </select>
           </div>
         </div>
@@ -370,8 +326,9 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
         </div>
       </div>
       <div class="modal-footer">
+        <input type="hidden" name="edit_id" id="edit_id">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary register-btn">Guardar cambios</button>
+        <button type="button" class="btn btn-primary register-btn" id="save">Guardar cambios</button>
       </div>
     </div>
   </div>
@@ -403,5 +360,6 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
 </script>
 
 <script src="../js/modalDinamicos/modal_detalle_trabajador.js"></script>
+<script src="../js/ajax/editTableCSugeridos.ajax.js"></script>
 
 <?php include '../views/components/lowerPart.php' ?>
