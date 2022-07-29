@@ -235,7 +235,7 @@
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
               <input id="id_curso" type="hidden" name="id_curso">
               <input id="nombre_viejo" type="hidden" name="cursoNombre_old">
-              <button type="submit" class="btn btn-primary" name="submit">Guardar Cambios</button>
+              <button type="submit" class="btn register-btn text-white" name="submit">Guardar Cambios</button>
             </div>
           </form>
         </div>
