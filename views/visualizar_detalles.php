@@ -10,6 +10,7 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
 <script>
   document.querySelector('.visualizar').classList.add('link-active');
 </script>
+
 <!-- MAIN CONTENT OF THE PAGE-->
 <main class="mt-5 pt-3">
   <div class="container-fluid">
@@ -149,7 +150,7 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
           <div class="card-header">
             <b>Cursos Sugeridos para el cargo</b>
           </div>
-          <div class="card-body">
+          <div class=" card-body">
             <div class="table-responsive">
               <table id="table2" class="table data-table table-hover table-responsive" style="width: 100%">
                 <thead>
@@ -356,10 +357,38 @@ $rechazado = 'rounded-pill badge bg-danger bg-opacity-10 text-danger border bord
 </div>
 <!-- /MODAL - ELIMINAR CURSO -->
 
-<script>
-</script>
+<!-- Toast content -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 99;">
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <i class="bi bi-check-square-fill text-primary"></i>&nbsp
+      <strong class="me-auto text-primary"> Curso editado</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      <span>El curso ha sido editado con éxito.</span>
+    </div>
+  </div>
+</div>
+<!-- /Toast content -->
 
 <script src="../js/modalDinamicos/modal_detalle_trabajador.js"></script>
 <script src="../js/ajax/editTableCSugeridos.ajax.js"></script>
+
+<script>
+  const toastTrigger = document.getElementById('save')
+  const toastHTMLElement = document.getElementById('toast')
+  const options = {
+    delay: 5000
+  }
+
+  if (toastTrigger) {
+    toastTrigger.addEventListener('click', () => {
+      const toast = new bootstrap.Toast(toastHTMLElement)
+
+      toast.show()
+    })
+  }
+</script>
 
 <?php include '../views/components/lowerPart.php' ?>
